@@ -23,36 +23,132 @@
 		<div class="wrapper">
 
 			<header class="main-header">
-				<div class="main-header-top">
-					<nav>
-						<ul class="nav-ul">
-							<li class="nav-li">
-								<a href="#">О салоне</a>
+
+				<div class="main-header-top-wrap">
+					<div class="main-header-top">
+						<nav class="main-nav clearfix">
+							<ul class="nav-ul clearfix">
+								<li class="nav-li">
+									<a href="#">О салоне</a>
+								</li>
+								<li class="nav-li">
+									<a href="#">Каталог</a>
+								</li>
+								<li class="nav-li">
+									<a href="#">Статьи</a>
+								</li>
+								<li class="nav-li">
+									<a href="#">Проекты</a>
+								</li>
+								<li class="nav-li">
+									<a href="#">Контакты</a>
+								</li>
+							</ul>
+						</nav>
+						<div class="pull-right">
+							<div class="main-search">
+								<form class="main-search-form">
+									<input class="main-search-input" type="text">
+									<button class="main-search-submit" type="submit">
+										<span class="icon icon-search"></span>
+									</button>
+								</form>
+							</div>
+							<div class="phone">
+								<a href="+78632185636">(863) 218-56-36</a>
+							</div>
+						</div>					
+					</div>
+				</div>
+				
+				<div class="main-header-bot-wrap">
+					<div class="main-header-bot">
+						<ul class="subnav-ul clearfix">
+							<li class="subnav-li">
+								<h1 class="logo">
+									<a href="#">
+										Плитка мира
+									</a>
+								</h1>
 							</li>
-							<li class="nav-li">
-								<a href="#">Каталог</a>
+							<li class="subnav-li tile">
+								<div class="subnav-li-top">
+									Плитка
+								</div>
+								<div class="subnav-li-desc">
+									<div class="subnav-li-desc-text">
+										Искусственный камень
+									</div>
+									<div class="subnav-li-desc-link">
+										<a href="#">
+											Натуральный камень
+										</a>
+									</div>
+								</div>
 							</li>
-							<li class="nav-li">
-								<a href="#">Статьи</a>
+							<li class="subnav-li stone">
+								<div class="subnav-li-top">
+									Камень
+								</div>
+								<div class="subnav-li-desc">
+									<div class="subnav-li-desc-text">
+										Искусственный камень
+									</div>
+									<div class="subnav-li-desc-link">
+										<a href="#">
+											Натуральный камень
+										</a>
+									</div>
+								</div>
 							</li>
-							<li class="nav-li">
-								<a href="#">Проекты</a>
+							<li class="subnav-li mosaic">
+								<div class="subnav-li-top">
+									Мозаика
+								</div>
+								<div class="subnav-li-desc">
+									<div class="subnav-li-desc-text">
+										Искусственный камень
+									</div>
+									<div class="subnav-li-desc-link">
+										<a href="#">
+											Натуральный камень
+										</a>
+									</div>
+								</div>
 							</li>
-							<li class="nav-li">
-								<a href="#">Контакты</a>
+							<li class="subnav-li materials">
+								<div class="subnav-li-top">
+									Сопутствующие материалы
+								</div>
+								<div class="subnav-li-desc">
+									<div class="subnav-li-desc-text">
+										Искусственный камень
+									</div>
+									<div class="subnav-li-desc-link">
+										<a href="#">
+											Натуральный камень
+										</a>
+									</div>
+								</div>
 							</li>
 						</ul>
-					</nav>
-				</div>
-				<div class="main-header-bot">
-					
-				</div>
+					</div>
+				</div>				
+
 			</header>
 
 			<div ng-view=""></div>
 
 			<footer class="main-footer">
-				
+				<div class="copy">
+					<div class="copy-text">
+						© Салон ПЛИТКА МИРА, 2012 – 2014
+					</div>
+					<a class="map-link" href="#">Показать на карте</a>
+				</div>
+				<div class="dev">
+					
+				</div>
 			</footer>
 
 		</div>
@@ -68,6 +164,8 @@
 			 ga('create', 'UA-XXXXX-X');
 			 ga('send', 'pageview');
 		</script>
+		<script src="//use.typekit.net/xfh4rnr.js"></script>
+		<script>try{Typekit.load();}catch(e){}</script>
 
 		<!-- build:js(.) scripts/oldieshim.js -->
 		<!--[if lt IE 9]>

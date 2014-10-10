@@ -140,7 +140,7 @@ strong {
   font-weight: bold;
 }
 blockquote {
-  margin: 1em 40px;
+  margin: 1em 2.5rem;
 }
 /**
  * Address styling not present in Safari 5 and Chrome.
@@ -239,7 +239,7 @@ ul {
   margin: 1em 0;
 }
 dd {
-  margin: 0 0 0 40px;
+  margin: 0 0 0 2.5rem;
 }
 /**
  * Address paddings set differently in IE 6/7.
@@ -247,7 +247,7 @@ dd {
 menu,
 ol,
 ul {
-  padding: 0 0 0 40px;
+  padding: 0 0 0 2.5rem;
 }
 /**
  * Correct list images handled incorrectly in IE 7.
@@ -299,7 +299,7 @@ form {
  */
 fieldset {
   border: 1px solid #c0c0c0;
-  margin: 0 2px;
+  margin: 0 0.125rem;
   padding: 0.35em 0.625em 0.75em;
 }
 /**
@@ -313,7 +313,7 @@ legend {
   padding: 0;
   white-space: normal;
   /* 2 */
-  *margin-left: -7px;
+  *margin-left: -0.4375rem;
   /* 3 */
 }
 /**
@@ -392,9 +392,9 @@ input[type="radio"] {
   /* 1 */
   padding: 0;
   /* 2 */
-  *height: 13px;
+  *height: 0.8125rem;
   /* 3 */
-  *width: 13px;
+  *width: 0.8125rem;
   /* 3 */
 }
 /**
@@ -484,7 +484,7 @@ html {
  */
 hr {
   display: block;
-  height: 1px;
+  height: 0.0625rem;
   border: 0;
   border-top: 1px solid #ccc;
   margin: 1em 0;
@@ -526,28 +526,222 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-*,
-*:before,
-*:after {
+* {
   box-sizing: border-box;
 }
-#field {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300px;
-  height: 300px;
-  margin: -150px 0 0 -150px;
-  border: 1px solid #ccc;
+a {
+  outline: none;
 }
-.field-part {
+a[href^="tel"] {
+  color: inherit;
+  text-decoration: none;
+}
+.list-unstyled {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pull-right {
+  float: right;
+}
+.pull-left {
   float: left;
-  width: 33.333333%;
-  height: 33.333333%;
-  border: 1px solid #ccc;
 }
-.field-part:nth-child(odd) {
-  background: #f4f4f4;
+.full-abs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('../fonts/HelveticaNeue/HelveticaNeue.eot');
+  src: url('../fonts/HelveticaNeue/HelveticaNeue.eot?#iefix') format('embedded-opentype'), url('../fonts/HelveticaNeue/HelveticaNeue.woff') format('woff'), url('../fonts/HelveticaNeue/HelveticaNeue.ttf') format('truetype'), url('../fonts/HelveticaNeue/HelveticaNeue.svg#geometria_mediummedium') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('../fonts/HelveticaNeue/HelveticaNeue-Bold.eot');
+  src: url('../fonts/HelveticaNeue/HelveticaNeue-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/HelveticaNeue/HelveticaNeue-Bold.woff') format('woff'), url('../fonts/HelveticaNeue/HelveticaNeue-Bold.ttf') format('truetype'), url('../fonts/HelveticaNeue/HelveticaNeue-Bold.svg#geometria_mediummedium') format('svg');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('../fonts/HelveticaNeue/HelveticaNeue-Medium.eot');
+  src: url('../fonts/HelveticaNeue/HelveticaNeue-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/HelveticaNeue/HelveticaNeue-Medium.woff') format('woff'), url('../fonts/HelveticaNeue/HelveticaNeue-Medium.ttf') format('truetype'), url('../fonts/HelveticaNeue/HelveticaNeue-Medium.svg#geometria_mediummedium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('../fonts/HelveticaNeue/HelveticaNeue-Thin.eot');
+  src: url('../fonts/HelveticaNeue/HelveticaNeue-Thin.eot?#iefix') format('embedded-opentype'), url('../fonts/HelveticaNeue/HelveticaNeue-Thin.woff') format('woff'), url('../fonts/HelveticaNeue/HelveticaNeue-Thin.ttf') format('truetype'), url('../fonts/HelveticaNeue/HelveticaNeue-Thin.svg#geometria_mediummedium') format('svg');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'fontello';
+  src: url('../fonts/fontello/fontello.eot?89695000');
+  src: url('../fonts/fontello/fontello.eot?89695000#iefix') format('embedded-opentype'), url('../fonts/fontello/fontello.woff?89695000') format('woff'), url('../fonts/fontello/fontello.ttf?89695000') format('truetype'), url('../fonts/fontello/fontello.svg?89695000#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.icon:before {
+  font-family: "fontello";
+}
+.icon-search:before {
+  content: '\e800';
+}
+/* '' */
+.main-header-top-wrap {
+  height: 3.25rem;
+  background: #404040;
+}
+.main-header-top {
+  width: 74.375rem;
+  height: 3.25rem;
+  margin: 0 auto;
+  background: #404040;
+}
+.main-header-top .main-nav {
+  float: left;
+  font-family: 'din-condensed-web';
+}
+.main-header-top .nav-ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-left: 1px solid #6c6c6c;
+}
+.main-header-top .nav-li {
+  float: left;
+  height: 3.25rem;
+  border-right: 1px solid #6c6c6c;
+  font-size: 0.875rem;
+  line-height: 3.25rem;
+  text-transform: uppercase;
+}
+.main-header-top .nav-li a {
+  display: block;
+  height: 100%;
+  padding: 0 1.125rem;
+  color: white;
+  text-decoration: none;
+}
+.main-header-top .main-search {
+  float: left;
+}
+.main-header-top .main-search .main-search-form {
+  position: relative;
+  margin: 0 1.5rem 0 0;
+}
+.main-header-top .main-search .main-search-input {
+  width: 11.25rem;
+  height: 1.625rem;
+  padding: 0 0.3125rem;
+  margin: 0.8125rem 0;
+  border: none;
+  background: #c6c6c6;
+  border-radius: 0.0625rem;
+}
+.main-header-top .main-search .main-search-submit {
+  position: absolute;
+  top: 0.8125rem;
+  right: 0;
+  width: 2rem;
+  height: 1.625rem;
+  border: none;
+  border-radius: 0.0625rem;
+  line-height: 1.625rem;
+  color: white;
+  background: none;
+}
+.main-header-top .phone {
+  float: left;
+  line-height: 3.25rem;
+}
+.main-header-top .phone a {
+  color: white;
+  text-decoration: none;
+}
+.main-header-bot-wrap {
+  height: 10.5rem;
+  background: #f1f1f1;
+}
+.main-header-bot {
+  width: 74.375rem;
+  height: 3.25rem;
+  margin: 0 auto;
+}
+.main-header-bot .subnav-ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.main-header-bot .subnav-li {
+  float: left;
+  width: 20%;
+}
+.main-header-bot .subnav-li.tile .subnav-li-top {
+  background-image: url(../images/subnav/01.png);
+}
+.main-header-bot .subnav-li.stone .subnav-li-top {
+  background-image: url(../images/subnav/02.png);
+}
+.main-header-bot .subnav-li.mosaic .subnav-li-top {
+  background-image: url(../images/subnav/03.png);
+}
+.main-header-bot .subnav-li.materials .subnav-li-top {
+  background-image: url(../images/subnav/04.png);
+}
+.main-header-bot .subnav-li.materials .subnav-li-top:before {
+  left: 0;
+}
+.main-header-bot .subnav-li .subnav-li-top {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  height: 10.5rem;
+  padding-left: 6.375rem;
+  background: no-repeat 0.25rem center;
+  font: 1.125rem 'din-condensed-web';
+  line-height: 0.975rem;
+  text-transform: uppercase;
+}
+.main-header-bot .subnav-li .subnav-li-top:before {
+  content: '';
+  position: absolute;
+  top: 72%;
+  left: 0.8125rem;
+  width: 3rem;
+  height: 0;
+  border-radius: 100%;
+  box-shadow: 0 0 0.4375rem 0.1875rem #d2cbc9;
+}
+.main-header-bot .subnav-li .subnav-li-desc {
+  display: none;
+}
+.main-header-bot .logo {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.375rem;
+  text-transform: uppercase;
+  color: black;
+  background: url(../images/logo.png) no-repeat 0.25rem center;
+}
+.main-header-bot .logo a {
+  display: table-cell;
+  vertical-align: middle;
+  height: 10.5rem;
+  padding: 0 0 0 4.25rem;
+  text-decoration: none;
+  color: inherit;
+}
+html {
+  font: 1rem 'HelveticaNeue', serif;
 }
 /* ==========================================================================
    Helper classes
@@ -560,7 +754,7 @@ textarea {
   border: 0;
   overflow: hidden;
   /* IE 6/7 fallback */
-  *text-indent: -9999px;
+  *text-indent: -624.9375rem;
 }
 .ir:before {
   content: "";
@@ -581,12 +775,12 @@ textarea {
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
+  height: 0.0625rem;
+  margin: -0.0625rem;
   overflow: hidden;
   padding: 0;
   position: absolute;
-  width: 1px;
+  width: 0.0625rem;
 }
 /*
  * Extends the .visuallyhidden class to allow the element to be focusable

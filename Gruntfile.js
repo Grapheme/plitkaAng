@@ -45,8 +45,12 @@ module.exports = function (grunt) {
         tasks: ['newer:jshint:test', 'karma']
       },
       less: {
-        files: ['<%= yeoman.app %>/styles/less/**/*.less'], // which files to watch
+        files: ['<%= yeoman.app %>/styles/less/**/**/*.less'], // which files to watch
         tasks: ['less']
+      },
+      rem: {
+        files: ['<%= yeoman.app %>/styles/main.css'], // which files to watch
+        tasks: ['px_to_rem']
       },
       styles: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
@@ -76,6 +80,21 @@ module.exports = function (grunt) {
         files: {
           // target.css file: source.less file
           '<%= yeoman.app %>/styles/main.css': '<%= yeoman.app %>/styles/less/main.less'
+        }
+      }
+    },
+
+    // Add px to rem task
+    px_to_rem: {
+      dist: {
+        options: {
+          base: 16,
+          fallback: false,
+          fallback_existing_rem: false,
+          ignore: ['border', 'border-left', 'border-right', 'border-top', 'border-bottom', 'outline']
+        },
+        files: {
+          '<%= yeoman.app %>/styles/main.css': ['<%= yeoman.app %>/styles/main.css']
         }
       }
     },

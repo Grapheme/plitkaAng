@@ -98,46 +98,13 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-*, 
-*:before,
-*:after {
-    box-sizing: border-box;
-}
+@import 'vars';
+@import 'partials/colors';
+@import 'static/fonts';
 
-#field {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300px;
-    height: 300px;
-    margin: -150px 0 0 -150px;
-    border: 1px solid #ccc;
-}
-
-.field-part {
-    float: left;
-    width: 33.333333%;
-    height: 33.333333%;
-    border: 1px solid #ccc;
-}
-
-.field-part:nth-child(odd) {
-    background: #f4f4f4;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@import 'partials/header';
+@import 'app';
+@import 'partials/footer';
 
 /* ==========================================================================
    Helper classes
