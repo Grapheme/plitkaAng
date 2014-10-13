@@ -108,8 +108,33 @@
 	}
 
 	.subnav-li {
+		position: relative;
 		float: left;
-		width: 20%;
+		width: 20.5%;
+		padding: 0 2.5%;
+
+		cursor: pointer;
+
+		&:hover {
+			.subnav-li-desc {
+				height: 140px;
+			}
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			right: 0;
+			height: 52px;
+			border-right: 1px solid #b3b3b3;
+			margin-top: -26px;			
+		}
+
+		&.logo-cont {
+			width: 18%;
+			padding: 0;
+		}
 
 		&.tile {
 			.subnav-li-top {
@@ -128,6 +153,7 @@
 		}
 		&.materials {
 			.subnav-li-top {
+				padding-left: 4rem;
 				background-image: url(../images/subnav/04.png);
 
 				&:before {
@@ -141,7 +167,7 @@
 			display: table-cell;
 			vertical-align: middle;
 			height: @headerBotHeight;
-			padding-left: 102px;
+			padding-left: 5rem;
 
 			background: no-repeat 4px center;
 
@@ -170,7 +196,28 @@
 		}
 
 		.subnav-li-desc {
-			display: none;
+			transition: all .4s ease;
+			overflow: hidden;
+			position: absolute;
+			z-index: 1;
+			top: 100%;
+			left: 0;
+			width: 100%;
+			height: 0;
+			padding: 0 0 0 50px;
+			background: #fff;
+			background: rgba(255,255,255,.95);
+
+			.subnav-li-desc-text {
+				margin: 28px 0 10px;
+				font-size: 14px;
+				line-height: 25px;
+			}
+			.subnav-li-desc-link {
+				a {
+					.typical-link;
+				}
+			}
 		}
 	}
 
