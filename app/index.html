@@ -8,6 +8,7 @@
 		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 		<!-- build:css(.) styles/vendor.css -->
 		<!-- bower:css -->
+		<link rel="stylesheet" href="bower_components/fotorama/fotorama.css" />
 		<!-- endbower -->
 		<!-- endbuild -->
 		<!-- build:css(.tmp) styles/main.css -->
@@ -137,17 +138,19 @@
 
 			</header>
 
-			<div ng-view=""></div>
+			<main class="main" ng-view=""></main>
 
-			<footer class="main-footer">
-				<div class="copy">
-					<div class="copy-text">
-						© Салон ПЛИТКА МИРА, 2012 – 2014
+			<footer class="main-footer clearfix">
+				<div class="main-footer-cont">
+					<div class="copy">
+						<div class="copy-text">
+							© Салон ПЛИТКА МИРА, 2012 – 2014
+						</div>
+						<a class="map-link" href="#">Показать на карте</a>
 					</div>
-					<a class="map-link" href="#">Показать на карте</a>
-				</div>
-				<div class="dev">
-					
+					<div class="dev">
+						Сделано в <a href="">GRPHM</a>
+					</div>
 				</div>
 			</footer>
 
@@ -176,6 +179,7 @@
 
 		<!-- build:js(.) scripts/vendor.js -->
 		<!-- bower:js -->
+		<script src="bower_components/jquery/dist/jquery.js"></script>
 		<script src="bower_components/angular/angular.js"></script>
 		<script src="bower_components/angular-resource/angular-resource.js"></script>
 		<script src="bower_components/angular-cookies/angular-cookies.js"></script>
@@ -183,6 +187,7 @@
 		<script src="bower_components/angular-animate/angular-animate.js"></script>
 		<script src="bower_components/angular-touch/angular-touch.js"></script>
 		<script src="bower_components/angular-route/angular-route.js"></script>
+		<script src="bower_components/fotorama/fotorama.js"></script>
 		<!-- endbower -->
 		<!-- endbuild -->
 

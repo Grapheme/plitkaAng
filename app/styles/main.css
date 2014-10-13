@@ -536,10 +536,26 @@ a[href^="tel"] {
   color: inherit;
   text-decoration: none;
 }
+.typical-link {
+  transition: all .4s ease;
+  display: inline-block;
+  color: #666;
+  text-decoration: none;
+  font-size: 0.875rem;
+  line-height: 1.5625rem;
+  border-bottom: 1px solid #d74e24;
+}
+.typical-link:hover {
+  color: #d74e24;
+  border-color: #666;
+}
 .list-unstyled {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+.uppercase {
+  text-transform: uppercase;
 }
 .pull-right {
   float: right;
@@ -553,6 +569,72 @@ a[href^="tel"] {
   left: 0;
   width: 100%;
   height: 100%;
+}
+.slide {
+  position: relative;
+  height: 100%;
+}
+.slide .slide-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: no-repeat 0 0;
+  background-size: cover;
+}
+.slide .slide-sign {
+  position: relative;
+  z-index: 1;
+  height: 25rem;
+  display: table-cell;
+  vertical-align: middle;
+}
+.slide .slide-sign .slide-sign-cont {
+  display: inline-block;
+  margin: 0 0 0 5.125rem;
+  padding: 0.9375rem 2rem;
+  color: #fff;
+  font-size: 2.25rem;
+  line-height: 3rem;
+  font-weight: 100;
+  background: #414141;
+  background: rgba(41, 41, 41, 0.49);
+}
+.fotorama__arr {
+  width: 5.125rem;
+  background: none;
+  text-align: center;
+}
+.fotorama__arr.fotorama__arr--prev:before {
+  transition: all .4s ease;
+  content: '';
+  transform: rotate(-45deg);
+  display: inline-block;
+  width: 0.875rem;
+  height: 0.875rem;
+  border-top: 3px solid #fff;
+  border-left: 3px solid #fff;
+  background: rgba(255, 255, 255, 0.28);
+}
+.fotorama__arr.fotorama__arr--prev:hover:before {
+  border-color: #d74e24;
+  background: rgba(215, 78, 36, 0.28);
+}
+.fotorama__arr.fotorama__arr--next:before {
+  transition: all .4s ease;
+  content: '';
+  transform: rotate(45deg);
+  display: inline-block;
+  width: 0.875rem;
+  height: 0.875rem;
+  border-top: 3px solid #fff;
+  border-right: 3px solid #fff;
+  background: rgba(255, 255, 255, 0.28);
+}
+.fotorama__arr.fotorama__arr--next:hover:before {
+  border-color: #d74e24;
+  background: rgba(215, 78, 36, 0.28);
 }
 @font-face {
   font-family: 'HelveticaNeue';
@@ -717,9 +799,14 @@ a[href^="tel"] {
   top: 72%;
   left: 0.8125rem;
   width: 3rem;
-  height: 0;
+  height: 0.25rem;
   border-radius: 100%;
-  box-shadow: 0 0 0.4375rem 0.1875rem #d2cbc9;
+  background: rgba(212, 210, 208, 0.4);
+  box-shadow: 0 0 0.3125rem 0.125rem rgba(212, 210, 208, 0.6);
+}
+.main-header-bot .subnav-li .subnav-li-top:last-child:before {
+  top: 70%;
+  left: 0.75rem;
 }
 .main-header-bot .subnav-li .subnav-li-desc {
   display: none;
@@ -742,6 +829,196 @@ a[href^="tel"] {
 }
 html {
   font: 1rem 'HelveticaNeue', serif;
+}
+.header-medium {
+  margin: 0;
+  font: 1.5rem / 1.75 "din-condensed-web";
+  text-transform: uppercase;
+}
+.section-cont {
+  width: 74.375rem;
+  margin: 0 auto;
+}
+.main-footer .main-footer-cont {
+  max-width: 74.375rem;
+  height: 7.1875rem;
+  margin: 0 auto;
+  padding: 1.9375rem 0 0;
+}
+.main-footer .copy {
+  float: left;
+}
+.main-footer .copy .copy-text {
+  position: relative;
+  left: -1.125rem;
+  margin: 0 0 0.5rem;
+  color: #f1f1f1;
+  color: rgba(0, 0, 0, 0.5);
+}
+.main-footer .copy .map-link {
+  transition: all .4s ease;
+  display: inline-block;
+  color: #666;
+  text-decoration: none;
+  font-size: 0.875rem;
+  line-height: 1.5625rem;
+  border-bottom: 1px solid #d74e24;
+}
+.main-footer .copy .map-link:hover {
+  color: #d74e24;
+  border-color: #666;
+}
+.main-footer .dev {
+  float: right;
+  font-size: 0.875rem;
+  color: #f1f1f1;
+  color: rgba(0, 0, 0, 0.5);
+}
+.main-footer .dev a {
+  transition: all .4s ease;
+  display: inline-block;
+  color: #666;
+  text-decoration: none;
+  font-size: 0.875rem;
+  line-height: 1.5625rem;
+  border-bottom: 1px solid #d74e24;
+}
+.main-footer .dev a:hover {
+  color: #d74e24;
+  border-color: #666;
+}
+.goods {
+  margin: 2.5rem 0 0;
+}
+.goods-ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.goods-ul .goods-li {
+  position: relative;
+  float: left;
+  width: 24%;
+  margin: 0 1.333% 1.333% 0;
+}
+.goods-ul .goods-li:nth-child(4n) {
+  margin-right: 0;
+}
+.goods-ul .goods-li.last {
+  margin-right: 0;
+}
+.goods-ul .goods-li:after {
+  content: '';
+  transition: all .2s ease;
+  position: absolute;
+  top: 13.1875rem;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: #e8e8e8;
+}
+.goods-ul .goods-li:hover {
+  color: #d74e24;
+}
+.goods-ul .goods-li:hover .goods-li-country {
+  color: #d74e24;
+}
+.goods-ul .goods-li:hover:after {
+  height: 11rem;
+}
+.goods-ul .goods-li-head {
+  position: relative;
+  height: 13.1875rem;
+  background: no-repeat 0 0;
+  background-size: cover;
+}
+.goods-ul .goods-li-head a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.goods-ul .goods-li-body {
+  position: relative;
+  z-index: 1;
+  height: 11rem;
+}
+.goods-ul .goods-li-body .goods-li-brand {
+  height: 3.1875rem;
+  background: no-repeat 0 1.3125rem;
+}
+.goods-ul .goods-li-body .goods-li-name {
+  transition: all .4s ease;
+  margin: 0 0 0.75rem;
+  font-size: 1.125rem;
+  line-height: 1.2rem;
+  font-weight: 600;
+}
+.goods-ul .goods-li-body .goods-li-country {
+  transition: all .4s ease;
+  margin: 0 0 1.875rem;
+  font-size: 0.875rem;
+  line-height: 1.2rem;
+  font-weight: 300;
+  color: #504436;
+}
+.goods-ul .goods-li-body .goods-li-price {
+  transition: all .4s ease;
+  font-size: 1.875rem;
+  line-height: 1.2rem;
+  font-weight: bold;
+}
+.about {
+  padding: 3.625rem 0 3.125rem;
+  background: #f1f1f1;
+}
+.about .header-medium {
+  margin: 0 0 3rem;
+}
+.about .about-cont {
+  float: left;
+  width: 75%;
+  padding: 0 6.75rem 0 0;
+}
+.about .about-cont p {
+  margin: 0 0 2rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.about .news {
+  float: left;
+  width: 25%;
+}
+.news .header-medium {
+  margin-bottom: 1rem;
+}
+.news-ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.news-ul .news-li {
+  margin: 0 0 2rem;
+}
+.news-ul .news-date {
+  color: #999;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+}
+.news-ul .news-link {
+  transition: all .4s ease;
+  display: inline-block;
+  color: #666;
+  text-decoration: none;
+  font-size: 0.875rem;
+  line-height: 1.5625rem;
+  border-bottom: 1px solid #d74e24;
+  display: inline;
+}
+.news-ul .news-link:hover {
+  color: #d74e24;
+  border-color: #666;
 }
 /* ==========================================================================
    Helper classes

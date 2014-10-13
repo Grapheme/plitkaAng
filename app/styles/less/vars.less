@@ -11,10 +11,29 @@ a[href^="tel"] {
 	text-decoration: none;
 }
 
+.typical-link {
+	transition: all .4s ease;
+	display: inline-block;
+	color: #666;
+	text-decoration: none;
+	font-size: 14px;
+	line-height: 25px;
+	border-bottom: 1px solid @clr-red;
+
+	&:hover {
+		color: @clr-red;
+		border-color: #666;
+	}
+}
+
 .list-unstyled {
 	margin: 0;
 	padding: 0;
 	list-style: none;
+}
+
+.uppercase {
+	text-transform: uppercase;
 }
 
 .pull-right {
