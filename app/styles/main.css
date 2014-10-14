@@ -678,6 +678,23 @@ a[href^="tel"] {
   content: '\e800';
 }
 /* '' */
+.btn {
+  transition: all .4s ease;
+  height: 4.25rem;
+  padding: 0 2.625rem;
+  border: 2px solid #d74e24;
+  line-height: 4.25rem;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  border-radius: 0.125rem;
+}
+.btn:hover {
+  color: #d74e24;
+  border-color: #000;
+}
 .main-header-top-wrap {
   height: 3.25rem;
   background: #404040;
@@ -883,6 +900,13 @@ html {
   font: 1.5rem / 1.75 "din-condensed-web";
   text-transform: uppercase;
 }
+.header-small {
+  margin: 0;
+  font: 1.5rem / 1.75 "din-condensed-web";
+  text-transform: uppercase;
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+}
 .section-cont {
   width: 74.375rem;
   margin: 0 auto;
@@ -891,6 +915,13 @@ html {
   margin: 0;
   font: 1.5rem / 1.75 "din-condensed-web";
   text-transform: uppercase;
+}
+.section-cont h3 {
+  margin: 0;
+  font: 1.5rem / 1.75 "din-condensed-web";
+  text-transform: uppercase;
+  margin: 0 0 10px;
+  font-size: 1.25rem;
 }
 .section-cont p {
   margin: 0 0 2rem;
@@ -1130,6 +1161,150 @@ html {
 .about-main .about-column strong a:hover {
   color: #d74e24;
   border-color: #666;
+}
+.contacts {
+  padding: 3.625rem 0 3.125rem;
+}
+.contacts h2 {
+  margin: 0 0 3rem;
+}
+.contacts h3 {
+  margin: 0;
+  font: 1.5rem / 1.75 "din-condensed-web";
+  text-transform: uppercase;
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+}
+.contacts .contacts-column {
+  float: left;
+  width: 50%;
+  font-size: 0.875rem;
+}
+.contacts .contacts-column:first-child {
+  padding: 0 1.25rem 0 0;
+}
+.contacts .contacts-column:last-child {
+  padding: 0 0 0 1.25rem;
+}
+.contacts .contacts-column address {
+  font-style: normal;
+}
+.contacts .contacts-column .travel-scheme a {
+  transition: all .4s ease;
+  display: inline-block;
+  color: #666;
+  text-decoration: none;
+  font-size: 0.875rem;
+  line-height: 1.5625rem;
+  border-bottom: 1px solid #d74e24;
+  padding: 0 0.3125rem;
+  border-bottom-style: dotted;
+}
+.contacts .contacts-column .travel-scheme a:hover {
+  color: #d74e24;
+  border-color: #666;
+}
+.contacts .contacts-column .travel-scheme .active {
+  color: #000;
+  background: #c6c6c6;
+  border: none;
+}
+.contacts .contacts-phones {
+  margin: 0 0 2.5rem;
+}
+.contacts .contacts-phones a {
+  color: inherit;
+  font-size: 1.5625rem;
+  line-height: 1.125rem;
+  text-decoration: none;
+  outline: none;
+}
+.contacts .contacts-phones .contacts-left-num {
+  padding: 0 1.125rem 0 0;
+  border-right: 1px solid #c6c6c6;
+}
+.contacts .contacts-phones .contacts-right-num {
+  padding: 0 0 0 1.125rem;
+}
+.contacts .contacts-phones .contacts-phones-prefix {
+  margin: 0 0.25rem 0 0;
+  vertical-align: top;
+  line-height: 1.125rem;
+}
+.contacts .work-time {
+  margin: 0 0 2.5rem;
+}
+.contacts .work-time .work-time-col {
+  float: left;
+  width: 37.333%;
+  padding: 0 2.5rem 0.625rem;
+  border-right: 1px solid #c6c6c6;
+}
+.contacts .work-time .work-time-col:first-child {
+  width: 25.333%;
+  padding-left: 0;
+}
+.contacts .work-time .work-time-col:last-child {
+  border: none;
+}
+.contacts .work-time .work-time-area {
+  margin: 0 0 0.375rem;
+  font-size: 0.875rem;
+}
+.contacts .work-time .work-time-hours {
+  font-size: 1.5625rem;
+  line-height: 1.125rem;
+}
+.contacts .work-time .work-time-hours span {
+  font-size: 0.75rem;
+  vertical-align: text-top;
+}
+.contacts .feedback-form {
+  width: 36.0625rem;
+  height: 22.5rem;
+  padding: 1.875rem 1.9375rem;
+  margin: 0 0 2.5rem;
+  background: url(../images/form-bg.png) 0 0 no-repeat;
+  background-size: 100% 100%;
+}
+.contacts .feedback-form fieldset {
+  margin: 0 0 1.75rem;
+}
+.contacts .feedback-form input {
+  transition: all .4s ease;
+  display: inline-block;
+  width: 48.5%;
+  height: 3rem;
+  padding: 0 0 0 1.6875rem;
+  line-height: 3rem;
+  font-size: 0.875rem;
+  border-radius: 0.125rem;
+  border: 1px solid #c6c6c6;
+  outline: none;
+}
+.contacts .feedback-form input:focus {
+  border: 1px solid #de947d;
+}
+.contacts .feedback-form .input-name {
+  margin: 0 3% 0 0;
+}
+.contacts .feedback-form textarea {
+  transition: all .4s ease;
+  width: 100%;
+  height: 8.0625rem;
+  padding: 0.75rem 0 0 1.6875rem;
+  line-height: 1.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.125rem;
+  border: 1px solid #c6c6c6;
+  outline: none;
+  resize: none;
+}
+.contacts .feedback-form textarea:focus {
+  border: 1px solid #de947d;
+}
+.contacts .feedback-form .btn {
+  float: right;
 }
 /* ==========================================================================
    Helper classes
