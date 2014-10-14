@@ -887,6 +887,16 @@ html {
   width: 74.375rem;
   margin: 0 auto;
 }
+.section-cont h2 {
+  margin: 0;
+  font: 1.5rem / 1.75 "din-condensed-web";
+  text-transform: uppercase;
+}
+.section-cont p {
+  margin: 0 0 2rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
 .main-footer {
   border-top: 1px solid #f1f1f1;
 }
@@ -1032,11 +1042,6 @@ html {
   width: 75%;
   padding: 0 6.75rem 0 0;
 }
-.about .about-cont p {
-  margin: 0 0 2rem;
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
 .about .news {
   float: left;
   width: 25%;
@@ -1068,6 +1073,61 @@ html {
   display: inline;
 }
 .news-ul .news-link:hover {
+  color: #d74e24;
+  border-color: #666;
+}
+.partners {
+  margin: 0 0 5.25rem;
+}
+.partners h2 {
+  margin: 0;
+  font: 1.5rem / 1.75 "din-condensed-web";
+  text-transform: uppercase;
+}
+.partners ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-top: 2rem;
+}
+.partners li {
+  float: left;
+  width: 25%;
+  height: 6.875rem;
+  line-height: 6.875rem;
+  text-align: center;
+}
+.partners li img {
+  max-height: 3.125rem;
+}
+.about-main {
+  padding: 3.625rem 0 3.125rem;
+}
+.about-main h2 {
+  margin: 0 0 3rem;
+}
+.about-main .about-column {
+  float: left;
+  width: 33.333%;
+  padding: 0 4.375rem 0 0;
+}
+.about-main .about-column strong {
+  display: block;
+  padding: 1.75rem;
+  font-weight: 400;
+  background: #c6c6c6;
+}
+.about-main .about-column strong a {
+  transition: all .4s ease;
+  display: inline-block;
+  color: #666;
+  text-decoration: none;
+  font-size: 0.875rem;
+  line-height: 1.5625rem;
+  border-bottom: 1px solid #d74e24;
+  font-size: 1rem;
+}
+.about-main .about-column strong a:hover {
   color: #d74e24;
   border-color: #666;
 }
