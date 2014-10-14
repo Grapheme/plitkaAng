@@ -1035,6 +1035,15 @@ html {
   position: relative;
   z-index: 1;
   height: 11rem;
+  padding: 0 1.5rem;
+}
+.goods-ul .goods-li-body .goods-li-date {
+  font-size: 0.75rem;
+  line-height: 3.5625rem;
+  color: #6c6c6c;
+}
+.goods-ul .goods-li-body .goods-li-text {
+  font: 1.125rem / 1.25rem "din-condensed-web";
 }
 .goods-ul .goods-li-body .goods-li-brand {
   height: 3.1875rem;
@@ -1065,7 +1074,7 @@ html {
   padding: 3.625rem 0 3.125rem;
   background: #f1f1f1;
 }
-.about .header-medium {
+.about h2 {
   margin: 0 0 3rem;
 }
 .about .about-cont {
@@ -1305,6 +1314,12 @@ html {
 }
 .contacts .feedback-form .btn {
   float: right;
+}
+.articles {
+  padding: 3.625rem 0 3.125rem;
+}
+.articles h2 {
+  margin: 0 0 3rem;
 }
 /* ==========================================================================
    Helper classes
