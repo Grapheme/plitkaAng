@@ -4,6 +4,30 @@
 .goods-ul {
 	.list-unstyled;
 
+	&.products-ul {
+
+		.goods-li {
+
+			&:after {
+					top: 352px;
+			}
+
+			&:hover {
+
+				&:after {
+					height: 222px;
+				}
+			}
+		}
+
+		.goods-li-head {
+			height: 352px;
+		}
+		.goods-li-body {
+			height: 222px;
+		}
+	}
+
 	.goods-li {
 		position: relative;
 		float: left;
@@ -36,6 +60,11 @@
 			.goods-li-country {
 				color: @clr-red;
 			}
+
+			.goods-li-body {
+				border-color: #e8e8e8;
+			}
+
 			&:after {
 				height: 176px;
 			}
@@ -58,10 +87,12 @@
 	}
 
 	.goods-li-body {
+		transition: all .2s ease;
 		position: relative;
 		z-index: 1;
 		height: 176px;
 		padding: 0 24px;
+		border-top: 1px solid #fff;
 		
 		.goods-li-date {
 			font-size: 12px;
@@ -70,10 +101,17 @@
 		}
 		.goods-li-text {
 			font: 18px / 20px "din-condensed-web";
+
+			&:first-child {
+				margin: 24px 0 16px;
+			}
 		}
 		.goods-li-brand {
 			height: 51px;
 			background: no-repeat 0 21px;
+		}
+		.goods-li-product {
+			font-size: 14px;
 		}
 		.goods-li-name {
 			transition: all .4s ease;
@@ -97,6 +135,10 @@
 			font-size: 30px;
 			line-height: 19.2px;
 			font-weight: bold;
+		}
+		.goods-li-desc {
+			font-size: 12px;
+			line-height: 18px;
 		}
 	}
 }
