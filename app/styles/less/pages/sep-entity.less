@@ -1,0 +1,63 @@
+.sep-entity {
+
+	.sep-entity-name {
+		margin-bottom: 10px;
+		font-weight: normal;
+	}
+
+	.sep-entity-date {
+		color: @clr-light-gray;
+		font-size: 12px;
+		line-height: 24px;
+	}
+
+	.sep-entity-sub-name {
+		margin: 20px 0
+	}
+
+	.sep-entity-desc {
+		
+		img {
+			margin-bottom: 18px;
+		}
+
+		p {
+			max-width: 800px;
+		}
+	}
+
+	.sep-entity-nav {
+		margin: 0 0 100px;
+	}
+
+	.icon {
+		transition: all .4s ease;
+		
+		display: inline-block;
+	    font-size: 42px;
+	    font-style: normal;
+	    line-height: 20px;
+	    vertical-align: top;
+
+	    color: @clr-lighter-gray;
+	}
+
+	a {
+		transition: all .4s ease;
+		
+		margin: 0 18px 0 0;
+		font-size: 12px;
+		line-height: 20px;
+		color: #000;
+		text-decoration: none;
+		font-style: italic;
+
+		&:hover {
+			color: @clr-red;
+
+			.icon {
+				color: @clr-red;
+			}
+		}
+	}
+}
