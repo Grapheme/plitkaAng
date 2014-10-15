@@ -1437,6 +1437,119 @@ html {
 .sep-entity a:hover .icon {
   color: #d74e24;
 }
+.product {
+  margin: 0 0 5rem;
+}
+.product .product-top {
+  margin: 0 0 2rem;
+}
+.product .back-to-block {
+  float: left;
+}
+.product .back-to-block .icon {
+  transition: all .4s ease;
+  display: inline-block;
+  font-size: 2.625rem;
+  font-style: normal;
+  line-height: 1.25rem;
+  vertical-align: top;
+  color: #c6c6c6;
+}
+.product .back-to-block a {
+  transition: all .4s ease;
+  margin: 0 1.125rem 0 0;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  color: #000;
+  text-decoration: none;
+  font-style: italic;
+}
+.product .back-to-block a:hover {
+  color: #d74e24;
+}
+.product .back-to-block a:hover .icon {
+  color: #d74e24;
+}
+.product .breadcrumbs {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  color: #6c6c6c;
+}
+.product .product-pict {
+  float: left;
+  width: 60%;
+  height: 25rem;
+}
+.product .product-desc {
+  float: left;
+  width: 40%;
+  padding: 0 0 0 2rem;
+}
+.product .product-desc h1 {
+  margin: -0.5rem 0 0;
+  font-size: 2.4375rem;
+  line-height: 3rem;
+  font-weight: normal;
+}
+.product .product-desc .product-brand {
+  height: 2.25rem;
+  background: no-repeat 0 center;
+  background-size: auto 0.875rem;
+}
+.product .product-desc p {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.product .product-char {
+  font-size: 0.875rem;
+  line-height: 1.75rem;
+}
+.product .product-char dt {
+  float: left;
+  font-weight: 600;
+}
+.product .product-char dt:after {
+  content: ':\00a0';
+}
+.product .product-char dd {
+  margin: 0 0 0;
+}
+.similar-products {
+  background: #f1f1f1;
+}
+.similar-products .section-cont {
+  padding: 4.125rem 0 2.125rem;
+}
+.similar-products .similar-products-ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.similar-products .similar-products-li {
+  float: left;
+  width: 25%;
+}
+.similar-products .similar-products-head {
+  height: 5.875rem;
+  background: no-repeat 0 bottom;
+}
+.similar-products .similar-products-body dl {
+  font-size: 0.875rem;
+  line-height: 1.75rem;
+}
+.similar-products .similar-products-body dt {
+  float: left;
+  font-weight: 600;
+}
+.similar-products .similar-products-body dt:after {
+  content: ':\00a0';
+}
+.similar-products .similar-products-body dd {
+  margin: 0 0 0;
+}
+.similar-products .similar-products-price {
+  font-weight: 600;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
