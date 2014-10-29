@@ -33,7 +33,8 @@ angular
       })
       .when('/articles', {
         templateUrl: 'views/articles.html',
-        controller: 'ArticlesCtrl'
+        controller: 'ArticlesCtrl',
+        controllerAs: 'ArtCtrl'
       })
       .when('/catalog', {
         templateUrl: 'views/catalog.html',

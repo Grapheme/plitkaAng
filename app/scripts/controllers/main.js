@@ -8,12 +8,10 @@
  * Controller of the plitkaApp
  */
 angular.module('plitkaApp')
-	.controller('MainCtrl', function ($scope) {
-		$scope.awesomeThings = [
-			'HTML5 Boilerplate',
-			'AngularJS',
-			'Karma'
-		];
+	.controller('MainCtrl', ['$http', '$rootScope', function ($http, $rootScope) {
+
+		var self = this;
+
 		//Fotorama init
 		jQuery('.fotorama').fotorama({
 			width: '100%',
@@ -21,4 +19,4 @@ angular.module('plitkaApp')
 			nav: false,
 			arrows: 'always'
 		});
-	});
+	}]);

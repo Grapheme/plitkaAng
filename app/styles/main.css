@@ -1549,6 +1549,7 @@ html {
 }
 .similar-products .similar-products-price {
   font-weight: 600;
+  font-size: 1.25rem;
 }
 /* ==========================================================================
    Helper classes
