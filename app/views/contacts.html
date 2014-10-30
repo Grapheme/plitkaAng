@@ -60,7 +60,12 @@
 				г. Ростов-на-Дону, ул. Нансена, 239, Торговый Центр «Декорум», второй этаж
 			</address>
 			<div class="travel-scheme">
-				Схема проезда <a class="active" href="#">к салону</a> <a href="#">к складу</a>
+				Схема проезда
+				<a ng-class="{ active : ContCtrl.checkMap('salon') }" ng-click="ContCtrl.setMap('salon')" >к салону</a>
+				<a ng-class="{ active : ContCtrl.checkMap('store') }" ng-click="ContCtrl.setMap('store')" >к складу</a>
+			</div>
+			<div id="map_canvas" class="map">
+				
 			</div>
 		</div>
 	</div>

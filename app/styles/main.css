@@ -1252,6 +1252,7 @@ html {
   border-bottom: 1px solid #d74e24;
   padding: 0 0.3125rem;
   border-bottom-style: dotted;
+  cursor: pointer;
 }
 .contacts .contacts-column .travel-scheme a:hover {
   color: #d74e24;
@@ -1358,6 +1359,11 @@ html {
 }
 .contacts .feedback-form .btn {
   float: right;
+}
+.contacts .map {
+  width: 100%;
+  height: 26.25rem;
+  margin: 1.3125rem 0 0;
 }
 .articles {
   padding: 3.625rem 0 3.125rem;

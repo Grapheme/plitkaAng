@@ -29,7 +29,8 @@ angular
       })
       .when('/contacts', {
         templateUrl: 'views/contacts.html',
-        controller: 'ContactsCtrl'
+        controller: 'ContactsCtrl',
+        controllerAs: 'ContCtrl'
       })
       .when('/articles', {
         templateUrl: 'views/articles.html',
