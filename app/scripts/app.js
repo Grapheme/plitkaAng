@@ -17,6 +17,10 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
+  .config(['$httpProvider', function ($httpProvider) {
+    // enable http caching
+    $httpProvider.defaults.cache = true;
+  }])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -39,7 +43,13 @@ angular
       })
       .when('/catalog', {
         templateUrl: 'views/catalog.html',
-        controller: 'CatalogCtrl'
+        controller: 'CatalogCtrl',
+        controllerAs: 'CatCtrl'
+      })
+      .when('/catalog/:id', {
+      	templateUrl: 'views/catalog.html',
+      	controller: 'CatalogCtrl',
+      	controllerAs: 'CatCtrl'
       })
       .when('/projects', {
         templateUrl: 'views/projects.html',

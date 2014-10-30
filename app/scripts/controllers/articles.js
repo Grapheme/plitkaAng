@@ -20,8 +20,6 @@ angular.module('plitkaApp')
 		//Break data into objects
 		self.articles = self.data.articles;
 		self.photos = self.data.photos;
-
-		console.log(self.articles);
 	});
 		
 }]);

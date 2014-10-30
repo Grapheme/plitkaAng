@@ -38,6 +38,7 @@ angular.module('plitkaApp')
 				zoom: 15,
 				zoomControl: false,
 				draggable: false,
+				scrollwheel: false,
 				center: new google.maps.LatLng(coords.x, coords.y),
 				mapTypeId: google.maps.MapTypeId.ROADMAP
 			};

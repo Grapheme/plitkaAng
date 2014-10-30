@@ -12,6 +12,10 @@ angular.module('plitkaApp')
 
 		var self = this;
 
+		$http.get('http://plitka.dev.grapheme.ru/application/get').success(function(data){
+			self.data = data;
+		});
+
 		//Fotorama init
 		jQuery('.fotorama').fotorama({
 			width: '100%',
