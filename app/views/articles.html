@@ -5,7 +5,7 @@
 		</h2>
 		<ul class="goods-ul clearfix">
 			<li class="goods-li" ng-repeat="(id, article) in ArtCtrl.articles">
-				<div class="goods-li-head" style="background-image:url(images/articles/01.jpg)">
+				<div class="goods-li-head" style="background-image:url({{ ArtCtrl.photos[ article.image_id ].full }})">
 					<a href="#"></a>
 				</div>
 				<div class="goods-li-body">

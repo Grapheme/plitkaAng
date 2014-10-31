@@ -14,6 +14,17 @@ angular.module('plitkaApp')
 
 		$http.get('http://plitka.dev.grapheme.ru/application/get').success(function(data){
 			self.data = data;
+			self.articles = self.data.articles;
+			self.photos = self.data.photos;
+
+			//make articles arr
+			self.articlesArr = $.map(self.articles, function(value, index){
+				return [value];
+			});
+
+			//get promo block
+			self.promo = self.data.promo;
+
 		});
 
 		//Fotorama init
