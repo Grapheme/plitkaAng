@@ -9,6 +9,12 @@
  */
 angular.module('plitkaApp')
 	.controller('SeparticleCtrl', ['$http', '$routeParams', function ($http, $routeParams) {
+
+		//Scroll to the top of article
+	 	$( 'html, body').animate({
+	        scrollTop: $( 'main' ).offset().top
+	    }, 400);
+
 		//Define controller scope as self
 		var self = this;
 
@@ -20,6 +26,6 @@ angular.module('plitkaApp')
 			self.articleId = $routeParams.id;
 			self.articles = self.data.articles;
 			self.photos = self.data.photos;
-			
+
 		});
 	}]);
