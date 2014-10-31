@@ -1223,6 +1223,10 @@ html {
 .partners li img {
   max-height: 3.125rem;
 }
+.sep-article {
+  width: 74.375rem;
+  margin: 1.5625rem auto 0;
+}
 .about-main {
   padding: 3.625rem 0 3.125rem;
 }

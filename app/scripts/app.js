@@ -59,7 +59,8 @@ angular
 			})
 			.when('/article/:id', {
 				templateUrl: 'views/separticle.html',
-				controller: 'SeparticleCtrl'
+				controller: 'SeparticleCtrl',
+				controllerAs: 'SepCtrl'
 			})
 			.otherwise({
 				redirectTo: '/'
