@@ -25,6 +25,7 @@ angular.module('plitkaApp')
 			self.chosenProduct = self.productType[Object.keys(self.productType)[0]];
 			self.chosenProductId = self.chosenProduct.id;
 
+			//Get all collections for this product type
 			self.collectionsArr = [];
 			console.log(self.collections);
 
@@ -33,6 +34,9 @@ angular.module('plitkaApp')
 					self.collectionsArr.push( self.collections[key] );
 				}
 			}
+
+			//Get all products from collection
+			
 			//self.chosenCollections = self.collections[self.chosenProductId];
 			console.log(self.collectionsArr);
 		});

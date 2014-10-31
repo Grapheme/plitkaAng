@@ -1015,6 +1015,12 @@ html {
 .goods-ul.products-ul .goods-li-body {
   height: 13.875rem;
 }
+.goods-ul.products-ul.finished-projects .goods-li:hover:after {
+  height: 16rem;
+}
+.goods-ul.products-ul.finished-projects .goods-li-body {
+  height: 16rem;
+}
 .goods-ul .goods-li {
   position: relative;
   float: left;
@@ -1052,7 +1058,7 @@ html {
 .goods-ul .goods-li-head {
   position: relative;
   height: 13.1875rem;
-  background: no-repeat 0 0;
+  background: no-repeat center center;
   background-size: cover;
 }
 .goods-ul .goods-li-head a {
@@ -1061,6 +1067,9 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
+}
+.goods-ul .goods-li-head > .fancybox:first-child {
+  z-index: 1;
 }
 .goods-ul .goods-li-body {
   transition: all .2s ease;
@@ -1083,11 +1092,18 @@ html {
 }
 .goods-ul .goods-li-body .goods-li-brand {
   height: 3.1875rem;
+  line-height: 3.1875rem;
   background: no-repeat 0 center;
   background-size: auto 1rem;
 }
 .goods-ul .goods-li-body .goods-li-product {
   font-size: 0.875rem;
+}
+.goods-ul .goods-li-body .goods-li-product strong {
+  display: inline-block;
+}
+.goods-ul .goods-li-body .goods-li-product strong:first-letter {
+  text-transform: capitalize;
 }
 .goods-ul .goods-li-body .goods-li-name {
   transition: all .4s ease;
@@ -1111,6 +1127,10 @@ html {
   font-weight: bold;
 }
 .goods-ul .goods-li-body .goods-li-desc {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+}
+.goods-ul .goods-li-body .goods-li-desc p {
   font-size: 0.75rem;
   line-height: 1.125rem;
 }
@@ -1556,6 +1576,44 @@ html {
 .similar-products .similar-products-price {
   font-weight: 600;
   font-size: 1.25rem;
+}
+.fancybox-opened .fancybox-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3.9375rem;
+  padding: 0 0 0 1.625rem;
+  font: 100 1.5rem/3.9375rem "HelveticaNeue", sans-serif;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+.fancybox-opened .fancybox-skin {
+  border-radius: 0;
+}
+.fancybox-nav.fancybox-prev span {
+  left: -6rem;
+  background: url(../images/icons/angle-left-thin.svg) no-repeat center center;
+  background-size: auto 100%;
+}
+.fancybox-nav.fancybox-next span {
+  right: -6rem;
+  background: url(../images/icons/angle-right-thin.svg) no-repeat center center;
+  background-size: auto 100%;
+}
+.fancybox-nav span {
+  transition: all .4s ease;
+  visibility: visible;
+  width: 3.125rem;
+  height: 3.125rem;
+  margin-top: -1.5625rem;
+}
+.fancybox-close {
+  width: 3.125rem;
+  height: 3.125rem;
+  top: 0;
+  right: -6rem;
+  background: url(../images/icons/close-thin.svg) no-repeat center center;
 }
 /* ==========================================================================
    Helper classes
