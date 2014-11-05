@@ -803,7 +803,7 @@ a[href^="tel"] {
   padding: 0 2.5%;
 }
 .main-header-bot .subnav-li:hover .subnav-li-desc {
-  height: 8.75rem;
+  height: auto;
 }
 .main-header-bot .subnav-li:after {
   content: '';
@@ -870,7 +870,7 @@ a[href^="tel"] {
   transition: all .4s ease;
   overflow: hidden;
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   top: 100%;
   left: 0;
   width: 100%;
@@ -897,6 +897,9 @@ a[href^="tel"] {
 .main-header-bot .subnav-li .subnav-li-desc .subnav-li-desc-text a:hover {
   color: #d74e24;
   border-color: #666;
+}
+.main-header-bot .subnav-li .subnav-li-desc .subnav-li-desc-link {
+  margin: 0.625rem 0;
 }
 .main-header-bot .subnav-li .subnav-li-desc .subnav-li-desc-link a {
   transition: all .4s ease;
