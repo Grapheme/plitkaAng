@@ -39,20 +39,21 @@
 			<h3>
 				Отправьте нам сообщение
 			</h3>
-			<form class="feedback-form">
+			<form name="feedbackForm" class="feedback-form" ng-submit="feedbackForm.$valid && ContCtrl.sendForm(ContCtrl.formData)" novalidate>
 				<fieldset>
-					<input class="input-name" type="text" placeholder="Имя"><!--
-				 --><input class="input-email" type="text" placeholder="Email">
+					<input class="input-name" type="text" placeholder="Имя" required ng-model="ContCtrl.formData.name"><!--
+				 --><input class="input-email" type="email" placeholder="Email" required ng-model="ContCtrl.formData.email">
 				</fieldset>
 				<fieldset>
-					<textarea></textarea>
+					<textarea required ng-model="ContCtrl.formData.text"></textarea>
 				</fieldset>
 				<footer>
-					<button class="btn feedback-submit">
+					<button class="btn feedback-submit" ng-class="{ disabled : !feedbackForm.$valid }" >
 						Отправить
 					</button>
 				</footer>
 			</form>
+			<div>feedbackForm is {{ feedbackForm.$valid }} </div>
 		</div>
 		<div class="contacts-column">
 			<h3>Адрес</h3>

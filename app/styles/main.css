@@ -1403,8 +1403,17 @@ html {
 .contacts .feedback-form textarea:focus {
   border: 1px solid #de947d;
 }
+.contacts .feedback-form .ng-dirty.ng-valid {
+  border-color: #52ac62;
+}
+.contacts .feedback-form .ng-dirty.ng-invalid {
+  border-color: #d74e24;
+}
 .contacts .feedback-form .btn {
   float: right;
+}
+.contacts .feedback-form .btn.disabled {
+  opacity: 0.3;
 }
 .contacts .map {
   width: 100%;
@@ -1602,6 +1611,50 @@ html {
 .similar-products .similar-products-price {
   font-weight: 600;
   font-size: 1.25rem;
+}
+.wrapper-404 {
+  display: table;
+  width: 100%;
+  height: 32.75rem;
+}
+.wrapper-404-cont {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.wrapper-404-left {
+  display: inline-block;
+  width: 17.125rem;
+  padding: 0 2.1875rem;
+  border-right: 1px solid #d8d8d8;
+  text-align: left;
+}
+.wrapper-404-left img {
+  max-width: 100%;
+}
+.wrapper-404-right {
+  display: inline-block;
+  vertical-align: middle;
+  width: 17.125rem;
+  padding: 0 2.1875rem;
+  text-align: left;
+}
+.wrapper-404-right p {
+  font-size: 0.875rem;
+  line-height: 1.5625rem;
+}
+.wrapper-404-right a {
+  transition: all .4s ease;
+  display: inline-block;
+  color: #666;
+  text-decoration: none;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  border-bottom: 1px solid #d74e24;
+}
+.wrapper-404-right a:hover {
+  color: #d74e24;
+  border-color: #666;
 }
 .fancybox-opened .fancybox-title {
   position: absolute;

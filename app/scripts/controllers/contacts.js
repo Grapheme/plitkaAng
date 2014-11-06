@@ -8,7 +8,7 @@
  * Controller of the plitkaApp
  */
 angular.module('plitkaApp')
-	.controller('ContactsCtrl', function () {
+	.controller('ContactsCtrl', ['$http', function($http) {
 
 		this.mapTo = 'salon';
 
@@ -55,4 +55,21 @@ angular.module('plitkaApp')
 		//Init default map
 		this.setMap('salon');
 
-	});
+		//Form
+		this.formData = {};
+
+		this.sendForm = function(data){
+
+			var request = $http({
+			    method: 'post',
+			    url: 'http://plitka.dev.grapheme.ru/ajax/feedback',
+			    data: {
+			    	name: data.name,
+			        email: data.email,
+			        text: data.text
+			    },
+			    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+			});
+		}
+
+	}]);

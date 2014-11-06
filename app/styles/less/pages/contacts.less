@@ -150,8 +150,22 @@
 				border: 1px solid @clr-orange;
 			}
 		}
+
+		.ng-dirty {
+			&.ng-valid {
+				border-color: @clr-green;
+			}
+			&.ng-invalid {
+				border-color: @clr-red;
+			}
+		}
+
 		.btn {
 			.pull-right;
+
+			&.disabled {
+				opacity: 0.3;
+			}
 		}
 	}
 

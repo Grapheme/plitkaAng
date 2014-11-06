@@ -62,7 +62,10 @@ angular
 				controller: 'SeparticleCtrl',
 				controllerAs: 'SepCtrl'
 			})
+			.when('/404', {
+				templateUrl: 'views/404.html'
+			})
 			.otherwise({
-				redirectTo: '/'
+				redirectTo: '/404'
 			});
 	});
