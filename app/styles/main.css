@@ -1407,7 +1407,7 @@ html {
   border-color: #52ac62;
 }
 .contacts .feedback-form .ng-dirty.ng-invalid {
-  border-color: #d74e24;
+  background: #FFEBEC;
 }
 .contacts .feedback-form .btn {
   float: right;
@@ -1655,6 +1655,9 @@ html {
 .wrapper-404-right a:hover {
   color: #d74e24;
   border-color: #666;
+}
+.search-result-wrap h1 {
+  font-size: 1.25rem;
 }
 .fancybox-opened .fancybox-title {
   position: absolute;

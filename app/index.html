@@ -48,9 +48,9 @@
 							</ul>
 						</nav>
 						<div class="pull-right">
-							<div class="main-search">
-								<form class="main-search-form">
-									<input class="main-search-input" type="text">
+							<div class="main-search" ng-controller="SearchCtrl as SCtrl">
+								<form name="searchForm" class="main-search-form" ng-submit="searchForm.$valid && SCtrl.sendForm(SCtrl.searchStr)" novalidate>
+									<input class="main-search-input" type="text" ng-model="SCtrl.searchStr" required>
 									<button class="main-search-submit" type="submit">
 										<span class="icon icon-search"></span>
 									</button>
@@ -252,6 +252,8 @@
 <script src="scripts/directives/slider.js"></script>
 <script src="scripts/controllers/slider.js"></script>
 <script src="scripts/controllers/separticle.js"></script>
+<script src="scripts/controllers/search.js"></script>
+<script src="scripts/controllers/search-results.js"></script>
 				<!-- endbuild -->
 </body>
 </html>
