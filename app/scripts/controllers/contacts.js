@@ -59,17 +59,26 @@ angular.module('plitkaApp')
 		this.formData = {};
 
 		this.sendForm = function(data){
-
-			var request = $http({
-			    method: 'post',
-			    url: 'http://plitka.dev.grapheme.ru/ajax/feedback',
-			    data: {
-			    	name: data.name,
-			        email: data.email,
-			        text: data.text
-			    },
-			    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+			
+			$.ajax({
+				type: 'POST',
+				url: 'http://plitka.dev.grapheme.ru/ajax/feedback',
+				data: {
+					name: data.name,
+					email: data.email,
+					text: data.text
+				},
+				dataType: 'json'
+			})
+			.done(function() {
+				
+			})
+			.fail(function() {
+				
+			})
+			.always(function() {
+				
 			});
-		}
+		};
 
 	}]);

@@ -24,7 +24,6 @@ angular.module('plitkaApp')
 
 			//get promo block
 			self.promo = self.data.promo;
-
 		});
 
 		//Fotorama init

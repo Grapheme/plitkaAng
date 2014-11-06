@@ -14,13 +14,22 @@ angular.module('plitkaApp')
 		self.searchStr = '';
 		self.sendForm = function(data){
 
-			var request = $http({
-			    method: 'post',
-			    url: 'http://plitka.dev.grapheme.ru/ajax/search',
-			    data: {
+			$.ajax({
+				type: 'POST',
+				url: 'http://plitka.dev.grapheme.ru/ajax/search',
+				data: {
 					searctString: data
-			    },
-			    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+				},
+				dataType: 'json'
+			})
+			.done(function() {
+				
+			})
+			.fail(function() {
+				
+			})
+			.always(function() {
+				
 			});
 		};
 	}]);

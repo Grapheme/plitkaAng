@@ -10,6 +10,7 @@ angular.module('plitkaApp')
 	.directive('promoSlider', function () {
 		return {
 			templateUrl: 'views/partials/slider.html',
-			restrict: 'E'
+			restrict: 'E',
+			controllee: 'SliderCtrl'
 		};
 	});

@@ -711,6 +711,23 @@ a[href^="tel"] {
   color: #d74e24;
   border-color: #000;
 }
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 1000;
+}
+.loader img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4rem;
+  height: 4rem;
+  margin: -2rem 0 0 -2rem;
+}
 .main-header-top-wrap {
   height: 3.25rem;
   background: #404040;
@@ -746,14 +763,22 @@ a[href^="tel"] {
   color: white;
   text-decoration: none;
 }
-.main-header-top .main-search {
+.main-header-top .phone {
+  float: left;
+  line-height: 3.25rem;
+}
+.main-header-top .phone a {
+  color: white;
+  text-decoration: none;
+}
+.main-search {
   float: left;
 }
-.main-header-top .main-search .main-search-form {
+.main-search .main-search-form {
   position: relative;
   margin: 0 1.5rem 0 0;
 }
-.main-header-top .main-search .main-search-input {
+.main-search .main-search-input {
   width: 11.25rem;
   height: 1.625rem;
   padding: 0 0.3125rem;
@@ -762,7 +787,7 @@ a[href^="tel"] {
   background: #c6c6c6;
   border-radius: 0.0625rem;
 }
-.main-header-top .main-search .main-search-submit {
+.main-search .main-search-submit {
   position: absolute;
   top: 0.8125rem;
   right: 0;
@@ -773,14 +798,6 @@ a[href^="tel"] {
   line-height: 1.625rem;
   color: white;
   background: none;
-}
-.main-header-top .phone {
-  float: left;
-  line-height: 3.25rem;
-}
-.main-header-top .phone a {
-  color: white;
-  text-decoration: none;
 }
 .main-header-bot-wrap {
   height: 10.5rem;
@@ -1656,8 +1673,22 @@ html {
   color: #d74e24;
   border-color: #666;
 }
-.search-result-wrap h1 {
-  font-size: 1.25rem;
+.search-results-wrap h1 {
+  margin: 1.25em 0;
+  font-size: 1.625rem;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.search-results-wrap .search-results-str {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.search-results-wrap .search-results-count {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.search-results-wrap .main-search .main-search-input {
+  width: 17.875rem;
 }
 .fancybox-opened .fancybox-title {
   position: absolute;

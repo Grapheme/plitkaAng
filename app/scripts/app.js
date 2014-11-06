@@ -21,6 +21,11 @@ angular
 		// enable http caching
 		$httpProvider.defaults.cache = true;
 	}])
+	.run( ['$http', function($http){
+		$http.get('http://plitka.dev.grapheme.ru/application/get').success(function(data){
+			$('.loader').fadeOut(400);
+		});
+	}])
 	.config(function ($routeProvider) {
 		$routeProvider
 			.when('/', {
@@ -65,10 +70,10 @@ angular
 			.when('/404', {
 				templateUrl: 'views/404.html'
 			})
-.when('/search-results', {
-  templateUrl: 'views/search-results.html',
-  controller: 'SearchResultsCtrl'
-})
+			.when('/search-results', {
+			  templateUrl: 'views/search-results.html',
+			  controller: 'SearchResultsCtrl'
+			})
 			.otherwise({
 				redirectTo: '/404'
 			});
