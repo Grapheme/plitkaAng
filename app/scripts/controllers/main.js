@@ -24,13 +24,21 @@ angular.module('plitkaApp')
 
 			//get promo block
 			self.promo = self.data.promo;
+			console.log(self.promo);
+
+			//Fotorama init
+			setTimeout( function(){
+				jQuery('.fotorama').fotorama({
+					width: '100%',
+					height: '400',
+					nav: false,
+					arrows: 'always',
+					autoplay: 3000,
+					loop: true
+				});
+			}, 100);
+			
 		});
 
-		//Fotorama init
-		jQuery('.fotorama').fotorama({
-			width: '100%',
-			height: '400',
-			nav: false,
-			arrows: 'always'
-		});
+		
 	}]);

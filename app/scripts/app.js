@@ -71,8 +71,13 @@ angular
 				templateUrl: 'views/404.html'
 			})
 			.when('/search-results', {
-			  templateUrl: 'views/search-results.html',
-			  controller: 'SearchResultsCtrl'
+				templateUrl: 'views/search-results.html',
+				controller: 'SearchResultsCtrl'
+			})
+			.when('/catalog-item/:id', {
+				templateUrl: 'views/catalog-item.html',
+				controller: 'CatalogItemCtrl',
+				controllerAs: 'CatItemCtrl'
 			})
 			.otherwise({
 				redirectTo: '/404'

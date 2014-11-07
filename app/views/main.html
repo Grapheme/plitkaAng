@@ -1,4 +1,16 @@
-<promo-slider></promo-slider>
+<section class="slideshow">
+	<div class="section-cont fotorama">	    
+        <div class="slide" ng-repeat="promo in MCtrl.promo">
+            <div class="slide-bg" style="background-image: url({{ MCtrl.photos[ promo.image_id ].full }});">
+                
+            </div>
+            <div class="slide-sign">
+            	<div class="slide-sign-cont" ng-bind-html="promo.name">
+            	</div>                
+            </div>
+        </div>
+	</div>
+</section>
 
 <section class="goods">
 	<div class="section-cont">

@@ -1483,6 +1483,7 @@ html {
   margin: 1.25rem 0;
 }
 .sep-entity .sep-entity-desc img {
+  margin-top: 1.125rem;
   margin-bottom: 1.125rem;
 }
 .sep-entity .sep-entity-desc p {

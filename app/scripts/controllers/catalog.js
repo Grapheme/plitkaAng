@@ -19,15 +19,24 @@ angular.module('plitkaApp')
 
 			//Break data into objects
 			self.productType = self.data.product_type;
+			//Коллекции
 			self.collections = self.data.collections;
+			//Продукты
 			self.products = self.data.products;
+			//Страны
+			self.countries = self.data.countries;
+			//Фабрики
+			self.factories = self.data.factory;
+			//Изображения
+			self.photos = self.data.photos;
+			//Галереи
+			self.galleries = self.data.galleries;
 
 			self.chosenProduct = self.productType[Object.keys(self.productType)[0]];
 			self.chosenProductId = self.chosenProduct.id;
 
 			//Get all collections for this product type
 			self.collectionsArr = [];
-			console.log(self.collections);
 
 			for (var key in self.collections) {
 				if ( self.collections[key].product_type_id === self.chosenProductId ){
@@ -35,9 +44,31 @@ angular.module('plitkaApp')
 				}
 			}
 
-			//Get all products from collection
-			
-			//self.chosenCollections = self.collections[self.chosenProductId];
-			console.log(self.collectionsArr);
+			//make articles arr
+			self.collections = $.map(self.collections, function(value, index){
+				return [value];
+			});
+
+			//Filters logic
+			self.countryFilter = [];
+			//Заполняем массив элементами, по которым идет фильтрация
+			//Если такой элемент уже есть, то удаляем его из массива
+			self.setCountryFilter = function(id){
+				if (self.countryFilter.indexOf(id) == -1) {
+					self.countryFilter.push(id);
+				} else {
+					self.countryFilter.splice( self.countryFilter.indexOf(id), 1 );
+				}
+				console.log(self.countryFilter);
+			};
+			//Фильтр элементов по имеющимся странам
+			self.filterByCountries = function(id){
+				if(self.countryFilter.length > 0) {
+					return(self.countryFilter.indexOf(id.country_id) !== -1);
+				} else {
+					return true;
+				}				
+			};
+
 		});
 	}]);
