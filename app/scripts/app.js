@@ -79,6 +79,11 @@ angular
 				controller: 'CatalogItemCtrl',
 				controllerAs: 'CatItemCtrl'
 			})
+			.when('/collection/:id', {
+				templateUrl: 'views/collection.html',
+				controller: 'CollectionCtrl',
+				controllerAs: 'CollCtrl'
+			})
 			.otherwise({
 				redirectTo: '/404'
 			});

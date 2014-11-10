@@ -1,28 +1,54 @@
 <section class="catalog">
 	<div class="section-cont clearfix">
 		<aside class="filters">
+			<div class="filter filter-factories">
+				<div class="filter-name">
+					Место применения:
+				</div>
+				<ul class="filter-chosen" ng-click="CatCtrl.showFilters('.filter-factories')">
+
+				</ul>
+				<ul class="filter-choise">
+					<li ng-repeat="factory in CatCtrl.factories">
+						<span data-factory="{{ factory.id }}" ng-click="CatCtrl.setFactoryFilter(factory.id)">{{ factory.name }}</span>						
+					</li>
+				</ul>
+			</div>
 			<div class="filter filter-countries">
 				<div class="filter-name">
-					Место применения
+					Страна:
 				</div>
-				<ul class="filter-chosen">
+				<ul class="filter-chosen" ng-click="CatCtrl.showFilters('.filter-countries')">
 
 				</ul>
 				<ul class="filter-choise">
 					<li ng-repeat="country in CatCtrl.countries">
-						<span ng-click="CatCtrl.setCountryFilter(country.id)">{{ country.name }}</span>						
+						<span data-country="{{ country.id }}" ng-click="CatCtrl.setCountryFilter(country.id)">{{ country.name }}</span>						
+					</li>
+				</ul>
+			</div>
+			<div class="filter filter-colors">
+				<div class="filter-name">
+					Цвет:
+				</div>
+				<ul class="filter-chosen" ng-click="CatCtrl.showFilters('.filter-colors')">
+
+				</ul>
+				<ul class="filter-choise">
+					<li ng-repeat="color in CatCtrl.colors">
+						<span data-color="{{ color.id }}" ng-click="CatCtrl.setColorFilter(color.id)">{{ color.name }}</span>						
 					</li>
 				</ul>
 			</div>
 		</aside>
 		<div class="catalog-items">
 			<h2>
-				Плитка
+				Каталог
 			</h2>
 			<ul class="goods-ul clearfix">
-				<li class="goods-li" ng-repeat="collection in CatCtrl.collections | filter: CatCtrl.filterByCountries">
+				<li class="goods-li" ng-repeat="collection in CatCtrl.collections | filter: CatCtrl.filterByCountries | filter: CatCtrl.filterByFactories | filter: CatCtrl.filterByColors">
 					<div class="goods-li-head" style="background-image:url({{ CatCtrl.photos[ CatCtrl.galleries[collection.gallery_id].photos[0] ].full }})">
-						<a href="#"></a>						
+						<a href="#/collection/{{ collection.id }}"></a>						
 					</div>
 					<div class="goods-li-body">
 						<div class="goods-li-brand" style="background-image:url({{ CatCtrl.photos[CatCtrl.factories[ collection.factory_id ].image_id].full }})"></div>
