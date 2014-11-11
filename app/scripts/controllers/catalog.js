@@ -35,6 +35,11 @@ angular.module('plitkaApp')
 			self.colors = self.data.colors;
 			//Цвета - коллекции
 			self.collectionColors = self.data.collections_colors;
+			//Цена - коллекции
+			self.collectionPrices = self.data.collections_prices;
+			//Поверхности - коллекции
+			self.surfaceTypes = self.data.surface_type;			
+			self.collectionSurfaces = self.data.collections_surface_types; 
 
 			self.chosenProduct = self.productType[Object.keys(self.productType)[0]];
 			self.chosenProductId = self.chosenProduct.id;
@@ -58,6 +63,9 @@ angular.module('plitkaApp')
 			self.factoryFilter = [];
 			self.colorFilter = [];
 			self.colorFilterArr = [];
+			self.minPrice = '';
+			self.surfaceFilter = [];
+			self.surfaceFilterArr = [];
 			//Заполняем массив элементами, по которым идет фильтрация
 			//Если такой элемент уже есть, то удаляем его из массива
 			self.setCountryFilter = function(id){
@@ -142,7 +150,7 @@ angular.module('plitkaApp')
 				var chosenFilters = $parent.find('.filter-chosen');
 				var filterString = '';
 				for( var i = 0; i < self.colorFilter.length; i++ ) {
-					filterString += '<li>' + self.colors[ self.colorFilter[i] ].name + '</li> ';
+					filterString += '<li style="background-color: #' + self.colors[ self.colorFilter[i] ].css_code + '"></li> ';
 				}
 				chosenFilters.html( filterString );
 
@@ -168,17 +176,109 @@ angular.module('plitkaApp')
 			self.filterByColors = function(id) {
 
 				if(self.colorFilterArr.length > 0) {
-					console.log( self.colorFilterArr );
-					console.log( id.id );
 					return(self.colorFilterArr.indexOf( +id.id) !== -1);
 				} else {
 					return true;
 				}
 			};
+			//Фильтр по ценам
+			self.setPriceFilter = function(id) {
+				var $parent = $('.filter-prices');
+
+				if( $parent.find('[data-price="' + id + '"]').hasClass('active') ) {
+					$parent.find('[data-price]').removeClass('active');
+					self.minPrice = '';
+				} else {
+					$parent.find('[data-price]').removeClass('active');
+					$parent.find('[data-price="' + id + '"]').toggleClass('active');
+
+					self.minPrice = +id;
+				}
+				var chosenFilters = $parent.find('.filter-chosen');
+				var filterPriceText = '';
+
+				if( self.minPrice != '' ) {
+					filterPriceText = $parent.find('[data-price="' + id + '"]').text();
+				}
+				else {
+					filterPriceText = '';
+				}
+				chosenFilters.html( '<li>' + filterPriceText + '</li>' );
+			}
+			self.filterByPrice = function(id) {
+				if(self.minPrice == 1000) {
+					return( self.collectionPrices[id.id] <= 1000 );
+				}
+				else if(self.minPrice == 2000) {
+					return( self.collectionPrices[id.id] <= 2000 );
+				}
+				else if(self.minPrice == 2001) {
+					return( self.collectionPrices[id.id] >= 2001 );
+				}
+				else {
+					return true;
+				}
+			}
+			//Фильтр по поверхностям
+			self.setSurfaceFilter = function(id) {
+				var $parent = $('.filter-surface');
+
+				if (self.surfaceFilter.indexOf(id) == -1) {
+					self.surfaceFilter.push(id);
+
+					//Add active class to filter
+					$parent.find('[data-surface="' + id + '"]').addClass('active');
+				} else {
+					self.surfaceFilter.splice( self.surfaceFilter.indexOf(id), 1 );
+					//Remove active class to filter
+					$parent.find('[data-surface="' + id + '"]').removeClass('active');
+				}
+
+				console.log(self.surfaceFilter);
+
+				//Обновим отображения фильтров
+				var chosenFilters = $parent.find('.filter-chosen');
+				var filterString = '';
+				for( var i = 0; i < self.surfaceFilter.length; i++ ) {
+					filterString += '<li>' + self.surfaceTypes[ self.surfaceFilter[i] ].name + '</li> ';
+				}
+				chosenFilters.html( filterString );
+
+				//Сольем все поверзности в один массив
+				self.surfaceFilterArr = [];
+
+				if(self.surfaceFilter.length > 0) {
+
+					for(var j = 0; j < self.surfaceFilter.length; j++) {
+
+						for(var k = 0; k < self.collectionSurfaces[ self.surfaceFilter[j] ].length; k++) {
+
+							if( self.surfaceFilterArr.indexOf( self.collectionSurfaces[ self.surfaceFilter[j] ][k] ) == -1 ) {
+								self.surfaceFilterArr.push( self.collectionSurfaces[ self.surfaceFilter[j] ][k] );
+							}
+
+						}
+
+					}
+
+				}
+			}
+			self.filterBySurface = function(id) {
+				if(self.surfaceFilterArr.length > 0) {
+					return(self.surfaceFilterArr.indexOf( +id.id) !== -1);
+				} else {
+					return true;
+				}
+			}
 
 			//Показываем фильтры
 			self.showFilters = function(elem){
-				$(elem).toggleClass('active');
+				if( $(elem).hasClass('active') ) {
+					$(elem).removeClass('active');
+				} else {
+					$('.filter').removeClass('active');
+					$(elem).addClass('active');
+				}				
 			};
 
 		});

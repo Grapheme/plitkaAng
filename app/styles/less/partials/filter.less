@@ -18,7 +18,7 @@
 
 		&.active {
 			margin: -4px -15px;
-    		padding: 4px 15px;
+    		padding: 4px .75rem;
 			background: #fff;
 			border: 1px solid #e5e5e5;
 			z-index: 1;
@@ -56,8 +56,22 @@
 		line-height: 24px;
 
 		color: @clr-orange;
-		background: #e5e5e5;
 		cursor: pointer;
+
+		&.colors {
+			background: none;
+
+			li {
+				vertical-align: middle;
+				width: 24px;
+				height: 24px;
+				border: 2px solid #e5e5e5;
+
+				&:after {
+					content: none;
+				}
+			}
+		}
 
 		li {
 			display: inline-block;

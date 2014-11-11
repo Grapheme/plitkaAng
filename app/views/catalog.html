@@ -3,7 +3,7 @@
 		<aside class="filters">
 			<div class="filter filter-factories">
 				<div class="filter-name">
-					Место применения:
+					Фабрика:
 				</div>
 				<ul class="filter-chosen" ng-click="CatCtrl.showFilters('.filter-factories')">
 
@@ -31,12 +31,44 @@
 				<div class="filter-name">
 					Цвет:
 				</div>
-				<ul class="filter-chosen" ng-click="CatCtrl.showFilters('.filter-colors')">
+				<ul class="filter-chosen colors" ng-click="CatCtrl.showFilters('.filter-colors')">
 
 				</ul>
 				<ul class="filter-choise">
 					<li ng-repeat="(key, color) in CatCtrl.collectionColors">
-						<span data-color="{{ key }}" ng-click="CatCtrl.setColorFilter(key)">{{ CatCtrl.colors[ key ].name }}</span>						
+						<span data-color="{{ key }}" ng-show="CatCtrl.colors[ key ].name" ng-click="CatCtrl.setColorFilter(key)">{{ CatCtrl.colors[ key ].name }}</span>						
+					</li>
+				</ul>
+			</div>
+			<div class="filter filter-prices">
+				<div class="filter-name">
+					Цена:
+				</div>
+				<ul class="filter-chosen" ng-click="CatCtrl.showFilters('.filter-prices')">
+
+				</ul>
+				<ul class="filter-choise">
+					<li>
+						<span data-price="1000" ng-click="CatCtrl.setPriceFilter(1000)">до 1 000 руб.</span>					
+					</li>
+					<li>
+						<span data-price="2000" ng-click="CatCtrl.setPriceFilter(2000)">от 1 000 до 2 000 руб.</span>			
+					</li>
+					<li>
+						<span data-price="2001" ng-click="CatCtrl.setPriceFilter(2001)">больше 2 000 руб.</span>					
+					</li>
+				</ul>
+			</div>
+			<div class="filter filter-surface">
+				<div class="filter-name">
+					Тип поверхности:
+				</div>
+				<ul class="filter-chosen" ng-click="CatCtrl.showFilters('.filter-surface')">
+
+				</ul>
+				<ul class="filter-choise">
+					<li ng-repeat="(key, surface) in CatCtrl.collectionSurfaces">
+						<span data-surface="{{ key }}" ng-show="CatCtrl.surfaceTypes[ key ].name" ng-click="CatCtrl.setSurfaceFilter(key)">{{ CatCtrl.surfaceTypes[ key ].name }}</span>						
 					</li>
 				</ul>
 			</div>
@@ -46,7 +78,7 @@
 				Каталог
 			</h2>
 			<ul class="goods-ul clearfix">
-				<li class="goods-li" ng-repeat="collection in CatCtrl.collections | filter: CatCtrl.filterByCountries | filter: CatCtrl.filterByFactories | filter: CatCtrl.filterByColors">
+				<li class="goods-li" ng-repeat="collection in CatCtrl.collections | filter: CatCtrl.filterByCountries | filter: CatCtrl.filterByFactories | filter: CatCtrl.filterByColors | filter: CatCtrl.filterByPrice | filter: CatCtrl.filterBySurface">
 					<div class="goods-li-head" style="background-image:url({{ CatCtrl.photos[ CatCtrl.galleries[collection.gallery_id].photos[0] ].full }})">
 						<a href="#/collection/{{ collection.id }}"></a>						
 					</div>

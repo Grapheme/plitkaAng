@@ -1749,7 +1749,7 @@ html {
 }
 .filters .filter.active {
   margin: -0.25rem -0.9375rem;
-  padding: 0.25rem 0.9375rem;
+  padding: 0.25rem .75rem;
   background: #fff;
   border: 1px solid #e5e5e5;
   z-index: 1;
@@ -1780,8 +1780,19 @@ html {
   font-size: 0.75rem;
   line-height: 1.5rem;
   color: #de947d;
-  background: #e5e5e5;
   cursor: pointer;
+}
+.filters .filter-chosen.colors {
+  background: none;
+}
+.filters .filter-chosen.colors li {
+  vertical-align: middle;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid #e5e5e5;
+}
+.filters .filter-chosen.colors li:after {
+  content: none;
 }
 .filters .filter-chosen li {
   display: inline-block;
