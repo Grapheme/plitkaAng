@@ -16,15 +16,31 @@ angular.module('plitkaApp')
 			self.data = data;
 			self.articles = self.data.articles;
 			self.photos = self.data.photos;
+			self.galleries = self.data.galleries;
+			self.factories = self.data.factory;
+			self.countries = self.data.countries;
+			self.collectionPrices = self.data.collections_prices;
 
 			//make articles arr
 			self.articlesArr = $.map(self.articles, function(value, index){
 				return [value];
 			});
 
+			console.log(self.articlesArr);
+
 			//get promo block
 			self.promo = self.data.promo;
-			console.log(self.promo);
+
+			//get collections
+			self.collections = self.data.collections;
+			self.recCollections = [];
+
+			for(var key in self.collections) {
+				if( self.collections[key].show_on_mainpage == 1 ) {
+					self.recCollections.push(self.collections[key]);
+				}
+			}
+
 
 			//Fotorama init
 			setTimeout( function(){

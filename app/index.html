@@ -65,7 +65,7 @@
 					</div>
 				</div>
 				
-				<div class="main-header-bot-wrap">
+				<div class="main-header-bot-wrap" ng-controller="SubmenuCtrl as SubmCtrl">
 					<div class="main-header-bot">
 						<ul class="subnav-ul clearfix">
 							<li class="subnav-li logo-cont">
@@ -77,61 +77,28 @@
 							</li>
 							<li class="subnav-li tile">
 								<div class="subnav-li-top">
-									<a href="#">Плитка</a>
+									<a href="#/catalog/1?type=75">Плитка</a>
 								</div>
 								<div class="subnav-li-desc">
-									<div class="subnav-li-desc-link">
-										<a href="#">
-											Ванная комната
-										</a>
-									</div>
-									<div class="subnav-li-desc-link">
-										<a href="#">
-											Кухня
-										</a>
-									</div>
-									<div class="subnav-li-desc-link">
-										<a href="#">
-											Холл-гостиная
-										</a>
-									</div>
-									<div class="subnav-li-desc-link">
-										<a href="#">
-											Улица-терраса
-										</a>
-									</div>
-									<div class="subnav-li-desc-link">
-										<a href="#">
-											Крыльцо (ступени)
-										</a>
-									</div>
-									<div class="subnav-li-desc-link">
-										<a href="#">
-											Фасад, ограждение
-										</a>
-									</div>
-									<div class="subnav-li-desc-link">
-										<a href="#">
-											Общественные помещения
-										</a>
-									</div>
-									<div class="subnav-li-desc-link">
-										<a href="#">
-											Бассейн
+									<div class="subnav-li-desc-link" ng-repeat="(key, place) in SubmCtrl.collectionPlaces">
+										<a href="#/catalog/1?type=75&places={{ SubmCtrl.places[ key ].id }}">
+											{{ SubmCtrl.places[ key ].name }}
 										</a>
 									</div>
 								</div>
 							</li>
 							<li class="subnav-li stone">
 								<div class="subnav-li-top">
-									Камень
+									<a href="#/catalog/1?type=76.5">
+										Камень
+									</a>
 								</div>
 								<div class="subnav-li-desc">
 									<div class="subnav-li-desc-link">
-										<a href="#">Искусственный камень</a>
+										<a href="#/catalog/1?type=76">Искусственный камень</a>
 									</div>
 									<div class="subnav-li-desc-link">
-										<a href="#">
+										<a href="#/catalog/1?type=77">
 											Натуральный камень
 										</a>
 									</div>
@@ -139,7 +106,7 @@
 							</li>
 							<li class="subnav-li mosaic">
 								<div class="subnav-li-top">
-									<a href="#">Мозаика</a>
+									<a href="#/catalog/1?type=78">Мозаика</a>
 								</div>
 								<div class="subnav-li-desc">
 									<div class="subnav-li-desc-link">
@@ -176,7 +143,7 @@
 							</li>
 							<li class="subnav-li materials">
 								<div class="subnav-li-top">
-									<a href="#">Сопутствующие материалы</a>
+									<a href="#/catalog/1?type=79">Сопутствующие материалы</a>
 								</div>
 							</li>
 						</ul>
@@ -196,7 +163,7 @@
 						<a class="map-link" href="#/contacts/#map_canvas">Показать на карте</a>
 					</div>
 					<div class="dev">
-						Сделано в «<a href="">Графема</a>»
+						Сделано в «<a href="http://grapheme.ru" target="_blank">Графема</a>»
 					</div>
 				</div>
 			</footer>
@@ -258,6 +225,7 @@
 <script src="scripts/controllers/search-results.js"></script>
 <script src="scripts/controllers/catalog-item.js"></script>
 <script src="scripts/controllers/collection.js"></script>
+<script src="scripts/controllers/submenu.js"></script>
 				<!-- endbuild -->
 </body>
 </html>

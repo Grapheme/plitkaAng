@@ -16,157 +16,22 @@
 	<div class="section-cont">
 		<h2 class="header-medium">Рекомендуемые товары</h2>
 		<ul class="goods-ul clearfix">
-			<li class="goods-li">
-				<div class="goods-li-head" style="background-image:url(images/goods/01.jpg)">
-					<a href="#"></a>
-				</div>
-				<div class="goods-li-body">
-					<div class="goods-li-brand" style="background-image:url(images/brands/01.png)">
-						
+			<li class="goods-li" ng-repeat="collection in MCtrl.recCollections">
+				<div class="goods-li-head" style="background-image:url({{ MCtrl.photos[ MCtrl.galleries[collection.gallery_id].photos[0] ].full }})">
+						<a href="#/collection/{{ collection.id }}"></a>						
 					</div>
-					<div class="goods-li-name">
-						Decoro MK31
+					<div class="goods-li-body">
+						<div class="goods-li-brand" style="background-image:url({{ MCtrl.photos[MCtrl.factories[ collection.factory_id ].image_id].full }})"></div>
+						<div class="goods-li-name">
+							{{ collection.name }}
+						</div>
+						<div class="goods-li-country">
+							Производство: <span class="uppercase">{{ MCtrl.countries[ collection.country_id ].name }}</span>
+						</div>
+						<div class="goods-li-price">
+							<span ng-show="MCtrl.collectionPrices[ collection.id ]">{{ MCtrl.collectionPrices[ collection.id ] }}.-</span>
+						</div>
 					</div>
-					<div class="goods-li-country">
-						Производство: <span class="uppercase">Франция</span>
-					</div>
-					<div class="goods-li-price">
-						<span>1 450.-</span>
-					</div>
-				</div>
-			</li>
-			<li class="goods-li">
-				<div class="goods-li-head" style="background-image:url(images/goods/02.jpg)">
-					<a href="#"></a>
-				</div>
-				<div class="goods-li-body">
-					<div class="goods-li-brand" style="background-image:url(images/brands/02.png)">
-						
-					</div>
-					<div class="goods-li-name">
-						Decoro MK31
-					</div>
-					<div class="goods-li-country">
-						Производство: <span class="uppercase">Франция</span>
-					</div>
-					<div class="goods-li-price">
-						<span>1 450.-</span>
-					</div>
-				</div>
-			</li>
-			<li class="goods-li">
-				<div class="goods-li-head" style="background-image:url(images/goods/03.jpg)">
-					<a href="#"></a>
-				</div>
-				<div class="goods-li-body">
-					<div class="goods-li-brand" style="background-image:url(images/brands/03.png)">
-						
-					</div>
-					<div class="goods-li-name">
-						Decoro MK31
-					</div>
-					<div class="goods-li-country">
-						Производство: <span class="uppercase">Франция</span>
-					</div>
-					<div class="goods-li-price">
-						<span>1 450.-</span>
-					</div>
-				</div>
-			</li>
-			<li class="goods-li last">
-				<div class="goods-li-head" style="background-image:url(images/goods/04.jpg)">
-					<a href="#"></a>
-				</div>
-				<div class="goods-li-body">
-					<div class="goods-li-brand" style="background-image:url(images/brands/04.png)">
-						
-					</div>
-					<div class="goods-li-name">
-						Decoro MK31
-					</div>
-					<div class="goods-li-country">
-						Производство: <span class="uppercase">Франция</span>
-					</div>
-					<div class="goods-li-price">
-						<span>1 450.-</span>
-					</div>
-				</div>
-			</li>
-			<li class="goods-li">
-				<div class="goods-li-head" style="background-image:url(images/goods/01.jpg)">
-					<a href="#"></a>
-				</div>
-				<div class="goods-li-body">
-					<div class="goods-li-brand" style="background-image:url(images/brands/01.png)">
-						
-					</div>
-					<div class="goods-li-name">
-						Decoro MK31
-					</div>
-					<div class="goods-li-country">
-						Производство: <span class="uppercase">Франция</span>
-					</div>
-					<div class="goods-li-price">
-						<span>1 450.-</span>
-					</div>
-				</div>
-			</li>
-			<li class="goods-li">
-				<div class="goods-li-head" style="background-image:url(images/goods/02.jpg)">
-					<a href="#"></a>
-				</div>
-				<div class="goods-li-body">
-					<div class="goods-li-brand" style="background-image:url(images/brands/02.png)">
-						
-					</div>
-					<div class="goods-li-name">
-						Decoro MK31
-					</div>
-					<div class="goods-li-country">
-						Производство: <span class="uppercase">Франция</span>
-					</div>
-					<div class="goods-li-price">
-						<span>1 450.-</span>
-					</div>
-				</div>
-			</li>
-			<li class="goods-li">
-				<div class="goods-li-head" style="background-image:url(images/goods/03.jpg)">
-					<a href="#"></a>
-				</div>
-				<div class="goods-li-body">
-					<div class="goods-li-brand" style="background-image:url(images/brands/03.png)">
-						
-					</div>
-					<div class="goods-li-name">
-						Decoro MK31
-					</div>
-					<div class="goods-li-country">
-						Производство: <span class="uppercase">Франция</span>
-					</div>
-					<div class="goods-li-price">
-						<span>1 450.-</span>
-					</div>
-				</div>
-			</li>
-			<li class="goods-li last">
-				<div class="goods-li-head" style="background-image:url(images/goods/04.jpg)">
-					<a href="#"></a>
-				</div>
-				<div class="goods-li-body">
-					<div class="goods-li-brand" style="background-image:url(images/brands/04.png)">
-						
-					</div>
-					<div class="goods-li-name">
-						Decoro MK31
-					</div>
-					<div class="goods-li-country">
-						Производство: <span class="uppercase">Франция</span>
-					</div>
-					<div class="goods-li-price">
-						<span>1 450.-</span>
-					</div>
-				</div>
 			</li>
 		</ul>
 	</div>
@@ -195,19 +60,19 @@
 					<div class="news-date">
 						{{ MCtrl.articlesArr[ MCtrl.articlesArr.length - 1 ].created_at.slice(0, 10) | date : 'dd/MM/yy' }}
 					</div>
-					<a class="news-link" href="#">{{ MCtrl.articlesArr[ MCtrl.articlesArr.length - 1 ].name }}</a>
+					<a class="news-link" href="#/article/{{ MCtrl.articlesArr[ MCtrl.articlesArr.length - 1 ].id }}">{{ MCtrl.articlesArr[ MCtrl.articlesArr.length - 1 ].name }}</a>
 				</li>
 				<li class="news-li">
 					<div class="news-date">
 						{{ MCtrl.articlesArr[ MCtrl.articlesArr.length - 2 ].created_at.slice(0, 10) | date : 'dd/MM/yy' }}
 					</div>
-					<a class="news-link" href="#">{{ MCtrl.articlesArr[ MCtrl.articlesArr.length - 2 ].name }}</a>
+					<a class="news-link" href="#/article/{{ MCtrl.articlesArr[ MCtrl.articlesArr.length - 2 ].id }}">{{ MCtrl.articlesArr[ MCtrl.articlesArr.length - 2 ].name }}</a>
 				</li>
 				<li class="news-li">
 					<div class="news-date">
 						{{ MCtrl.articlesArr[ MCtrl.articlesArr.length - 3 ].created_at.slice(0, 10) | date : 'dd/MM/yy' }}
 					</div>
-					<a class="news-link" href="#">{{ MCtrl.articlesArr[ MCtrl.articlesArr.length - 3 ].name }}</a>
+					<a class="news-link" href="#/article/{{ MCtrl.articlesArr[ MCtrl.articlesArr.length - 3 ].id }}">{{ MCtrl.articlesArr[ MCtrl.articlesArr.length - 3 ].name }}</a>
 				</li>
 			</ul>
 		</section>

@@ -72,13 +72,26 @@
 					</li>
 				</ul>
 			</div>
+			<div class="filter filter-place">
+				<div class="filter-name">
+					Место применения:
+				</div>
+				<ul class="filter-chosen" ng-click="CatCtrl.showFilters('.filter-place')">
+
+				</ul>
+				<ul class="filter-choise">
+					<li ng-repeat="(key, place) in CatCtrl.collectionPlaces">
+						<span data-place="{{ key }}" ng-show="CatCtrl.places[ key ].name" ng-click="CatCtrl.setPlacesFilter(key)">{{ CatCtrl.places[ key ].name }}</span>						
+					</li>
+				</ul>
+			</div>
 		</aside>
 		<div class="catalog-items">
 			<h2>
-				Каталог
+				{{ CatCtrl.catalogHeader }}
 			</h2>
 			<ul class="goods-ul clearfix">
-				<li class="goods-li" ng-repeat="collection in CatCtrl.collections | filter: CatCtrl.filterByCountries | filter: CatCtrl.filterByFactories | filter: CatCtrl.filterByColors | filter: CatCtrl.filterByPrice | filter: CatCtrl.filterBySurface">
+				<li class="goods-li" ng-repeat="collection in CatCtrl.collections | filter: CatCtrl.filterByCountries | filter: CatCtrl.filterByFactories | filter: CatCtrl.filterByColors | filter: CatCtrl.filterByPrice | filter: CatCtrl.filterBySurface | filter: CatCtrl.filterByPlace">
 					<div class="goods-li-head" style="background-image:url({{ CatCtrl.photos[ CatCtrl.galleries[collection.gallery_id].photos[0] ].full }})">
 						<a href="#/collection/{{ collection.id }}"></a>						
 					</div>
@@ -91,7 +104,7 @@
 							Производство: <span class="uppercase">{{ CatCtrl.countries[ collection.country_id ].name }}</span>
 						</div>
 						<div class="goods-li-price">
-							<!-- <span>1 450.-</span> -->
+							<span ng-show="CatCtrl.collectionPrices[ collection.id ]">{{ CatCtrl.collectionPrices[ collection.id ] }}.-</span>
 						</div>
 					</div>
 				</li>

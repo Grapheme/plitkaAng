@@ -3,10 +3,10 @@
 		<h1>Результаты поиска</h1>
 		<div class="search-results clearfix">
 			<div class="search-results-str">
-				Вы искали «<strong>Плитка</strong>»
+				Вы искали «<strong>{{ SResultsCtrl.queryStr }}</strong>»
 			</div>
 			<div class="search-results-count">
-				Найдено <strong>248</strong> результатов
+				Найдено <strong>{{ SResultsCtrl.resultsCount }}</strong> результатов
 			</div>
 			<div class="main-search" ng-controller="SearchCtrl as SCtrl">
 				<form name="searchForm" class="main-search-form" ng-submit="searchForm.$valid && SCtrl.sendForm(SCtrl.searchStr)" novalidate>

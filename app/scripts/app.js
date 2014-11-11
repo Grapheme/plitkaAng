@@ -72,7 +72,8 @@ angular
 			})
 			.when('/search-results', {
 				templateUrl: 'views/search-results.html',
-				controller: 'SearchResultsCtrl'
+				controller: 'SearchResultsCtrl',
+				controllerAs: 'SResultsCtrl'
 			})
 			.when('/catalog-item/:id', {
 				templateUrl: 'views/catalog-item.html',

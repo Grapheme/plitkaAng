@@ -8,14 +8,15 @@
  * Controller of the plitkaApp
  */
 angular.module('plitkaApp')
-	.controller('CatalogCtrl', ['$http',function ($http) {
-		
+	.controller('CatalogCtrl', ['$http', '$routeParams', function ($http, $routeParams) {
+
 		//Define controller scope as self
 		var self = this;
 
 		//Get data from server
 		$http.get('http://plitka.dev.grapheme.ru/application/get').success(function(data){
 			self.data = data;
+			self.catalogHeader = 'Каталог';
 
 			//Break data into objects
 			self.productType = self.data.product_type;
@@ -39,10 +40,79 @@ angular.module('plitkaApp')
 			self.collectionPrices = self.data.collections_prices;
 			//Поверхности - коллекции
 			self.surfaceTypes = self.data.surface_type;			
-			self.collectionSurfaces = self.data.collections_surface_types; 
+			self.collectionSurfaces = self.data.collections_surface_types;
+			//Места - коллекции
+			self.places = self.data.scope;
+			self.collectionPlaces = self.data.collections_scopes;
 
 			self.chosenProduct = self.productType[Object.keys(self.productType)[0]];
 			self.chosenProductId = self.chosenProduct.id;
+
+			console.log($routeParams);
+			self.collectionsFilter = [];
+			//Если указана единица - то мы применяем к коллекциям фильтр по типу поверхности
+
+			if($routeParams.id == 1 && $routeParams.type == 75) {
+				for(var key in self.collections) {
+					if(self.collections[key].product_type_id == $routeParams.type) {
+						self.collectionsFilter.push(self.collections[key]);
+					}
+				}
+				self.collections = self.collectionsFilter;
+				self.catalogHeader = self.productType[$routeParams.type].name || 'Каталог';
+			}
+			if($routeParams.id == 1 && $routeParams.type == 76) {
+				for(var key in self.collections) {
+					if(self.collections[key].product_type_id == $routeParams.type) {
+						self.collectionsFilter.push(self.collections[key]);
+					}
+				}
+				self.collections = self.collectionsFilter;
+				self.catalogHeader = self.productType[$routeParams.type].name || 'Каталог';
+			}
+			if($routeParams.id == 1 && $routeParams.type == 76.5) {
+				for(var key in self.collections) {
+					if(self.collections[key].product_type_id == $routeParams.type-0.5 || self.collections[key].product_type_id == $routeParams.type+0.5) {
+						self.collectionsFilter.push(self.collections[key]);
+					}
+				}
+				self.collections = self.collectionsFilter;
+				self.catalogHeader = 'Камень';
+			}
+			if($routeParams.id == 1 && $routeParams.type == 77) {
+				for(var key in self.collections) {
+					if(self.collections[key].product_type_id == $routeParams.type) {
+						self.collectionsFilter.push(self.collections[key]);
+					}
+				}
+				self.collections = self.collectionsFilter;
+				self.catalogHeader = self.productType[$routeParams.type].name || 'Каталог';
+			}
+			if($routeParams.id == 1 && $routeParams.type == 78) {
+				for(var key in self.collections) {
+					if(self.collections[key].product_type_id == $routeParams.type) {
+						self.collectionsFilter.push(self.collections[key]);
+					}
+				}
+				self.collections = self.collectionsFilter;
+				self.catalogHeader = self.productType[$routeParams.type].name || 'Каталог';
+			}
+			if($routeParams.id == 1 && $routeParams.type == 79) {
+				for(var key in self.collections) {
+					if(self.collections[key].product_type_id == $routeParams.type) {
+						self.collectionsFilter.push(self.collections[key]);
+					}
+				}
+				self.collections = self.collectionsFilter;
+				self.catalogHeader = self.productType[$routeParams.type].name || 'Каталог';
+			}
+
+			//Если указана двойка - то мы применяем к коллекция фильтр по месту применения
+			if($routeParams.id == 1 && $routeParams.places) {
+				setTimeout( function(){
+					$('[data-place="' + $routeParams.places + '"]').trigger('click');
+				}, 100);
+			}
 
 			//Get all collections for this product type
 			self.collectionsArr = [];
@@ -66,6 +136,8 @@ angular.module('plitkaApp')
 			self.minPrice = '';
 			self.surfaceFilter = [];
 			self.surfaceFilterArr = [];
+			self.placeFilter = [];
+			self.placeFilterArr = [];
 			//Заполняем массив элементами, по которым идет фильтрация
 			//Если такой элемент уже есть, то удаляем его из массива
 			self.setCountryFilter = function(id){
@@ -210,7 +282,7 @@ angular.module('plitkaApp')
 					return( self.collectionPrices[id.id] <= 1000 );
 				}
 				else if(self.minPrice == 2000) {
-					return( self.collectionPrices[id.id] <= 2000 );
+					return( self.collectionPrices[id.id] > 1000 && self.collectionPrices[id.id] <= 2000 );
 				}
 				else if(self.minPrice == 2001) {
 					return( self.collectionPrices[id.id] >= 2001 );
@@ -270,7 +342,55 @@ angular.module('plitkaApp')
 					return true;
 				}
 			}
+			//Фильтр по местам применения
+			self.setPlacesFilter = function(id) {
+				var $parent = $('.filter-place');
 
+				if (self.placeFilter.indexOf(id) == -1) {
+					self.placeFilter.push(id);
+
+					//Add active class to filter
+					$parent.find('[data-place="' + id + '"]').addClass('active');
+				} else {
+					self.placeFilter.splice( self.placeFilter.indexOf(id), 1 );
+					//Remove active class to filter
+					$parent.find('[data-place="' + id + '"]').removeClass('active');
+				}
+
+				//Обновим отображения фильтров
+				var chosenFilters = $parent.find('.filter-chosen');
+				var filterString = '';
+				for( var i = 0; i < self.placeFilter.length; i++ ) {
+					filterString += '<li>' + self.places[ self.placeFilter[i] ].name + '</li> ';
+				}
+				chosenFilters.html( filterString );
+
+				//Сольем все поверзности в один массив
+				self.placeFilterArr = [];
+
+				if(self.placeFilter.length > 0) {
+
+				 	for(var j = 0; j < self.placeFilter.length; j++) {
+
+						for(var k = 0; k < self.collectionPlaces[ self.placeFilter[j] ].length; k++) {
+
+							if( self.placeFilterArr.indexOf( self.collectionPlaces[ self.placeFilter[j] ][k] ) == -1 ) {
+								self.placeFilterArr.push( self.collectionPlaces[ self.placeFilter[j] ][k] );
+							}
+
+						}
+
+					}
+
+				}
+			}
+			self.filterByPlace = function(id) {
+				if(self.placeFilterArr.length > 0) {
+					return(self.placeFilterArr.indexOf( id.id) !== -1);
+				} else {
+					return true;
+				}
+			}
 			//Показываем фильтры
 			self.showFilters = function(elem){
 				if( $(elem).hasClass('active') ) {

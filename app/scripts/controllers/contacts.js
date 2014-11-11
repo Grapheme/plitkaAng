@@ -71,7 +71,7 @@ angular.module('plitkaApp')
 				dataType: 'json'
 			})
 			.done(function() {
-				
+				$('.feedback-form').html('<p style="text-align: center;">Ваше сообщение отправлено</p>')
 			})
 			.fail(function() {
 				
