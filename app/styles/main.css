@@ -1517,7 +1517,7 @@ html {
   margin: 0 0 5rem;
 }
 .product .product-top {
-  margin: 0 0 2rem;
+  margin: 1em 0 2rem;
 }
 .product .back-to-block {
   float: left;
@@ -1555,6 +1555,8 @@ html {
   float: left;
   width: 60%;
   height: 25rem;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 .product .product-desc {
   float: left;
@@ -1602,25 +1604,29 @@ html {
   list-style: none;
 }
 .similar-products .similar-products-li {
-  float: left;
+  display: inline-block;
+  vertical-align: top;
   width: 25%;
+  margin: 0 0 5%;
 }
 .similar-products .similar-products-head {
+  margin: 0 0 1.5em;
   height: 5.875rem;
-  background: no-repeat 0 bottom;
+  background: no-repeat left center;
+  background-size: auto 100%;
 }
-.similar-products .similar-products-body dl {
+.similar-products .similar-products-body .dl {
   font-size: 0.875rem;
   line-height: 1.75rem;
 }
-.similar-products .similar-products-body dt {
+.similar-products .similar-products-body .dt {
   float: left;
   font-weight: 600;
 }
-.similar-products .similar-products-body dt:after {
+.similar-products .similar-products-body .dt:after {
   content: ':\00a0';
 }
-.similar-products .similar-products-body dd {
+.similar-products .similar-products-body .dd {
   margin: 0 0 0;
 }
 .similar-products .similar-products-price {

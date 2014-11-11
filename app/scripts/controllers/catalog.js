@@ -123,7 +123,7 @@ angular.module('plitkaApp')
 					return true;
 				}
 			};
-			//Фильтр по фабрикам
+			//Фильтр по цветам
 			self.setColorFilter = function(id) {
 				var $parent = $('.filter-colors');
 
@@ -148,33 +148,33 @@ angular.module('plitkaApp')
 
 				//Сольем все цвета в один массив, чтобы удобней было фильтровать продукты
 				self.colorFilterArr = [];
+
 				if(self.colorFilter.length > 0) {
-					// for(var j = 0; j < self.colorFilter.length; j++) {
-					// 	$.merge(self.colorFilterArr, self.collectionColors[ self.colorFilter[j] ]);
-					// }
-					console.log(self.collectionColors);
+
 					for(var j = 0; j < self.colorFilter.length; j++) {
-						//if( self.colorFilterArr.indexOf( self.colorFilter[j] ) == -1 ) self.colorFilterArr.push( self.colorFilter[j] );
-						// for(var k = 0; k < self.colorFilter[j].length; k++) {
-						// 	if( self.colorFilterArr.indexOf( self.colorFilter[j][k] ) == -1 ) self.colorFilterArr.push( self.colorFilter[j][k] );
-						// }
-						// console.log(self.colorFilter.length);
-						// console.log(self.colorFilter);
-						// console.log(self.colorFilter[j]);
-						console.log( self.collectionColors[ self.colorFilter[j] ] );
-						//console.log(self.colorFilter[j]);
+
+						for(var k = 0; k < self.collectionColors[ self.colorFilter[j] ].length; k++) {
+
+							if( self.colorFilterArr.indexOf( self.collectionColors[ self.colorFilter[j] ][k] ) == -1 ) {
+								self.colorFilterArr.push( self.collectionColors[ self.colorFilter[j] ][k] );
+							}
+
+						}
+
 					}
+
 				}
 			};
-
 			self.filterByColors = function(id) {
 
-				if(self.colorFilter.length > 0) {
-					
+				if(self.colorFilterArr.length > 0) {
+					console.log( self.colorFilterArr );
+					console.log( id.id );
+					return(self.colorFilterArr.indexOf( +id.id) !== -1);
 				} else {
 					return true;
 				}
-			}
+			};
 
 			//Показываем фильтры
 			self.showFilters = function(elem){
