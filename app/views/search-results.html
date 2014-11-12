@@ -1,7 +1,7 @@
 <div class="search-results-wrap">
 	<div class="section-cont">
 		<h1>Результаты поиска</h1>
-		<div class="search-results clearfix">
+		<div class="search-results clearfix" style="margin-bottom: 2rem;">
 			<div class="search-results-str">
 				Вы искали «<strong>{{ SResultsCtrl.queryStr }}</strong>»
 			</div>
@@ -17,7 +17,7 @@
 				</form>
 			</div>
 		</div>
-		<div class="search-results-cat" ng-show="SResultsCtrl.collectionsArr">
+		<div class="search-results-cat" ng-show="SResultsCtrl.searchCollections">
 			<h2>
 				Каталог
 			</h2>
@@ -41,7 +41,7 @@
 				</li>
 			</ul>
 		</div>
-		<div class="search-result-art" ng-show="SResultsCtrl.articlesArr">
+		<div class="search-result-art" ng-show="SResultsCtrl.searchArticles">
 			<h2>
 				Статьи
 			</h2>

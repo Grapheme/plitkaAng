@@ -8,7 +8,7 @@
  * Controller of the plitkaApp
  */
 angular.module('plitkaApp')
-	.controller('SearchCtrl', ['$http', '$location', '$rootScope', '$scope', function ($http, $location, $rootScope, $scope) {
+	.controller('SearchCtrl', ['$http', '$location', '$rootScope', '$scope', '$route', function ($http, $location, $rootScope, $scope, $route) {
 		var self = this;
 
 		self.searchStr = '';
@@ -28,6 +28,7 @@ angular.module('plitkaApp')
 				$scope.$apply(function() {
 			        $location.path("/search-results");
 			    });
+			    $route.reload();
 			})
 			.fail(function(data) {
 			})

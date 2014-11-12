@@ -845,6 +845,9 @@ a[href^="tel"] {
   width: 18%;
   padding: 0;
 }
+.main-header-bot .subnav-li.logo-cont:hover {
+  background: none;
+}
 .main-header-bot .subnav-li.tile .subnav-li-top {
   background-image: url(../images/subnav/01.png);
 }

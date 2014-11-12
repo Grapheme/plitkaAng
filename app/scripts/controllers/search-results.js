@@ -16,10 +16,9 @@ angular.module('plitkaApp')
 			self.data = data;
 
 			var data = $rootScope.searchData;
+			console.log($rootScope.searchData);
 
 			if (data) {
-				console.log(data.results);
-				console.log(data);
 
 				self.queryStr = data.queryStr;
 				self.articles = data.results.articles;
@@ -47,8 +46,8 @@ angular.module('plitkaApp')
 					self.collectionsArr.push(j);
 				}
 
-				self.searchCollections = []
-				for(var i = 0; i < self.collectionsArr; i++) {
+				self.searchCollections = [];
+				for(var i = 0; i < self.collectionsArr.length; i++) {
 					for(var key in self.allCollections) {
 						if( self.collectionsArr[i] == key ) {
 							self.searchCollections.push(self.allCollections[key]);
@@ -56,10 +55,12 @@ angular.module('plitkaApp')
 					}
 				}
 
+				console.log(self.articlesArr);
+
 				self.searchArticles = [];
-				for(var l = 0; l < self.articlesArr; l++){
+				for(var l = 0; l < self.articlesArr.length; l++){
 					for(var key in self.allArticles) {
-						if( self.articlesArr[i] == key ) {
+						if( self.articlesArr[l] == key ) {
 							self.searchArticles.push(self.allArticles[key]);
 						}
 					}
