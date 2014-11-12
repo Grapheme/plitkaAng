@@ -29,8 +29,6 @@ angular.module('plitkaApp')
 				self.resultsCount++;
 			}
 
-		} else {
-			console.log('gi ood');
 		}
 
 	}]);

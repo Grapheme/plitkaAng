@@ -61,7 +61,7 @@
 			</div>
 			<div class="filter filter-surface">
 				<div class="filter-name">
-					Тип поверхности:
+					Поверхности:
 				</div>
 				<ul class="filter-chosen" ng-click="CatCtrl.showFilters('.filter-surface')">
 
@@ -85,13 +85,39 @@
 					</li>
 				</ul>
 			</div>
+			<div class="filter filter-format">
+				<div class="filter-name">
+					Формат:
+				</div>
+				<ul class="filter-chosen" ng-click="CatCtrl.showFilters('.filter-format')">
+
+				</ul>
+				<ul class="filter-choise">
+					<li ng-repeat="(key, format) in CatCtrl.collectionFormats">
+						<span data-format="{{ key }}" ng-show="CatCtrl.formats[ key ].name" ng-click="CatCtrl.setFormatsFilter(key)">{{ CatCtrl.formats[ key ].name }}</span>					
+					</li>
+				</ul>
+			</div>
+			<div class="filter filter-surface-type">
+				<div class="filter-name">
+					Тип поверхности:
+				</div>
+				<ul class="filter-chosen" ng-click="CatCtrl.showFilters('.filter-surface-type')">
+
+				</ul>
+				<ul class="filter-choise">
+					<li ng-repeat="(key, surface) in CatCtrl.collectionSurfaces">
+						<span data-surface-type="{{ key }}" ng-show="CatCtrl.surfaces[ key ].name" ng-click="CatCtrl.setSurfaceTypesFilter(key)">{{ CatCtrl.surfaces[ key ].name }}</span>						
+					</li>
+				</ul>
+			</div>
 		</aside>
 		<div class="catalog-items">
 			<h2>
 				{{ CatCtrl.catalogHeader }}
 			</h2>
 			<ul class="goods-ul clearfix">
-				<li class="goods-li" ng-repeat="collection in CatCtrl.collections | filter: CatCtrl.filterByCountries | filter: CatCtrl.filterByFactories | filter: CatCtrl.filterByColors | filter: CatCtrl.filterByPrice | filter: CatCtrl.filterBySurface | filter: CatCtrl.filterByPlace">
+				<li class="goods-li" ng-repeat="collection in CatCtrl.collections | filter: CatCtrl.filterByCountries | filter: CatCtrl.filterByFactories | filter: CatCtrl.filterByColors | filter: CatCtrl.filterByPrice | filter: CatCtrl.filterBySurface | filter: CatCtrl.filterByPlace | filter: CatCtrl.filterByFormat | filter: CatCtrl.filterBySurfaceTypes">
 					<div class="goods-li-head" style="background-image:url({{ CatCtrl.photos[ CatCtrl.galleries[collection.gallery_id].photos[0] ].full }})">
 						<a href="#/collection/{{ collection.id }}"></a>						
 					</div>

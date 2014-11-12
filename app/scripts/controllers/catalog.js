@@ -38,12 +38,18 @@ angular.module('plitkaApp')
 			self.collectionColors = self.data.collections_colors;
 			//Цена - коллекции
 			self.collectionPrices = self.data.collections_prices;
-			//Поверхности - коллекции
+			//Типы поверхности - коллекции
 			self.surfaceTypes = self.data.surface_type;			
 			self.collectionSurfaces = self.data.collections_surface_types;
 			//Места - коллекции
 			self.places = self.data.scope;
 			self.collectionPlaces = self.data.collections_scopes;
+			//Формат - коллекции
+			self.formats = self.data.format;
+			self.collectionFormats = self.data.collections_formats;
+			//Поверхности - коллекции
+			self.surfaces = self.data.surface;
+			self.collectionSurfaces = self.data.collections_surfaces;
 
 			self.chosenProduct = self.productType[Object.keys(self.productType)[0]];
 			self.chosenProductId = self.chosenProduct.id;
@@ -113,6 +119,11 @@ angular.module('plitkaApp')
 					$('[data-place="' + $routeParams.places + '"]').trigger('click');
 				}, 100);
 			}
+			if($routeParams.id == 1 && $routeParams.surface) {
+				setTimeout( function(){
+					$('[data-surface-type="' + $routeParams.surface + '"]').trigger('click');
+				}, 100);
+			}
 
 			//Get all collections for this product type
 			self.collectionsArr = [];
@@ -138,6 +149,10 @@ angular.module('plitkaApp')
 			self.surfaceFilterArr = [];
 			self.placeFilter = [];
 			self.placeFilterArr = [];
+			self.formatFilter = [];
+			self.formatFilterArr = [];
+			self.surfaceTypesFilter = [];
+			self.surfaceTypesFilterArr = [];
 			//Заполняем массив элементами, по которым идет фильтрация
 			//Если такой элемент уже есть, то удаляем его из массива
 			self.setCountryFilter = function(id){
@@ -391,6 +406,111 @@ angular.module('plitkaApp')
 					return true;
 				}
 			}
+			//Фильтр по форматам
+			self.setFormatsFilter = function(id) {
+
+				var $parent = $('.filter-format');
+
+				if (self.formatFilter.indexOf(id) == -1) {
+					self.formatFilter.push(id);
+
+					//Add active class to filter
+					$parent.find('[data-format="' + id + '"]').addClass('active');
+				} else {
+					self.formatFilter.splice( self.formatFilter.indexOf(id), 1 );
+					//Remove active class to filter
+					$parent.find('[data-format="' + id + '"]').removeClass('active');
+				}
+
+				//Обновим отображения фильтров
+				var chosenFilters = $parent.find('.filter-chosen');
+				var filterString = '';
+				for( var i = 0; i < self.formatFilter.length; i++ ) {
+					filterString += '<li>' + self.formats[ self.formatFilter[i] ].name + '</li> ';
+				}
+				chosenFilters.html( filterString );
+
+				//Сольем все поверзности в один массив
+				self.formatFilterArr = [];
+
+				if(self.formatFilter.length > 0) {
+
+				 	for(var j = 0; j < self.formatFilter.length; j++) {
+
+						for(var k = 0; k < self.collectionFormats[ self.formatFilter[j] ].length; k++) {
+
+							if( self.formatFilterArr.indexOf( self.collectionFormats[ self.formatFilter[j] ][k] ) == -1 ) {
+								self.formatFilterArr.push( self.collectionFormats[ self.formatFilter[j] ][k] );
+							}
+
+						}
+
+					}
+
+				}
+			}
+			self.filterByFormat = function(id) {
+				if(self.formatFilterArr.length > 0) {
+					return(self.formatFilterArr.indexOf( +id.id) !== -1);
+				} else {
+					return true;
+				}
+			}
+			//Фильтр по типам поверхности
+			self.setSurfaceTypesFilter = function(id) {
+				// self.surfaces = self.data.surface;
+				// self.collectionsSurfaces = self.data.collections_surfaces;
+				// self.surfaceTypesFilter = [];
+				// self.surfaceTypesFilterArr = [];
+
+				var $parent = $('.filter-surface-type');
+
+				if (self.surfaceTypesFilter.indexOf(id) == -1) {
+					self.surfaceTypesFilter.push(id);
+
+					//Add active class to filter
+					$parent.find('[data-surface-type="' + id + '"]').addClass('active');
+				} else {
+					self.surfaceTypesFilter.splice( self.surfaceTypesFilter.indexOf(id), 1 );
+					//Remove active class to filter
+					$parent.find('[data-surface-type="' + id + '"]').removeClass('active');
+				}
+
+				//Обновим отображения фильтров
+				var chosenFilters = $parent.find('.filter-chosen');
+				var filterString = '';
+				for( var i = 0; i < self.surfaceTypesFilter.length; i++ ) {
+					filterString += '<li>' + self.surfaces[ self.surfaceTypesFilter[i] ].name + '</li> ';
+				}
+				chosenFilters.html( filterString );
+
+				//Сольем все поверзности в один массив
+				self.surfaceTypesFilterArr = [];
+
+				if(self.surfaceTypesFilter.length > 0) {
+
+				 	for(var j = 0; j < self.surfaceTypesFilter.length; j++) {
+
+						for(var k = 0; k < self.collectionSurfaces[ self.surfaceTypesFilter[j] ].length; k++) {
+
+							if( self.surfaceTypesFilterArr.indexOf( self.collectionSurfaces[ self.surfaceTypesFilter[j] ][k] ) == -1 ) {
+								self.surfaceTypesFilterArr.push( self.collectionSurfaces[ self.surfaceTypesFilter[j] ][k] );
+							}
+
+						}
+
+					}
+
+				}
+			}
+			self.filterBySurfaceTypes = function(id) {
+				if(self.surfaceTypesFilterArr.length > 0) {
+					return(self.surfaceTypesFilterArr.indexOf(id.id) !== -1);
+				} else {
+					return true;
+				}
+			}
+
 			//Показываем фильтры
 			self.showFilters = function(elem){
 				if( $(elem).hasClass('active') ) {
