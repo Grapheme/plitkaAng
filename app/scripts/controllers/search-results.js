@@ -8,27 +8,63 @@
  * Controller of the plitkaApp
  */
 angular.module('plitkaApp')
-	.controller('SearchResultsCtrl', ['$rootScope', '$location', '$scope', function ($rootScope, $location, $scope) {
+	.controller('SearchResultsCtrl', ['$rootScope', '$location', '$scope', '$http', function ($rootScope, $location, $scope, $http) {
 		
 		var self = this;
-		var data = $rootScope.searchData;
 
-		if (data) {
-			console.log(data.results);
-			console.log(data);
+		$http.get('http://plitka.dev.grapheme.ru/application/get').success(function(data){
+			self.data = data;
 
-			self.queryStr = data.queryStr;
-			self.articles = data.results.articles;
-			self.collections = data.results.collections;
-			self.resultsCount = 0;
+			var data = $rootScope.searchData;
 
-			for(var k in self.articles) {
-				self.resultsCount++;
+			if (data) {
+				console.log(data.results);
+				console.log(data);
+
+				self.queryStr = data.queryStr;
+				self.articles = data.results.articles;
+				self.collections = data.results.collections;
+
+				self.allCollections = self.data.collections;
+				self.allArticles = self.data.articles;
+
+				self.photos = self.data.photos;
+				self.galleries = self.data.galleries;
+				self.factories = self.data.factory;
+				self.collectionPrices = self.data.collections_prices;
+
+				self.articlesArr = [];
+				self.collectionsArr = [];
+
+				self.resultsCount = 0;
+
+				for(var k in self.articles) {
+					self.resultsCount++;
+					self.articlesArr.push(k);
+				}
+				for(var j in self.collections) {
+					self.resultsCount++;
+					self.collectionsArr.push(j);
+				}
+
+				self.searchCollections = []
+				for(var i = 0; i < self.collectionsArr; i++) {
+					for(var key in self.allCollections) {
+						if( self.collectionsArr[i] == key ) {
+							self.searchCollections.push(self.allCollections[key]);
+						}
+					}
+				}
+
+				self.searchArticles = [];
+				for(var l = 0; l < self.articlesArr; l++){
+					for(var key in self.allArticles) {
+						if( self.articlesArr[i] == key ) {
+							self.searchArticles.push(self.allArticles[key]);
+						}
+					}
+				}
+
 			}
-			for(var j in self.collections) {
-				self.resultsCount++;
-			}
-
-		}
-
+		});
 	}]);

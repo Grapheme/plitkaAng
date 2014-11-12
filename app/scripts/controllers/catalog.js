@@ -49,7 +49,7 @@ angular.module('plitkaApp')
 			self.collectionFormats = self.data.collections_formats;
 			//Поверхности - коллекции
 			self.surfaces = self.data.surface;
-			self.collectionSurfaces = self.data.collections_surfaces;
+			self.collectionSurfacesTypes = self.data.collections_surfaces;
 
 			self.chosenProduct = self.productType[Object.keys(self.productType)[0]];
 			self.chosenProductId = self.chosenProduct.id;
@@ -491,10 +491,10 @@ angular.module('plitkaApp')
 
 				 	for(var j = 0; j < self.surfaceTypesFilter.length; j++) {
 
-						for(var k = 0; k < self.collectionSurfaces[ self.surfaceTypesFilter[j] ].length; k++) {
+						for(var k = 0; k < self.collectionSurfacesTypes[ self.surfaceTypesFilter[j] ].length; k++) {
 
-							if( self.surfaceTypesFilterArr.indexOf( self.collectionSurfaces[ self.surfaceTypesFilter[j] ][k] ) == -1 ) {
-								self.surfaceTypesFilterArr.push( self.collectionSurfaces[ self.surfaceTypesFilter[j] ][k] );
+							if( self.surfaceTypesFilterArr.indexOf( self.collectionSurfacesTypes[ self.surfaceTypesFilter[j] ][k] ) == -1 ) {
+								self.surfaceTypesFilterArr.push( self.collectionSurfacesTypes[ self.surfaceTypesFilter[j] ][k] );
 							}
 
 						}

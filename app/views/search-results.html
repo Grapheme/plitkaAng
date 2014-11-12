@@ -17,88 +17,37 @@
 				</form>
 			</div>
 		</div>
-		<div class="search-results-cat">
+		<div class="search-results-cat" ng-show="SResultsCtrl.collectionsArr">
 			<h2>
 				Каталог
 			</h2>
 			<ul class="goods-ul clearfix">
-				<li class="goods-li">
-					<div class="goods-li-head" style="background-image:url(images/goods/01.jpg)">
-						<a href="#"></a>
+				<li class="goods-li" ng-repeat="collection in SResultsCtrl.searchCollections">
+					<div class="goods-li-head" style="background-image:url({{ SResultsCtrl.photos[ SResultsCtrl.galleries[collection.gallery_id].photos[0] ].full }})">
+						<a href="#/collection/{{ collection.id }}"></a>						
 					</div>
 					<div class="goods-li-body">
-						<div class="goods-li-brand" style="background-image:url(images/brands/01.png)"></div>
+						<div class="goods-li-brand" style="background-image:url({{ SResultsCtrl.photos[SResultsCtrl.factories[ collection.factory_id ].image_id].full }})"></div>
 						<div class="goods-li-name">
-							Decoro MK31
+							{{ collection.name }}
 						</div>
 						<div class="goods-li-country">
-							Производство: <span class="uppercase">Франция</span>
+							Производство: <span class="uppercase">{{ SResultsCtrl.countries[ collection.country_id ].name }}</span>
 						</div>
 						<div class="goods-li-price">
-							<span>1 450.-</span>
-						</div>
-					</div>
-				</li>
-				<li class="goods-li">
-					<div class="goods-li-head" style="background-image:url(images/goods/01.jpg)">
-						<a href="#"></a>
-					</div>
-					<div class="goods-li-body">
-						<div class="goods-li-brand" style="background-image:url(images/brands/01.png)"></div>
-						<div class="goods-li-name">
-							Decoro MK31
-						</div>
-						<div class="goods-li-country">
-							Производство: <span class="uppercase">Франция</span>
-						</div>
-						<div class="goods-li-price">
-							<span>1 450.-</span>
-						</div>
-					</div>
-				</li>
-				<li class="goods-li">
-					<div class="goods-li-head" style="background-image:url(images/goods/01.jpg)">
-						<a href="#"></a>
-					</div>
-					<div class="goods-li-body">
-						<div class="goods-li-brand" style="background-image:url(images/brands/01.png)"></div>
-						<div class="goods-li-name">
-							Decoro MK31
-						</div>
-						<div class="goods-li-country">
-							Производство: <span class="uppercase">Франция</span>
-						</div>
-						<div class="goods-li-price">
-							<span>1 450.-</span>
-						</div>
-					</div>
-				</li>
-				<li class="goods-li">
-					<div class="goods-li-head" style="background-image:url(images/goods/01.jpg)">
-						<a href="#"></a>
-					</div>
-					<div class="goods-li-body">
-						<div class="goods-li-brand" style="background-image:url(images/brands/01.png)"></div>
-						<div class="goods-li-name">
-							Decoro MK31
-						</div>
-						<div class="goods-li-country">
-							Производство: <span class="uppercase">Франция</span>
-						</div>
-						<div class="goods-li-price">
-							<span>1 450.-</span>
+							<span ng-show="SResultsCtrl.collectionPrices[ collection.id ]">{{ SResultsCtrl.collectionPrices[ collection.id ] }}.-</span>
 						</div>
 					</div>
 				</li>
 			</ul>
 		</div>
-		<div class="search-result-art">
+		<div class="search-result-art" ng-show="SResultsCtrl.articlesArr">
 			<h2>
 				Статьи
 			</h2>
 			<ul class="goods-ul clearfix">
-				<li class="goods-li" ng-repeat="(id, article) in ArtCtrl.articles">
-					<div class="goods-li-head" style="background-image:url({{ ArtCtrl.photos[ article.image_id ].full }})">
+				<li class="goods-li" ng-repeat="(id, article) in SResultsCtrl.searchArticles">
+					<div class="goods-li-head" style="background-image:url({{ SResultsCtrl.photos[ article.image_id ].full }})">
 						<a href="#/article/{{ article.id }}"></a>
 					</div>
 					<div class="goods-li-body">

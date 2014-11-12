@@ -18,7 +18,7 @@ angular.module('plitkaApp')
 				type: 'POST',
 				url: 'http://plitka.dev.grapheme.ru/ajax/search',
 				data: {
-					searctString: data
+					q: data
 				},
 				dataType: 'json'
 			})
