@@ -824,6 +824,9 @@ a[href^="tel"] {
   width: 20.5%;
   padding: 0 2.5%;
 }
+.main-header-bot .subnav-li.active {
+  background: #fff;
+}
 .main-header-bot .subnav-li:hover {
   background: #fff;
 }
@@ -1276,7 +1279,7 @@ html {
   display: block;
   padding: 1.75rem;
   font-weight: 400;
-  background: #c6c6c6;
+  background: #e5e5e5;
 }
 .about-main .about-column strong a {
   transition: all .4s ease;
@@ -1754,7 +1757,6 @@ html {
 }
 .filters .filter {
   position: relative;
-  transition: all .4s ease;
   margin: 0 0 1em;
 }
 .filters .filter.active {

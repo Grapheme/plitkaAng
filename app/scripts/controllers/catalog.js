@@ -57,6 +57,7 @@ angular.module('plitkaApp')
 			console.log($routeParams);
 			self.collectionsFilter = [];
 			//Если указана единица - то мы применяем к коллекциям фильтр по типу поверхности
+			self.catalogPos = $routeParams.type;
 
 			if($routeParams.id == 1 && $routeParams.type == 75) {
 				for(var key in self.collections) {

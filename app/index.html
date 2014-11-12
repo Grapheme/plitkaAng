@@ -75,7 +75,7 @@
 									</a>
 								</h1>
 							</li>
-							<li class="subnav-li tile">
+							<li class="subnav-li tile" ng-class="{ active: SubmCtrl.isActive('75') }">
 								<div class="subnav-li-top">
 									<a href="#/catalog/1?type=75">Плитка</a>
 								</div>
@@ -87,7 +87,7 @@
 									</div>
 								</div>
 							</li>
-							<li class="subnav-li stone">
+							<li class="subnav-li stone" ng-class="{ active: SubmCtrl.isActive('76') || SubmCtrl.isActive('76.5') || SubmCtrl.isActive('77') }">
 								<div class="subnav-li-top">
 									<a href="#/catalog/1?type=76.5">
 										Камень
@@ -104,7 +104,7 @@
 									</div>
 								</div>
 							</li>
-							<li class="subnav-li mosaic">
+							<li class="subnav-li mosaic"ng-class="{ active: SubmCtrl.isActive('78') }" >
 								<div class="subnav-li-top">
 									<a href="#/catalog/1?type=78">Мозаика</a>
 								</div>
@@ -141,7 +141,7 @@
 									</div>
 								</div>
 							</li>
-							<li class="subnav-li materials">
+							<li class="subnav-li materials" ng-class="{ active: SubmCtrl.isActive('79') }">
 								<div class="subnav-li-top">
 									<a href="#/catalog/1?type=79">Сопутствующие материалы</a>
 								</div>
