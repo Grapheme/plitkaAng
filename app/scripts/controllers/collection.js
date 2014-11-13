@@ -39,6 +39,20 @@ angular.module('plitkaApp')
 			self.factoryImg = self.photos[ self.factories[ self.collections[ self.collectionId ].factory_id ].image_id ].full;
 			//Тип поверхности коллекции
 			self.collectionSurfType = self.productTypes[ self.collection.product_type_id ].name;
+			//Слайдшоу коллекции
+			self.slides = self.galleries[ self.collection.gallery_id ].photos;
+
+			//Fotorama init
+			setTimeout( function(){
+				jQuery('.fotorama').fotorama({
+					width: '60%',
+					height: '400',
+					nav: false,
+					arrows: 'always',
+					autoplay: 3000,
+					loop: true
+				});
+			}, 100);
 			
 			//Места применения
 			self.dicvals = self.collection.related_dicvals;

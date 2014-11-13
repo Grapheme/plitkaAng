@@ -106,7 +106,7 @@
 
 				</ul>
 				<ul class="filter-choise">
-					<li ng-repeat="(key, surface) in CatCtrl.collectionSurfaces">
+					<li ng-repeat="(key, surface) in CatCtrl.collectionSurfacesTypes">
 						<span data-surface-type="{{ key }}" ng-show="CatCtrl.surfaces[ key ].name" ng-click="CatCtrl.setSurfaceTypesFilter(key)">{{ CatCtrl.surfaces[ key ].name }}</span>						
 					</li>
 				</ul>

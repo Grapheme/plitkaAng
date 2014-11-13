@@ -10,8 +10,9 @@
 angular.module('plitkaApp')
 	.controller('ContactsCtrl', ['$http', function($http) {
 
-		this.mapTo = 'salon';
+		var self = this;
 
+		this.mapTo = 'salon';
 		this.mapCoords = {
 			salon: {
 				x: 47.244747,
@@ -22,17 +23,14 @@ angular.module('plitkaApp')
 				y: 39.624738
 			}
 		};
-
 		this.setMap = function(mapObj) {
 			this.mapTo = mapObj;
 
 			this.initialize( this.mapCoords[this.mapTo] );
 		};
-
 		this.checkMap = function(mapObj) {
 			return this.mapTo === mapObj;
-		};
-		
+		};		
 		this.initialize = function(coords){
 			var mapOptions = {
 				zoom: 15,
@@ -51,13 +49,10 @@ angular.module('plitkaApp')
 			//	icon: 'images/map.png'
 			});
 		};
-
 		//Init default map
 		this.setMap('salon');
-
 		//Form
 		this.formData = {};
-
 		this.sendForm = function(data){
 			
 			$.ajax({
@@ -71,7 +66,7 @@ angular.module('plitkaApp')
 				dataType: 'json'
 			})
 			.done(function() {
-				$('.feedback-form').html('<p style="text-align: center;">Ваше сообщение отправлено</p>')
+				$('.feedback-form').addClass('sended').html('<p><strong>Спасибо!</strong></p><p>Мы получили ваше сообщение и постараемся<br>как можно быстрее ответить</p>');
 			})
 			.fail(function() {
 				
@@ -80,5 +75,19 @@ angular.module('plitkaApp')
 				
 			});
 		};
+
+		//Get contacts - page data
+		$http.get('http://plitka.dev.grapheme.ru/application/get').success(function(data){
+			self.data = data;
+
+			self.contactsDataBlocks = self.data.pages.contacts.blocks;
+
+			self.header = self.data.pages.contacts.name;
+			self.phones = self.contactsDataBlocks['phones'].content;
+			self.workTime = self.contactsDataBlocks['work-time-clearfix'].content;
+			self.contactsColumn = self.contactsDataBlocks['contacts-column'].content;
+
+			// console.log(self.phones);
+		});
 
 	}]);

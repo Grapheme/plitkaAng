@@ -107,6 +107,23 @@
 		background: url(../images/form-bg.png) 0 0 no-repeat;
 		background-size: 100% 100%;
 
+		&.sended {
+			background-image: url(../images/success-form.jpg);
+			text-align: center;
+
+			p {
+				margin-bottom: 1.1em;
+				font-size: 14px;
+				line-height: 19.2px;
+
+				strong {
+					display: block;
+					padding-top: 21%;
+					font-size: 18px;
+				}
+			}
+		}
+
 		fieldset {
 			margin: 0 0 28px;
 		}
@@ -115,8 +132,7 @@
 			display: inline-block;
 			width: 48.5%;
 			height: 48px;
-			padding: 0 0 0 27px;
-			line-height: 48px;
+			padding: 1em 0 1em 27px;
 			font-size: 14px;
 
 			border-radius: 2px;
@@ -162,9 +178,16 @@
 
 		.btn {
 			.pull-right;
+			outline: none;
 
 			&.disabled {
 				opacity: 0.3;
+
+				&:hover {
+					border-color: #d74e24;
+					color: inherit;
+					cursor: default;
+				}
 			}
 		}
 	}

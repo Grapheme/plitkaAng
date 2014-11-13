@@ -21,21 +21,35 @@
 			</div>
 		</div> -->
 		<div class="product-item clearfix">
-			<div class="product-pict" style="background-image: url({{ CollCtrl.collectionPhoto }});"></div>
+
+			<div class="product-pict">
+
+				<section class="slideshow">
+					<div class="section-cont fotorama">	    
+				        <div class="slide" ng-repeat="slide in CollCtrl.slides">
+				            <div class="slide-bg" style="background-image: url({{ CollCtrl.photos[ slide ].full }});">
+				                
+				            </div>
+				        </div>
+					</div>
+				</section>
+
+			</div>
+
 			<div class="product-desc">
 				<h1>
 					{{ CollCtrl.collection.name }}
 				</h1>
 				<div class="product-brand" style="background-image:url({{ CollCtrl.factoryImg }})"></div>
 				<dl class="product-char clearfix">
-					<dt>Тип</dt>
-					<dd>{{ CollCtrl.collectionSurfType }}</dd>
-					<dt>Место применения</dt>
-					<dd>{{ CollCtrl.dicvalsArr.join(', ') }}</dd>
-					<dt>Производитель</dt>
-					<dd>{{ CollCtrl.factoryName }}</dd>
-					<dt>Страна</dt>
-					<dd> {{ CollCtrl.country.name }} </dd>
+					<dt ng-show="CollCtrl.collectionSurfType">Тип</dt>
+					<dd ng-show="CollCtrl.collectionSurfType">{{ CollCtrl.collectionSurfType }}</dd>
+					<dt ng-show="CollCtrl.dicvalsArr.join(', ')">Место применения</dt>
+					<dd ng-show="CollCtrl.dicvalsArr.join(', ')">{{ CollCtrl.dicvalsArr.join(', ') }}</dd>
+					<dt ng-show="CollCtrl.factoryName">Производитель</dt>
+					<dd ng-show="CollCtrl.factoryName">{{ CollCtrl.factoryName }}</dd>
+					<dt ng-show="CollCtrl.country.name">Страна</dt>
+					<dd ng-show="CollCtrl.country.name"> {{ CollCtrl.country.name }} </dd>
 				</dl>
 				<p>
 					{{ CollCtrl.collection.description}}

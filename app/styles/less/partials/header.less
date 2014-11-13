@@ -40,6 +40,7 @@
 			height: 100%;
 			padding: 0 18px;
 
+			font-size: 16px;
 			color: white;
 			text-decoration: none;
 		}
@@ -66,7 +67,7 @@
 	}
 
 	.main-search-input {
-		width: 180px;
+		width: 276px;
 		height: 26px;
 		padding: 0 5px;
 		margin: (@headerTopHeight - 26px) / 2 0;
@@ -83,6 +84,9 @@
 
 		width: 32px;
 		height: 26px;
+		margin: 0;
+		padding: 0;
+		
 		border: none;
 		border-radius: 1px;
 
@@ -119,12 +123,21 @@
 		}
 
 		&:hover {
+			position: relative;
+			left: -2px;
 			background: #fff;
 
 			.subnav-li-desc {
 				height: auto;
-				padding-top: .5em;
-				padding-bottom: .5em;
+				padding-top: 1em;
+				padding-bottom: 1em;
+			}
+
+			&:after {
+				border-color: #fff;
+			}
+			&:before {
+				border-color: #fff !important;
 			}
 		}
 
@@ -144,12 +157,25 @@
 
 			&:hover {
 				background: none;
+				left: 0;
+			}
+			&:after {
+				content: none;
 			}
 		}
 
 		&.tile {
 			.subnav-li-top {
 				background-image: url(../images/subnav/01.png);
+			}
+			&:before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 0;
+				height: 52px;
+				border-right: 1px solid #b3b3b3;
+				margin-top: -26px;			
 			}
 		}
 		&.stone {
@@ -165,8 +191,11 @@
 		}
 		&.materials {
 			.subnav-li-top {
-				padding-left: 4rem;
 				background-image: url(../images/subnav/04.png);
+
+				& > a {
+					padding-left: 4rem;
+				}
 
 				&:before {
 					left: 0;
@@ -176,8 +205,6 @@
 
 		.subnav-li-top {
 			position: relative;
-			display: table-cell;
-			vertical-align: middle;
 			height: @headerBotHeight;
 			padding-left: 5rem;
 
@@ -188,9 +215,22 @@
 			text-transform: uppercase;
 
 			& > a {
+				display: table;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				padding-left: 5rem;
+
 				color: inherit;
 				text-decoration: none;
 				outline: none;
+
+				& > span {
+					display: table-cell;
+					vertical-align: middle;
+				}
 			}
 
 			&:before {
@@ -222,9 +262,11 @@
 			left: 0;
 			width: 100%;
 			height: 0;
-			padding: 0 0 0 50px;
+			padding: 0 30px 0 50px;
 			background: #fff;
 			background: rgba(255,255,255,.95);
+
+			text-transform: capitalize;
 
 			.subnav-li-desc-text {
 				margin: 28px 0 10px;
@@ -239,6 +281,10 @@
 				margin: 10px 0;
 				a {
 					.typical-link;
+					display: inline;
+					color: #000;
+					border-color: transparent;
+					outline: none;
 				}
 			}
 		}
@@ -257,11 +303,13 @@
 			display: table-cell;
 			vertical-align: middle;
 
+			width: 212px;
 			height: @headerBotHeight;
 			padding: 0 0 0 68px;
 
 			text-decoration: none;
 			color: inherit;
+			text-indent: -9999px;
 		}
 	}
 }

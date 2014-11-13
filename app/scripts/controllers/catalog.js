@@ -8,15 +8,90 @@
  * Controller of the plitkaApp
  */
 angular.module('plitkaApp')
-	.controller('CatalogCtrl', ['$http', '$routeParams', function ($http, $routeParams) {
+	.controller('CatalogCtrl', ['$http', '$routeParams', '$cookies', function ($http, $routeParams, $cookies) {
 
 		//Define controller scope as self
 		var self = this;
-
+		
 		//Get data from server
 		$http.get('http://plitka.dev.grapheme.ru/application/get').success(function(data){
 			self.data = data;
 			self.catalogHeader = 'Каталог';
+
+			console.log($cookies);
+
+			if($cookies.countryFilter) {
+				console.log( 'country' );
+				var _cookieCountry = $cookies.countryFilter.split(',');
+				console.log(_cookieCountry);
+				for( var i = 0; i < _cookieCountry.length; i++) {
+					
+						$('[data-country="' + _cookieCountry[i] + '"]').trigger('click');
+				}
+			}
+			if($cookies.factoryFilter) {
+				console.log( 'factory' );
+				var _cookieFactory = $cookies.factoryFilter.split(',');
+				console.log(_cookieFactory);
+				for( var i = 0; i < _cookieFactory.length; i++) {
+					setTimeout( function(){
+						$('[data-factory="' + _cookieFactory[i] + '"]').trigger('click');
+					}, 1000);
+				}
+			}
+			if($cookies.colorFilter) {
+				console.log( 'color' );
+				var _cookieColor = $cookies.colorFilter.split(',');
+				console.log(_cookieColor);
+				for( var i = 0; i < _cookieColor.length; i++) {
+					setTimeout( function(){
+						$('[data-color="' + _cookieColor[i] + '"]').trigger('click');
+					}, 1000);
+				}
+			}
+			if($cookies.filterPriceText) {
+				console.log( 'price' );
+			}
+			if($cookies.placeFilter) {
+				console.log( 'place' );
+				var _cookiePlace = $cookies.placeFilter.split(',');
+				console.log(_cookiePlace);
+				for( var i = 0; i < _cookiePlace.length; i++) {
+					setTimeout( function(){
+						$('[data-place="' + _cookiePlace[i] + '"]').trigger('click');
+					}, 1000);
+				}			
+			}
+			if($cookies.formatFilter) {
+				console.log( 'format' );
+				var _cookieFormat = $cookies.formatFilter.split(',');
+				console.log(_cookieFormat);	
+				for( var i = 0; i < _cookieFormat.length; i++) {
+					setTimeout( function(){
+						$('[data-format="' + _cookieFormat[i] + '"]').trigger('click');
+					}, 1000);
+				}		
+			}
+			if($cookies.surfaceTypesFilter) {
+				console.log( 'surfaceType' );
+				var _cookieSurfaceTypes = $cookies.surfaceTypesFilter.split(',');
+				console.log(_cookieSurfaceTypes);	
+				for( var i = 0; i < _cookieSurfaceTypes.length; i++) {
+					setTimeout( function(){
+						$('[data-surface-type="' + _cookieSurfaceTypes[i] + '"]').trigger('click');
+					}, 1000);
+				}		
+			}
+			if($cookies.surfaceFilter) {
+				console.log( 'surface' );
+				var _cookieSurface = $cookies.surfaceFilter.split(',');
+				console.log(_cookieSurface);
+				for( var i = 0; i < _cookieSurface.length; i++) {
+					setTimeout( function(){
+						$('[data-surface="' + _cookieSurface[i] + '"]').trigger('click');
+					}, 1000);
+				}
+			}
 
 			//Break data into objects
 			self.productType = self.data.product_type;
@@ -54,7 +129,6 @@ angular.module('plitkaApp')
 			self.chosenProduct = self.productType[Object.keys(self.productType)[0]];
 			self.chosenProductId = self.chosenProduct.id;
 
-			console.log($routeParams);
 			self.collectionsFilter = [];
 			//Если указана единица - то мы применяем к коллекциям фильтр по типу поверхности
 			self.catalogPos = $routeParams.type;
@@ -170,7 +244,9 @@ angular.module('plitkaApp')
 					//Remove active class to filter
 					$parent.find('[data-country="' + id + '"]').removeClass('active');
 				}
-				console.log(self.countryFilter);
+
+				//Добавляем результаты в куки
+				$cookies.countryFilter = self.countryFilter;
 
 				//Обновим отображения фильтров
 				var chosenFilters = $parent.find('.filter-chosen');
@@ -202,7 +278,9 @@ angular.module('plitkaApp')
 					//Remove active class to filter
 					$parent.find('[data-factory="' + id + '"]').removeClass('active');
 				}
-				console.log(self.factoryFilter);
+				
+				//Добавляем результаты в куки
+				$cookies.factoryFilter = self.factoryFilter;
 
 				//Обновим отображения фильтров
 				var chosenFilters = $parent.find('.filter-chosen');
@@ -233,6 +311,9 @@ angular.module('plitkaApp')
 					//Remove active class to filter
 					$parent.find('[data-color="' + id + '"]').removeClass('active');
 				}
+
+				//Добавляем результаты в куки
+				$cookies.colorFilter = self.colorFilter;
 
 				//Обновим отображения фильтров
 				var chosenFilters = $parent.find('.filter-chosen');
@@ -291,6 +372,8 @@ angular.module('plitkaApp')
 				else {
 					filterPriceText = '';
 				}
+				//Добавляем результаты в куки
+				$cookies.filterPriceText = filterPriceText;
 				chosenFilters.html( '<li>' + filterPriceText + '</li>' );
 			}
 			self.filterByPrice = function(id) {
@@ -322,7 +405,8 @@ angular.module('plitkaApp')
 					$parent.find('[data-surface="' + id + '"]').removeClass('active');
 				}
 
-				console.log(self.surfaceFilter);
+				//Добавляем результаты в куки
+				$cookies.surfaceFilter = self.surfaceFilter;
 
 				//Обновим отображения фильтров
 				var chosenFilters = $parent.find('.filter-chosen');
@@ -373,6 +457,9 @@ angular.module('plitkaApp')
 					$parent.find('[data-place="' + id + '"]').removeClass('active');
 				}
 
+				//Добавляем результаты в куки
+				$cookies.placeFilter = self.placeFilter;
+
 				//Обновим отображения фильтров
 				var chosenFilters = $parent.find('.filter-chosen');
 				var filterString = '';
@@ -422,6 +509,9 @@ angular.module('plitkaApp')
 					//Remove active class to filter
 					$parent.find('[data-format="' + id + '"]').removeClass('active');
 				}
+
+				//Добавляем результаты в куки
+				$cookies.formatFilter = self.formatFilter;
 
 				//Обновим отображения фильтров
 				var chosenFilters = $parent.find('.filter-chosen');
@@ -476,6 +566,9 @@ angular.module('plitkaApp')
 					//Remove active class to filter
 					$parent.find('[data-surface-type="' + id + '"]').removeClass('active');
 				}
+
+				//Добавляем результаты в куки
+				$cookies.surfaceTypesFilter = self.surfaceTypesFilter;
 
 				//Обновим отображения фильтров
 				var chosenFilters = $parent.find('.filter-chosen');
