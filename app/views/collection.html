@@ -1,25 +1,25 @@
 <section class="product">
 	<div class="section-cont">
-		<div class="product-top clearfix">
+		<!-- <div class="product-top clearfix">
 			<div class="back-to-block">
 				<a href="#/catalog">
 					<span class="icon icon-angle-left"></span> вернуться
 				</a>
 			</div>
-		</div>
-		<!-- <div class="product-top clearfix">
+		</div> -->
+		<div class="product-top product-top-nav clearfix">
 			<div class="back-to-block">
-				<a href="#">
+				<a href="#/collection/{{ CollCtrl.leftLink }}" ng-click="CollCtrl.renewUrl( CollCtrl.leftLink )" ng-show="CollCtrl.leftLink">
 					<span class="icon icon-angle-left"></span> пред.
 				</a>
-				<a href="#">
+				<a href="#/collection/{{ CollCtrl.rightLink }}" ng-click="CollCtrl.renewUrl( CollCtrl.rightLink )" ng-show="CollCtrl.rightLink">
 					след. <span class="icon icon-angle-right"></span> 
 				</a>
 			</div>
 			<div class="breadcrumbs">
-				Мозаика / Marazzi / 90 Series
+				<a href="#/catalog/1?type={{CollCtrl.collectionSurfId}}"> {{ CollCtrl.collectionSurfType }} </a> / <a href="#/catalog/1?type=75&factory={{ CollCtrl.mainFactory }}">{{ CollCtrl.factoryName }}</a> / {{ CollCtrl.collection.name }}
 			</div>
-		</div> -->
+		</div>
 		<div class="product-item clearfix">
 
 			<div class="product-pict">

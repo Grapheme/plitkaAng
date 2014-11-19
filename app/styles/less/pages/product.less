@@ -1,5 +1,5 @@
 .product {
-	margin: 0 0 80px;
+	margin: 0 0 40px;
 
 	.product-top {
 		margin: 1em 0 32px;
@@ -44,6 +44,15 @@
 		font-size: 14px;
 		line-height: 22px;
 		color: @clr-light-gray;
+
+		a {
+			text-decoration: none;
+			color: inherit;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 
 	.product-pict {
@@ -60,7 +69,18 @@
 				background-position: 0 center;
 			}
 		}
-	}	
+	}
+
+	.product-top-nav {
+		margin: 2em 0 2.5em;
+
+		.back-to-block {
+			a {
+				float: none;
+				display: inline-block;
+			}
+		}
+	}
 		
 	.product-desc {
 		float: left;

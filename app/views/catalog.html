@@ -116,25 +116,31 @@
 			<h2>
 				{{ CatCtrl.catalogHeader }}
 			</h2>
-			<ul class="goods-ul clearfix">
-				<li class="goods-li" ng-repeat="collection in CatCtrl.collections | filter: CatCtrl.filterByCountries | filter: CatCtrl.filterByFactories | filter: CatCtrl.filterByColors | filter: CatCtrl.filterByPrice | filter: CatCtrl.filterBySurface | filter: CatCtrl.filterByPlace | filter: CatCtrl.filterByFormat | filter: CatCtrl.filterBySurfaceTypes">
-					<div class="goods-li-head" style="background-image:url({{ CatCtrl.photos[ CatCtrl.galleries[collection.gallery_id].photos[0] ].full }})">
-						<a href="#/collection/{{ collection.id }}"></a>						
-					</div>
-					<div class="goods-li-body">
-						<div class="goods-li-brand" style="background-image:url({{ CatCtrl.photos[CatCtrl.factories[ collection.factory_id ].image_id].full }})"></div>
-						<div class="goods-li-name">
-							{{ collection.name }}
+			<div ng-switch="(CatCtrl.collections | filter: CatCtrl.filterByCountries | filter: CatCtrl.filterByFactories | filter: CatCtrl.filterByColors | filter: CatCtrl.filterByPrice | filter: CatCtrl.filterBySurface | filter: CatCtrl.filterByPlace | filter: CatCtrl.filterByFormat | filter: CatCtrl.filterBySurfaceTypes).length">
+
+        		<p class="nothing-found" ng-switch-when="0">Пока у нас нет товаров с такими параметрами</p>
+
+				<ul class="goods-ul clearfix">
+					<li class="goods-li" ng-repeat="collection in CatCtrl.collections | filter: CatCtrl.filterByCountries | filter: CatCtrl.filterByFactories | filter: CatCtrl.filterByColors | filter: CatCtrl.filterByPrice | filter: CatCtrl.filterBySurface | filter: CatCtrl.filterByPlace | filter: CatCtrl.filterByFormat | filter: CatCtrl.filterBySurfaceTypes">
+						<div class="goods-li-head" style="background-image:url({{ CatCtrl.photos[ CatCtrl.galleries[collection.gallery_id].photos[0] ].full }})">
+							<a href="#/collection/{{ collection.id }}"></a>						
 						</div>
-						<div class="goods-li-country">
-							Производство: <span class="uppercase">{{ CatCtrl.countries[ collection.country_id ].name }}</span>
+						<div class="goods-li-body">
+							<div class="goods-li-brand" style="background-image:url({{ CatCtrl.photos[CatCtrl.factories[ collection.factory_id ].image_id].full }})"></div>
+							<div class="goods-li-name">
+								{{ collection.name }}
+							</div>
+							<div class="goods-li-country">
+								Производство: <span class="uppercase">{{ CatCtrl.countries[ collection.country_id ].name }}</span>
+							</div>
+							<div class="goods-li-price">
+								<span ng-show="CatCtrl.collectionPrices[ collection.id ]">{{ CatCtrl.collectionPrices[ collection.id ] }}.-</span>
+							</div>
 						</div>
-						<div class="goods-li-price">
-							<span ng-show="CatCtrl.collectionPrices[ collection.id ]">{{ CatCtrl.collectionPrices[ collection.id ] }}.-</span>
-						</div>
-					</div>
-				</li>
-			</ul>
+					</li>
+					<p>{{ collection.length }}</p>
+				</ul>
+			</div>
 		</div>		
 	</div>
 </section>

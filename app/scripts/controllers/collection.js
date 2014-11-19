@@ -39,8 +39,24 @@ angular.module('plitkaApp')
 			self.factoryImg = self.photos[ self.factories[ self.collections[ self.collectionId ].factory_id ].image_id ].full;
 			//Тип поверхности коллекции
 			self.collectionSurfType = self.productTypes[ self.collection.product_type_id ].name;
+			self.collectionSurfId = self.productTypes[ self.collection.product_type_id ].id;
 			//Слайдшоу коллекции
 			self.slides = self.galleries[ self.collection.gallery_id ].photos;
+
+			/*
+				В этом блоке будем работать с навигацией среди коллекций бренда
+			*/
+			self.sameCollections = [];
+			//Достанем айдишник фабрики из текущей коллекции
+			self.mainFactory = self.collection.factory_id;
+			//Теперь переберем все коллеции и сформируем массив братских коллекций
+			for(var key in self.collections) {
+				if(self.collections[key].factory_id == self.mainFactory) self.sameCollections.push(self.collections[key]);
+			}
+			//Теперь вычислим место отображаемой коллекции в этом поцизии
+			self.collectionPos = self.sameCollections.map(function(e) { return e.id; }).indexOf(self.collection.id);
+			self.leftLink = (self.sameCollections[self.collectionPos - 1]) ? self.sameCollections[self.collectionPos - 1].id : '';
+			self.rightLink = (self.sameCollections[self.collectionPos + 1]) ? self.sameCollections[self.collectionPos + 1].id : '';
 
 			//Fotorama init
 			setTimeout( function(){

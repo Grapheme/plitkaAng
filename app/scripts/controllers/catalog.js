@@ -18,80 +18,80 @@ angular.module('plitkaApp')
 			self.data = data;
 			self.catalogHeader = 'Каталог';
 
-			console.log($cookies);
-
-			if($cookies.countryFilter) {
-				console.log( 'country' );
-				var _cookieCountry = $cookies.countryFilter.split(',');
-				console.log(_cookieCountry);
-				for( var i = 0; i < _cookieCountry.length; i++) {
-					
-						$('[data-country="' + _cookieCountry[i] + '"]').trigger('click');
+			setTimeout( function(){
+				if($cookies.countryFilter) {
+					console.log( 'country' );
+					var _cookieCountry = $cookies.countryFilter.split(',');
+					console.log(_cookieCountry);
+					for( var i = 0; i < _cookieCountry.length; i++) {
+						
+							$('[data-country="' + _cookieCountry[i] + '"]').trigger('click');
+					}
 				}
-			}
-			if($cookies.factoryFilter) {
-				console.log( 'factory' );
-				var _cookieFactory = $cookies.factoryFilter.split(',');
-				console.log(_cookieFactory);
-				for( var i = 0; i < _cookieFactory.length; i++) {
-					setTimeout( function(){
-						$('[data-factory="' + _cookieFactory[i] + '"]').trigger('click');
-					}, 1000);
+				if($cookies.factoryFilter) {
+					console.log( 'factory' );
+					var _cookieFactory = $cookies.factoryFilter.split(',');
+					console.log(_cookieFactory);
+					for( var i = 0; i < _cookieFactory.length; i++) {
+						
+							$('[data-factory="' + _cookieFactory[i] + '"]').trigger('click');
+						
+					}
 				}
-			}
-			if($cookies.colorFilter) {
-				console.log( 'color' );
-				var _cookieColor = $cookies.colorFilter.split(',');
-				console.log(_cookieColor);
-				for( var i = 0; i < _cookieColor.length; i++) {
-					setTimeout( function(){
-						$('[data-color="' + _cookieColor[i] + '"]').trigger('click');
-					}, 1000);
+				if($cookies.colorFilter) {
+					console.log( 'color' );
+					var _cookieColor = $cookies.colorFilter.split(',');
+					console.log(_cookieColor);
+					for( var i = 0; i < _cookieColor.length; i++) {
+						
+							$('[data-color="' + _cookieColor[i] + '"]').trigger('click');
+						
+					}
 				}
-			}
-			if($cookies.filterPriceText) {
-				console.log( 'price' );
-			}
-			if($cookies.placeFilter) {
-				console.log( 'place' );
-				var _cookiePlace = $cookies.placeFilter.split(',');
-				console.log(_cookiePlace);
-				for( var i = 0; i < _cookiePlace.length; i++) {
-					setTimeout( function(){
-						$('[data-place="' + _cookiePlace[i] + '"]').trigger('click');
-					}, 1000);
-				}			
-			}
-			if($cookies.formatFilter) {
-				console.log( 'format' );
-				var _cookieFormat = $cookies.formatFilter.split(',');
-				console.log(_cookieFormat);	
-				for( var i = 0; i < _cookieFormat.length; i++) {
-					setTimeout( function(){
-						$('[data-format="' + _cookieFormat[i] + '"]').trigger('click');
-					}, 1000);
-				}		
-			}
-			if($cookies.surfaceTypesFilter) {
-				console.log( 'surfaceType' );
-				var _cookieSurfaceTypes = $cookies.surfaceTypesFilter.split(',');
-				console.log(_cookieSurfaceTypes);	
-				for( var i = 0; i < _cookieSurfaceTypes.length; i++) {
-					setTimeout( function(){
-						$('[data-surface-type="' + _cookieSurfaceTypes[i] + '"]').trigger('click');
-					}, 1000);
-				}		
-			}
-			if($cookies.surfaceFilter) {
-				console.log( 'surface' );
-				var _cookieSurface = $cookies.surfaceFilter.split(',');
-				console.log(_cookieSurface);
-				for( var i = 0; i < _cookieSurface.length; i++) {
-					setTimeout( function(){
-						$('[data-surface="' + _cookieSurface[i] + '"]').trigger('click');
-					}, 1000);
+				if($cookies.filterPriceText) {
+					console.log( 'price' );
 				}
-			}
+				if($cookies.placeFilter) {
+					console.log( 'place' );
+					var _cookiePlace = $cookies.placeFilter.split(',');
+					console.log(_cookiePlace);
+					for( var i = 0; i < _cookiePlace.length; i++) {
+						
+							$('[data-place="' + _cookiePlace[i] + '"]').trigger('click');
+						
+					}			
+				}
+				if($cookies.formatFilter) {
+					console.log( 'format' );
+					var _cookieFormat = $cookies.formatFilter.split(',');
+					console.log(_cookieFormat);	
+					for( var i = 0; i < _cookieFormat.length; i++) {
+						
+							$('[data-format="' + _cookieFormat[i] + '"]').trigger('click');
+						
+					}		
+				}
+				if($cookies.surfaceTypesFilter) {
+					console.log( 'surfaceType' );
+					var _cookieSurfaceTypes = $cookies.surfaceTypesFilter.split(',');
+					console.log(_cookieSurfaceTypes);	
+					for( var i = 0; i < _cookieSurfaceTypes.length; i++) {
+						
+							$('[data-surface-type="' + _cookieSurfaceTypes[i] + '"]').trigger('click');
+						
+					}		
+				}
+				if($cookies.surfaceFilter) {
+					console.log( 'surface' );
+					var _cookieSurface = $cookies.surfaceFilter.split(',');
+					console.log(_cookieSurface);
+					for( var i = 0; i < _cookieSurface.length; i++) {
+						
+							$('[data-surface="' + _cookieSurface[i] + '"]').trigger('click');
+						
+					}
+				}
+			}, 1000);
 
 			//Break data into objects
 			self.productType = self.data.product_type;
@@ -200,6 +200,11 @@ angular.module('plitkaApp')
 			if($routeParams.id == 1 && $routeParams.surface) {
 				setTimeout( function(){
 					$('[data-surface-type="' + $routeParams.surface + '"]').trigger('click');
+				}, 100);
+			}
+			if($routeParams.id == 1 && $routeParams.factory) {
+				setTimeout( function(){
+					$('[data-factory="' + $routeParams.factory + '"]').trigger('click');
 				}, 100);
 			}
 
