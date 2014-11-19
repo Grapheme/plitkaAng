@@ -22,5 +22,8 @@ angular.module('plitkaApp')
 
 			self.places = self.data.scope;
 			self.collectionPlaces = self.data.collections_scopes;
+
+			
+			self.materials = self.data.product_type_others_collections;
 		});
 	}]);

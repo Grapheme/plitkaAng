@@ -2,7 +2,7 @@
 	<div class="section-cont clearfix">
 		<aside class="filters">
 			<div class="filter filter-factories">
-				<div class="filter-name">
+				<div class="filter-name" ng-click="CatCtrl.showFilters('.filter-factories')">
 					Фабрика:
 				</div>
 				<ul class="filter-chosen" ng-click="CatCtrl.showFilters('.filter-factories')">
@@ -15,7 +15,7 @@
 				</ul>
 			</div>
 			<div class="filter filter-countries">
-				<div class="filter-name">
+				<div class="filter-name" ng-click="CatCtrl.showFilters('.filter-countries')">
 					Страна:
 				</div>
 				<ul class="filter-chosen" ng-click="CatCtrl.showFilters('.filter-countries')">
@@ -28,7 +28,7 @@
 				</ul>
 			</div>
 			<div class="filter filter-colors">
-				<div class="filter-name">
+				<div class="filter-name" ng-click="CatCtrl.showFilters('.filter-colors')">
 					Цвет:
 				</div>
 				<ul class="filter-chosen colors" ng-click="CatCtrl.showFilters('.filter-colors')">
@@ -41,7 +41,7 @@
 				</ul>
 			</div>
 			<div class="filter filter-prices">
-				<div class="filter-name">
+				<div class="filter-name" ng-click="CatCtrl.showFilters('.filter-prices')">
 					Цена:
 				</div>
 				<ul class="filter-chosen" ng-click="CatCtrl.showFilters('.filter-prices')">
@@ -60,8 +60,8 @@
 				</ul>
 			</div>
 			<div class="filter filter-surface">
-				<div class="filter-name">
-					Поверхности:
+				<div class="filter-name" ng-click="CatCtrl.showFilters('.filter-surface')">
+					Тип поверхности:
 				</div>
 				<ul class="filter-chosen" ng-click="CatCtrl.showFilters('.filter-surface')">
 
@@ -73,7 +73,7 @@
 				</ul>
 			</div>
 			<div class="filter filter-place">
-				<div class="filter-name">
+				<div class="filter-name" ng-click="CatCtrl.showFilters('.filter-place')">
 					Место применения:
 				</div>
 				<ul class="filter-chosen" ng-click="CatCtrl.showFilters('.filter-place')">
@@ -86,7 +86,7 @@
 				</ul>
 			</div>
 			<div class="filter filter-format">
-				<div class="filter-name">
+				<div class="filter-name" ng-click="CatCtrl.showFilters('.filter-format')">
 					Формат:
 				</div>
 				<ul class="filter-chosen" ng-click="CatCtrl.showFilters('.filter-format')">
@@ -99,8 +99,8 @@
 				</ul>
 			</div>
 			<div class="filter filter-surface-type">
-				<div class="filter-name">
-					Тип поверхности:
+				<div class="filter-name" ng-click="CatCtrl.showFilters('.filter-surface-type')">
+					Поверхность:
 				</div>
 				<ul class="filter-chosen" ng-click="CatCtrl.showFilters('.filter-surface-type')">
 

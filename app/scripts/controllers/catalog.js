@@ -97,6 +97,8 @@ angular.module('plitkaApp')
 			self.productType = self.data.product_type;
 			//Коллекции
 			self.collections = self.data.collections;
+			//Сопутствующие материалы
+			self.materialsCollections = self.data.product_type_others_collections;
 			//Продукты
 			self.products = self.data.products;
 			//Страны
@@ -179,9 +181,10 @@ angular.module('plitkaApp')
 				self.catalogHeader = self.productType[$routeParams.type].name || 'Каталог';
 			}
 			if($routeParams.id == 1 && $routeParams.type == 79) {
-				for(var key in self.collections) {
-					if(self.collections[key].product_type_id == $routeParams.type) {
-						self.collectionsFilter.push(self.collections[key]);
+				console.log(self.materialsCollections);
+				for(var key in self.materialsCollections) {
+					if(self.materialsCollections[key].product_type_id == $routeParams.type) {
+						self.collectionsFilter.push(self.materialsCollections[key]);
 					}
 				}
 				self.collections = self.collectionsFilter;
@@ -614,6 +617,14 @@ angular.module('plitkaApp')
 					$(elem).addClass('active');
 				}				
 			};
+
+			//Событие скрытия фильтров
+			$('.filter').click( function(e){
+				e.stopPropagation();
+			});
+			$(document).click( function(){
+				$('.filter').removeClass('active');
+			});
 
 		});
 	}]);

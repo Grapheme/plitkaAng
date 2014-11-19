@@ -19,8 +19,8 @@ angular.module('plitkaApp')
 				y: 39.723161
 			},
 			store: {
-				x: 47.256845,
-				y: 39.624738
+				x: 47.249539,
+				y: 39.621147
 			}
 		};
 		this.setMap = function(mapObj) {

@@ -830,10 +830,24 @@ a[href^="tel"] {
 .main-header-bot .subnav-li.active {
   background: #fff;
 }
+.main-header-bot .subnav-li.active:after {
+  border-color: #fff;
+  border-color: #f6f6f6;
+}
+.main-header-bot .subnav-li.active:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -0.0625rem;
+  height: 100% !important;
+  margin: 0;
+  border-right: 1px solid #fff !important;
+  border-color: #f6f6f6 !important;
+}
 .main-header-bot .subnav-li:hover {
   position: relative;
-  left: -0.125rem;
   background: #fff;
+  background: #f6f6f6;
 }
 .main-header-bot .subnav-li:hover .subnav-li-desc {
   height: auto;
@@ -842,9 +856,17 @@ a[href^="tel"] {
 }
 .main-header-bot .subnav-li:hover:after {
   border-color: #fff;
+  border-color: #f6f6f6;
 }
 .main-header-bot .subnav-li:hover:before {
-  border-color: #fff !important;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -0.0625rem;
+  height: 100% !important;
+  margin: 0;
+  border-right: 1px solid #fff !important;
+  border-color: #f6f6f6 !important;
 }
 .main-header-bot .subnav-li:after {
   content: '';
@@ -945,8 +967,7 @@ a[href^="tel"] {
   height: 0;
   padding: 0 1.875rem 0 3.125rem;
   background: #fff;
-  background: rgba(255, 255, 255, 0.95);
-  text-transform: capitalize;
+  background: rgba(247, 247, 247, 0.9);
 }
 .main-header-bot .subnav-li .subnav-li-desc .subnav-li-desc-text {
   margin: 1.75rem 0 0.625rem;
@@ -1843,6 +1864,7 @@ html {
   line-height: 1.5rem;
   font-weight: 600;
   text-transform: uppercase;
+  cursor: pointer;
 }
 .filters .filter-chosen {
   transition: all .4s ease;

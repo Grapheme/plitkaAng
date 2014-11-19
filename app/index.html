@@ -151,6 +151,13 @@
 										<span>Сопутствующие материалы</span>
 									</a>
 								</div>
+								<div class="subnav-li-desc">
+									<div class="subnav-li-desc-link" ng-repeat="(key, item) in SubmCtrl.materials">
+										<a href="#/collection/{{ SubmCtrl.materials[key].id }}">
+											{{ SubmCtrl.materials[key].name }}
+										</a>
+									</div>
+								</div>
 							</li>
 						</ul>
 					</div>
