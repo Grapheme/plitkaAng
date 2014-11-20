@@ -15,7 +15,8 @@ angular
 		'ngResource',
 		'ngRoute',
 		'ngSanitize',
-		'ngTouch'
+		'ngTouch',
+		'seo'
 	])
 	.config(['$httpProvider', function ($httpProvider) {
 		// enable http caching

@@ -8,7 +8,7 @@
  * Controller of the plitkaApp
  */
 angular.module('plitkaApp')
-	.controller('AboutCtrl', ['$http', function ($http) {
+	.controller('AboutCtrl', ['$http', '$scope', function ($http, $scope) {
 		
 		var self = this;
 
@@ -32,5 +32,11 @@ angular.module('plitkaApp')
 					loop: true
 				});
 			}, 100);
+
+			// SEO REQUIREMENT: 
+		    // PhantomJS pre-rendering workflow requires the page to declare, through htmlReady(), that
+		    // we are finished with this controller.
+		    $scope.htmlReady();
+
 		});
 	}]);

@@ -87,7 +87,10 @@ angular.module('plitkaApp')
 			self.workTime = self.contactsDataBlocks['work-time-clearfix'].content;
 			self.contactsColumn = self.contactsDataBlocks['contacts-column'].content;
 
-			// console.log(self.phones);
+			// SEO REQUIREMENT: 
+      		// PhantomJS pre-rendering workflow requires the page to declare, through htmlReady(), that
+    	    // we are finished with this controller.
+      		$scope.htmlReady();
 		});
 
 	}]);

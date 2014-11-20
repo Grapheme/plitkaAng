@@ -11,7 +11,7 @@ angular.module('plitkaApp')
 	.controller('SeparticleCtrl', ['$http', '$routeParams', function ($http, $routeParams) {
 
 		//Scroll to the top of article
-	 	$( 'html, body').animate({
+		$( 'html, body').animate({
 	        scrollTop: $( 'main' ).offset().top
 	    }, 400);
 
@@ -27,5 +27,9 @@ angular.module('plitkaApp')
 			self.articles = self.data.articles;
 			self.photos = self.data.photos;
 
+			// SEO REQUIREMENT: 
+	      	// PhantomJS pre-rendering workflow requires the page to declare, through htmlReady(), that
+	      	// we are finished with this controller.
+	      	$scope.htmlReady();
 		});
 	}]);

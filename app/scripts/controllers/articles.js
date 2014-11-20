@@ -8,7 +8,7 @@
  * Controller of the plitkaApp
  */
 angular.module('plitkaApp')
-	.controller('ArticlesCtrl', ['$http', '$rootScope', function ($http, $rootScope) {
+	.controller('ArticlesCtrl', ['$http', '$rootScope', '$scope', function ($http, $rootScope, $scope) {
 	
 	//Define controller scope as self
 	var self = this;
@@ -20,6 +20,11 @@ angular.module('plitkaApp')
 		//Break data into objects
 		self.articles = self.data.articles;
 		self.photos = self.data.photos;
+
+		// SEO REQUIREMENT: 
+        // PhantomJS pre-rendering workflow requires the page to declare, through htmlReady(), that
+        // we are finished with this controller. 
+        $scope.htmlReady();
 	});
 		
 }]);

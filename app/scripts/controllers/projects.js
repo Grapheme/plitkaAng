@@ -26,6 +26,12 @@ angular.module('plitkaApp')
 			self.products = self.data.products;
 			self.factory = self.data.factory;
 			self.productTypes = self.data.product_type;
+
+
+			// SEO REQUIREMENT: 
+	      	// PhantomJS pre-rendering workflow requires the page to declare, through htmlReady(), that
+	      	// we are finished with this controller.
+	      	$scope.htmlReady();
 		});
 		// Init fancybox for project
 		var fancybox = $('.fancybox').fancybox({
