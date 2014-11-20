@@ -18,9 +18,10 @@ angular
 		'ngTouch',
 		'seo'
 	])
-	.config(['$httpProvider', function ($httpProvider) {
+	.config(['$httpProvider', '$locationProvider', function ($httpProvider, $locationProvider) {
 		// enable http caching
 		$httpProvider.defaults.cache = true;
+		$locationProvider.hashPrefix('!');
 	}])
 	.run( ['$http', function($http){
 		$http.get('http://plitka.dev.grapheme.ru/application/get').success(function(data){

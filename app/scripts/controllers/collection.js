@@ -8,7 +8,7 @@
  * Controller of the plitkaApp
  */
 angular.module('plitkaApp')
-	.controller('CollectionCtrl', ['$http', '$routeParams', function ($http, $routeParams) {
+	.controller('CollectionCtrl', ['$http', '$routeParams', '$scope', function ($http, $routeParams, $scope) {
 		var self = this;
 
 		//Get data from server

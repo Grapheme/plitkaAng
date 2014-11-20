@@ -8,7 +8,7 @@
  * Controller of the plitkaApp
  */
 angular.module('plitkaApp')
-	.controller('ContactsCtrl', ['$http', function($http) {
+	.controller('ContactsCtrl', ['$http', '$scope', function($http, $scope) {
 
 		var self = this;
 

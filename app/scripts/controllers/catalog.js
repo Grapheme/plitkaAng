@@ -8,7 +8,7 @@
  * Controller of the plitkaApp
  */
 angular.module('plitkaApp')
-	.controller('CatalogCtrl', ['$http', '$routeParams', '$cookies', function ($http, $routeParams, $cookies) {
+	.controller('CatalogCtrl', ['$http', '$routeParams', '$cookies', '$scope', function ($http, $routeParams, $cookies, $scope) {
 
 		//Define controller scope as self
 		var self = this;

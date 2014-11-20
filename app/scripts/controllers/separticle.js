@@ -8,7 +8,7 @@
  * Controller of the plitkaApp
  */
 angular.module('plitkaApp')
-	.controller('SeparticleCtrl', ['$http', '$routeParams', function ($http, $routeParams) {
+	.controller('SeparticleCtrl', ['$http', '$routeParams', '$scope', function ($http, $routeParams, $scope) {
 
 		//Scroll to the top of article
 		$( 'html, body').animate({
