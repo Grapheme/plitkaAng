@@ -8,7 +8,7 @@
  * Controller of the plitkaApp
  */
 angular.module('plitkaApp')
-	.controller('ContactsCtrl', ['$http', '$scope', function($http, $scope) {
+	.controller('ContactsCtrl', ['$http', '$scope', '$rootScope', function($http, $scope, $rootScope) {
 
 		var self = this;
 
@@ -86,6 +86,11 @@ angular.module('plitkaApp')
 			self.phones = self.contactsDataBlocks['phones'].content;
 			self.workTime = self.contactsDataBlocks['work-time-clearfix'].content;
 			self.contactsColumn = self.contactsDataBlocks['contacts-column'].content;
+
+			$rootScope.h1 = self.data.pages.contacts.seo.h1;
+			$rootScope.title = self.data.pages.contacts.seo.title;
+			$rootScope.description = self.data.pages.contacts.seo.title;
+			$rootScope.keywords = self.data.pages.contacts.seo.title;
 
 			// SEO REQUIREMENT: 
       		// PhantomJS pre-rendering workflow requires the page to declare, through htmlReady(), that

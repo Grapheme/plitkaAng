@@ -41,6 +41,12 @@ angular.module('plitkaApp')
 				}
 			}
 
+			//Seo block
+			$rootScope.h1 = self.data.pages.index.seo.h1;
+			$rootScope.title = self.data.pages.index.seo.title;
+			$rootScope.description = self.data.pages.index.seo.title;
+			$rootScope.keywords = self.data.pages.index.seo.title;
+
 
 			//Fotorama init
 			setTimeout( function(){

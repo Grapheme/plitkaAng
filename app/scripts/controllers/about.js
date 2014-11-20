@@ -8,7 +8,7 @@
  * Controller of the plitkaApp
  */
 angular.module('plitkaApp')
-	.controller('AboutCtrl', ['$http', '$scope', function ($http, $scope) {
+	.controller('AboutCtrl', ['$http', '$scope', '$rootScope', function ($http, $scope, $rootScope) {
 		
 		var self = this;
 
@@ -32,6 +32,11 @@ angular.module('plitkaApp')
 					loop: true
 				});
 			}, 100);
+
+			$rootScope.h1 = self.data.pages.about.seo.h1;
+			$rootScope.title = self.data.pages.about.seo.title;
+			$rootScope.description = self.data.pages.about.seo.title;
+			$rootScope.keywords = self.data.pages.about.seo.title;
 
 			// SEO REQUIREMENT: 
 		    // PhantomJS pre-rendering workflow requires the page to declare, through htmlReady(), that

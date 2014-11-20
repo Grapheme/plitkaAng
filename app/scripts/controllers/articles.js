@@ -21,6 +21,8 @@ angular.module('plitkaApp')
 		self.articles = self.data.articles;
 		self.photos = self.data.photos;
 
+		$rootScope.title = '';
+
 		// SEO REQUIREMENT: 
         // PhantomJS pre-rendering workflow requires the page to declare, through htmlReady(), that
         // we are finished with this controller. 

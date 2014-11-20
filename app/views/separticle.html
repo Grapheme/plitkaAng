@@ -5,7 +5,7 @@
 		</a>
 	</div>
 	<h1 class="sep-entity-name">
-		{{ SepCtrl.articles[ SepCtrl.articleId ].name }}
+		{{ $root.h1 }}
 	</h1>
 	<div class="sep-entity-date">
 		{{ SepCtrl.articles[ SepCtrl.articleId ].created_at.slice(0, 10) | date : 'dd/MM/yy' }}

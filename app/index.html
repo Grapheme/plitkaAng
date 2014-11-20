@@ -1,9 +1,10 @@
 <!doctype html>
 <html class="no-js" ng-app="plitkaApp">
-	<head>
+	<head ng-controller="HeadCtrl as HCtrl">
 		<meta charset="utf-8">
-		<title></title>
-		<meta name="description" content="">
+		<title ng-bind="$root.title">Плитка мира</title>
+		<meta name="description" content="{{ $root.description }}">
+		<meta name="keywords" content="{{ $root.keywords }}">
 		<meta name="viewport" content="width=device-width">
 		<meta name="fragment" content="!" />
 		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -70,11 +71,11 @@
 					<div class="main-header-bot">
 						<ul class="subnav-ul clearfix">
 							<li class="subnav-li logo-cont">
-								<h1 class="logo">
-									<a href="#">
+								<div class="logo">
+									<a href="#!/">
 										Плитка мира
 									</a>
-								</h1>
+								</div>
 							</li>
 							<li class="subnav-li tile" ng-class="{ active: SubmCtrl.isActive('75') }">
 								<div class="subnav-li-top">
@@ -241,6 +242,7 @@
 <script src="scripts/controllers/catalog-item.js"></script>
 <script src="scripts/controllers/collection.js"></script>
 <script src="scripts/controllers/submenu.js"></script>
+<script src="scripts/controllers/head.js"></script>
 				<!-- endbuild -->
 </body>
 </html>

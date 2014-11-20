@@ -8,7 +8,7 @@
  * Controller of the plitkaApp
  */
 angular.module('plitkaApp')
-	.controller('SeparticleCtrl', ['$http', '$routeParams', '$scope', function ($http, $routeParams, $scope) {
+	.controller('SeparticleCtrl', ['$http', '$routeParams', '$scope', '$rootScope', function ($http, $routeParams, $scope, $rootScope) {
 
 		//Scroll to the top of article
 		$( 'html, body').animate({
@@ -26,6 +26,11 @@ angular.module('plitkaApp')
 			self.articleId = $routeParams.id;
 			self.articles = self.data.articles;
 			self.photos = self.data.photos;
+
+			$rootScope.h1 = self.articles[ self.articleId ].seo.h1;
+			$rootScope.title = self.articles[ self.articleId ].seo.title;
+			$rootScope.description = self.articles[ self.articleId ].seo.description;
+			$rootScope.keywords = self.articles[ self.articleId ].seo.keywords;
 
 			// SEO REQUIREMENT: 
 	      	// PhantomJS pre-rendering workflow requires the page to declare, through htmlReady(), that
