@@ -8,10 +8,12 @@
  * Controller of the plitkaApp
  */
 angular.module('plitkaApp')
-	.controller('ProjectsCtrl', ['$http', '$scope', function ($http, $scope) {
+	.controller('ProjectsCtrl', ['$http', '$scope', '$rootScope', function ($http, $scope, $rootScope) {
 
 		//Define controller scope as self
 		var self = this;
+
+		$rootScope.route = 'projects';
 
 		//Get data from server
 		$http.get('http://plitka.dev.grapheme.ru/application/get').success(function(data){

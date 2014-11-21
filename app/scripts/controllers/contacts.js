@@ -12,6 +12,8 @@ angular.module('plitkaApp')
 
 		var self = this;
 
+		$rootScope.route = 'contacts';
+
 		this.mapTo = 'salon';
 		this.mapCoords = {
 			salon: {

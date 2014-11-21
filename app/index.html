@@ -33,21 +33,21 @@
 
 				<div class="main-header-top-wrap">
 					<div class="main-header-top">
-						<nav class="main-nav clearfix">
+						<nav class="main-nav clearfix" ng-controller="NavCtrl as NavController">
 							<ul class="nav-ul clearfix">
-								<li class="nav-li">
+								<li class="nav-li" ng-class="{ active: ($root.route == 'about') }">
 									<a href="#!/about">О салоне</a>
 								</li>
-								<li class="nav-li">
+								<li class="nav-li" ng-class="{ active: ($root.route == 'catalog') }">
 									<a href="#!/catalog">Каталог</a>
 								</li>
-								<li class="nav-li">
+								<li class="nav-li" ng-class="{ active: ($root.route == 'articles') }">
 									<a href="#!/articles">Статьи</a>
 								</li>
-								<li class="nav-li">
+								<li class="nav-li" ng-class="{ active: ($root.route == 'projects') }">
 									<a href="#!/projects">Проекты</a>
 								</li>
-								<li class="nav-li">
+								<li class="nav-li" ng-class="{ active: ($root.route == 'contacts') }">
 									<a href="#!/contacts">Контакты</a>
 								</li>
 							</ul>
@@ -244,6 +244,7 @@
 <script src="scripts/controllers/collection.js"></script>
 <script src="scripts/controllers/submenu.js"></script>
 <script src="scripts/controllers/head.js"></script>
+<script src="scripts/controllers/nav.js"></script>
 				<!-- endbuild -->
 </body>
 </html>

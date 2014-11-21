@@ -12,6 +12,8 @@ angular.module('plitkaApp')
 		
 		var self = this;
 
+		$rootScope.route = 'about';
+
 		$http.get('http://plitka.dev.grapheme.ru/application/get').success(function(data){
 			self.data = data;
 			

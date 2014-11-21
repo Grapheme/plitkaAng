@@ -753,12 +753,38 @@ a[href^="tel"] {
   border-left: 1px solid #6c6c6c;
 }
 .main-header-top .nav-li {
+  transition: all .4s ease;
   float: left;
   height: 3.25rem;
   border-right: 1px solid #6c6c6c;
   font-size: 0.875rem;
   line-height: 3.25rem;
   text-transform: uppercase;
+}
+.main-header-top .nav-li.active {
+  position: relative;
+}
+.main-header-top .nav-li.active:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin: 0 0 0 -0.375rem;
+  border-style: solid;
+  border-width: 0 0.375rem 0.375rem 0.375rem;
+  border-color: transparent transparent #f1f1f1 transparent;
+}
+.main-header-top .nav-li.active:hover {
+  background: inherit;
+  cursor: default;
+}
+.main-header-top .nav-li.active:hover a {
+  cursor: default;
+}
+.main-header-top .nav-li:hover {
+  background: #666666;
 }
 .main-header-top .nav-li a {
   display: block;
@@ -767,6 +793,7 @@ a[href^="tel"] {
   font-size: 1rem;
   color: white;
   text-decoration: none;
+  outline: none;
 }
 .main-header-top .phone {
   float: left;

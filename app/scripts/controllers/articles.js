@@ -13,6 +13,8 @@ angular.module('plitkaApp')
 	//Define controller scope as self
 	var self = this;
 
+	$rootScope.route = 'articles';
+
 	//Get data from server
 	$http.get('http://plitka.dev.grapheme.ru/application/get').success(function(data){
 		self.data = data;
