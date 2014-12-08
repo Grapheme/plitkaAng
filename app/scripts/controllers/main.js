@@ -28,8 +28,6 @@ angular.module('plitkaApp')
 				return [value];
 			});
 
-			console.log(self.articlesArr);
-
 			//get promo block
 			self.promo = self.data.promo;
 

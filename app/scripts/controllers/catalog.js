@@ -22,18 +22,14 @@ angular.module('plitkaApp')
 
 			setTimeout( function(){
 				if($cookies.countryFilter) {
-					console.log( 'country' );
 					var _cookieCountry = $cookies.countryFilter.split(',');
-					console.log(_cookieCountry);
 					for( var i = 0; i < _cookieCountry.length; i++) {
 						
 							$('[data-country="' + _cookieCountry[i] + '"]').trigger('click');
 					}
 				}
 				if($cookies.factoryFilter) {
-					console.log( 'factory' );
 					var _cookieFactory = $cookies.factoryFilter.split(',');
-					console.log(_cookieFactory);
 					for( var i = 0; i < _cookieFactory.length; i++) {
 						
 							$('[data-factory="' + _cookieFactory[i] + '"]').trigger('click');
@@ -41,22 +37,15 @@ angular.module('plitkaApp')
 					}
 				}
 				if($cookies.colorFilter) {
-					console.log( 'color' );
 					var _cookieColor = $cookies.colorFilter.split(',');
-					console.log(_cookieColor);
 					for( var i = 0; i < _cookieColor.length; i++) {
 						
 							$('[data-color="' + _cookieColor[i] + '"]').trigger('click');
 						
 					}
 				}
-				if($cookies.filterPriceText) {
-					console.log( 'price' );
-				}
 				if($cookies.placeFilter) {
-					console.log( 'place' );
 					var _cookiePlace = $cookies.placeFilter.split(',');
-					console.log(_cookiePlace);
 					for( var i = 0; i < _cookiePlace.length; i++) {
 						
 							$('[data-place="' + _cookiePlace[i] + '"]').trigger('click');
@@ -64,9 +53,7 @@ angular.module('plitkaApp')
 					}			
 				}
 				if($cookies.formatFilter) {
-					console.log( 'format' );
 					var _cookieFormat = $cookies.formatFilter.split(',');
-					console.log(_cookieFormat);	
 					for( var i = 0; i < _cookieFormat.length; i++) {
 						
 							$('[data-format="' + _cookieFormat[i] + '"]').trigger('click');
@@ -74,9 +61,7 @@ angular.module('plitkaApp')
 					}		
 				}
 				if($cookies.surfaceTypesFilter) {
-					console.log( 'surfaceType' );
 					var _cookieSurfaceTypes = $cookies.surfaceTypesFilter.split(',');
-					console.log(_cookieSurfaceTypes);	
 					for( var i = 0; i < _cookieSurfaceTypes.length; i++) {
 						
 							$('[data-surface-type="' + _cookieSurfaceTypes[i] + '"]').trigger('click');
@@ -84,9 +69,7 @@ angular.module('plitkaApp')
 					}		
 				}
 				if($cookies.surfaceFilter) {
-					console.log( 'surface' );
 					var _cookieSurface = $cookies.surfaceFilter.split(',');
-					console.log(_cookieSurface);
 					for( var i = 0; i < _cookieSurface.length; i++) {
 						
 							$('[data-surface="' + _cookieSurface[i] + '"]').trigger('click');
@@ -183,7 +166,6 @@ angular.module('plitkaApp')
 				self.catalogHeader = self.productType[$routeParams.type].name || 'Каталог';
 			}
 			if($routeParams.id == 1 && $routeParams.type == 79) {
-				console.log(self.materialsCollections);
 				for(var key in self.materialsCollections) {
 					if(self.materialsCollections[key].product_type_id == $routeParams.type) {
 						self.collectionsFilter.push(self.materialsCollections[key]);
@@ -250,7 +232,6 @@ angular.module('plitkaApp')
 					$parent.find('[data-country="' + id + '"]').addClass('active');
 				} else {
 					self.countryFilter.splice( self.countryFilter.indexOf(id), 1 );
-					console.log(id);
 					//Remove active class to filter
 					$parent.find('[data-country="' + id + '"]').removeClass('active');
 				}

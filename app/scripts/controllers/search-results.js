@@ -16,7 +16,6 @@ angular.module('plitkaApp')
 			self.data = data;
 
 			var data = $rootScope.searchData;
-			console.log($rootScope.searchData);
 
 			if (data) {
 
@@ -54,8 +53,6 @@ angular.module('plitkaApp')
 						}
 					}
 				}
-
-				console.log(self.articlesArr);
 
 				self.searchArticles = [];
 				for(var l = 0; l < self.articlesArr.length; l++){
