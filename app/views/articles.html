@@ -3,7 +3,7 @@
 		<h2>
 			Статьи
 		</h2>
-		<ul class="goods-ul clearfix">
+		<ul class="goods-ul articles-ul clearfix">
 			<li class="goods-li" ng-repeat="(id, article) in ArtCtrl.articles">
 				<div class="goods-li-head" style="background-image:url({{ ArtCtrl.photos[ article.image_id ].full }})">
 					<a href="#!/article/{{ article.id }}"></a>

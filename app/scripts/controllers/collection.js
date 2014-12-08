@@ -33,11 +33,15 @@ angular.module('plitkaApp')
 			self.collectionPhoto = self.photos[ self.galleries[ self.collection.gallery_id ].photos[0] ].full;
 			//Страна нашей коллекции
 			self.country = self.countries[ self.collections[ self.collectionId ].country_id ];
-			//Имя фабрики коллекции
-			self.factoryName = self.factories[ self.collections[ self.collectionId ].factory_id ].name;
-			//Изображение фабрики коллекции
-			self.factoryImg = self.photos[ self.factories[ self.collections[ self.collectionId ].factory_id ].image_id ].full;
-			//Тип поверхности коллекции
+
+			if( self.factories[ self.collections[ self.collectionId ].factory_id ] ) {
+				//Имя фабрики коллекции
+				self.factoryName = self.factories[ self.collections[ self.collectionId ].factory_id ].name;
+				//Изображение фабрики коллекции
+				self.factoryImg = self.photos[ self.factories[ self.collections[ self.collectionId ].factory_id ].image_id ].full;
+				//Тип поверхности коллекции
+			}
+			
 			self.collectionSurfType = self.productTypes[ self.collection.product_type_id ].name;
 			self.collectionSurfId = self.productTypes[ self.collection.product_type_id ].id;
 			//Слайдшоу коллекции

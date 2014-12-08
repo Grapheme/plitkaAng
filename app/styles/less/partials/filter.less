@@ -32,6 +32,33 @@
 				}
 			}
 		}
+
+		&.filter-colors {
+			.filter-choise {
+				li {
+					span[data-color] {
+						opacity: 0.5;
+						display: inline-block;
+						width: 1.5rem;
+						height: 1.5rem;
+						margin: 0 0 0.25rem;
+					    border: 2px solid #e5e5e5;					    
+					    
+					    line-height: 1.25rem;					    
+					    text-indent: 1.75rem;
+					    white-space: nowrap;
+
+					    &:before {
+					    	content: none;
+					    }
+
+					    &.active {
+					    	opacity: 1;
+					    }				    
+					}
+				}
+			}
+		}
 	}
 	
 	.filter-name {

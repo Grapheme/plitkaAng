@@ -18,11 +18,13 @@ angular.module('plitkaApp')
 		this.mapCoords = {
 			salon: {
 				x: 47.244747,
-				y: 39.723161
+				y: 39.723161,
+				zoom: 15
 			},
 			store: {
 				x: 47.249539,
-				y: 39.621147
+				y: 39.621147,
+				zoom: 14
 			}
 		};
 		this.setMap = function(mapObj) {
@@ -35,7 +37,7 @@ angular.module('plitkaApp')
 		};		
 		this.initialize = function(coords){
 			var mapOptions = {
-				zoom: 15,
+				zoom: coords.zoom,
 				zoomControl: false,
 				draggable: false,
 				scrollwheel: false,

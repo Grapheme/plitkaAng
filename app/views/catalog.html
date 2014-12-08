@@ -36,7 +36,7 @@
 				</ul>
 				<ul class="filter-choise">
 					<li ng-repeat="(key, color) in CatCtrl.collectionColors">
-						<span data-color="{{ key }}" ng-show="CatCtrl.colors[ key ].name" ng-click="CatCtrl.setColorFilter(key)">{{ CatCtrl.colors[ key ].name }}</span>						
+						<span data-color="{{ key }}" style="background-color: #{{ CatCtrl.colors[ key ].css_code }}" ng-show="CatCtrl.colors[ key ].name" ng-click="CatCtrl.setColorFilter(key)">{{ CatCtrl.colors[ key ].name }}</span>						
 					</li>
 				</ul>
 			</div>

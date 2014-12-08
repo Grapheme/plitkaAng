@@ -17,7 +17,11 @@
 				</a>
 			</div>
 			<div class="breadcrumbs">
-				<a href="#!/catalog/1?type={{CollCtrl.collectionSurfId}}"> {{ CollCtrl.collectionSurfType }} </a> / <a href="#!/catalog/1?type=75&factory={{ CollCtrl.mainFactory }}">{{ CollCtrl.factoryName }}</a> / {{ CollCtrl.collection.name }}
+				<a href="#!/catalog/1?type={{CollCtrl.collectionSurfId}}"> {{ CollCtrl.collectionSurfType }} </a>
+
+				<span ng-show="CollCtrl.collectionSurfType">/</span> <a href="#!/catalog/1?type=75&factory={{ CollCtrl.mainFactory }}">{{ CollCtrl.factoryName }}</a>
+
+				<span ng-show="CollCtrl.factoryName">/</span> {{ CollCtrl.collection.name }}
 			</div>
 		</div>
 		<div class="product-item clearfix">
