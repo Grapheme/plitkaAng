@@ -90,7 +90,7 @@ module.exports = function (grunt) {
       dist: {
         options: {
           base: 16,
-          fallback: false,
+          fallback: true,
           fallback_existing_rem: false,
           ignore: ['border', 'border-left', 'border-right', 'border-top', 'border-bottom', 'outline']
         },
