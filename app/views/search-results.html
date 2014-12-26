@@ -6,7 +6,7 @@
 				Вы искали «<strong>{{ SResultsCtrl.queryStr }}</strong>»
 			</div>
 			<div class="search-results-count">
-				Найдено <strong>{{ SResultsCtrl.resultsCount }}</strong> результатов
+				Найдено результатов: <strong>{{ SResultsCtrl.resultsCount }}</strong>
 			</div>
 			<div class="main-search" ng-controller="SearchCtrl as SCtrl">
 				<form name="searchForm" class="main-search-form" ng-submit="searchForm.$valid && SCtrl.sendForm(SCtrl.searchStr)" novalidate>

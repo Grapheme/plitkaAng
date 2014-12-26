@@ -15,14 +15,14 @@
 			</h3>
 			<form name="feedbackForm" class="feedback-form" ng-submit="feedbackForm.$valid && ContCtrl.sendForm(ContCtrl.formData)" novalidate>
 				<fieldset>
-					<input class="input-name" type="text" placeholder="Имя" required ng-model="ContCtrl.formData.name"><!--
-				 --><input class="input-email" type="email" placeholder="Email" required ng-model="ContCtrl.formData.email">
+					<input class="input-name" type="text" placeholder="Имя *" required ng-model="ContCtrl.formData.name"><!--
+				 --><input class="input-email" type="email" placeholder="Email *" required ng-model="ContCtrl.formData.email">
 				</fieldset>
 				<fieldset>
-					<textarea required ng-model="ContCtrl.formData.text"></textarea>
+					<textarea placeholder="Сообщение *" required ng-model="ContCtrl.formData.text"></textarea>
 				</fieldset>
 				<footer>
-					<button class="btn feedback-submit" ng-class="{ disabled : !feedbackForm.$valid }" >
+					<button class="btn feedback-submit" >
 						Отправить
 					</button>
 				</footer>

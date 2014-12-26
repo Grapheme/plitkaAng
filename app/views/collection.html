@@ -67,8 +67,30 @@
 	<div class="section-cont">
 		<ul class="similar-products-ul clearfix">
 			<li class="similar-products-li" ng-repeat="product in CollCtrl.productsArr">
-				<div class="similar-products-head" style="background-image: url({{ CollCtrl.photos[ product.image_id ].full }});">
-					
+				<div class="similar-products-head">
+					<a class="fancybox" 
+						title="
+							<img style='background: #fff; padding: 8px;' src='{{ CollCtrl.factoryImg }}'>
+							<div>
+								<strong>Тип</strong>: {{ CollCtrl.collectionSurfType }}
+							</div>	
+							<div>
+								<strong>Название</strong>: {{ product.name }}
+							</div>	
+							<div>
+								<strong>Производитель</strong>: {{ CollCtrl.factoryName }}
+							</div>	
+							<div>
+								<strong>Страна</strong>: {{ CollCtrl.country.name }}
+							</div>	
+							<div class='{{ !product.price ? 'hidden' : '' }}'>
+								<strong>Цена</strong>: {{ product.price }}
+							</div>
+							" 
+
+						rel="gallery" href="{{ CollCtrl.photos[ product.image_id ].full }}">
+						<img src="{{ CollCtrl.photos[ product.image_id ].full }}" alt="">
+					</a>					
 				</div>
 				<div class="similar-products-body">
 					<div class="dl">

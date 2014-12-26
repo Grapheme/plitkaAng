@@ -17,6 +17,7 @@ angular.module('plitkaApp')
 
 			//Break data into objects
 			self.collectionId = $routeParams.id;
+			
 			self.products = self.data.products;
 			self.collections = self.data.collections;
 			self.photos = self.data.photos;
@@ -73,6 +74,18 @@ angular.module('plitkaApp')
 					loop: true
 				});
 			}, 100);
+
+			//Fancybox init
+			var fancybox = $('.fancybox').fancybox({
+				maxWidth: 450,
+				wrapCSS: 'collFancybox',
+				padding: 0,
+				helpers: {
+					title: {
+						type: 'inside'
+					}
+				}
+			});
 			
 			//Места применения
 			self.dicvals = self.collection.related_dicvals;

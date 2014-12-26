@@ -58,3 +58,40 @@
 .fancybox-overlay {
 	background: rgba(0, 0, 0, 0.7);
 }
+
+.collFancybox {
+	.fancybox-skin {
+		background: none;
+	}
+	.fancybox-outer,
+	.fancybox-inner {
+		position: relative;
+		right: 25%;
+	}
+	.fancybox-prev {
+		left: -25%;
+	}
+	.fancybox-next {
+	    right: -75%;
+	}
+	.fancybox-close {
+		right: -70%;
+	}
+	&.fancybox-opened {
+		.fancybox-title {
+			top: 0;
+			left: 50%;
+			height: 100%;
+			background: none;
+
+			line-height: 3rem;
+
+			color: rgba(255,255,255, .7);
+
+			strong {
+				font-weight: 300;
+				color: #fff;
+			}
+		}
+	}
+}

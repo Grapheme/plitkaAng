@@ -143,10 +143,6 @@
 			border: 1px solid @clr-lighter-gray;
 
 			outline: none;
-
-			&:focus {
-				border: 1px solid @clr-orange;
-			}
 		}
 		.input-name {
 			margin: 0 3% 0 0;
@@ -165,10 +161,6 @@
 
 			outline: none;
 			resize: none;
-
-			&:focus {
-				border: 1px solid @clr-orange;
-			}
 		}
 
 		.ng-dirty {
@@ -184,14 +176,10 @@
 			.pull-right;
 			outline: none;
 
-			&.disabled {
-				opacity: 0.3;
-
-				&:hover {
-					border-color: #d74e24;
-					color: inherit;
-					cursor: default;
-				}
+			&:hover {
+				color: inherit;
+				border-color: inherit;
+				opacity: .75;
 			}
 		}
 	}

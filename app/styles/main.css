@@ -1689,9 +1689,6 @@ html {
   border: 1px solid #c6c6c6;
   outline: none;
 }
-.contacts .feedback-form input:focus {
-  border: 1px solid #de947d;
-}
 .contacts .feedback-form .input-name {
   margin: 0 3% 0 0;
 }
@@ -1712,9 +1709,6 @@ html {
   outline: none;
   resize: none;
 }
-.contacts .feedback-form textarea:focus {
-  border: 1px solid #de947d;
-}
 .contacts .feedback-form .ng-dirty.ng-valid {
   border-color: #52ac62;
 }
@@ -1725,13 +1719,10 @@ html {
   float: right;
   outline: none;
 }
-.contacts .feedback-form .btn.disabled {
-  opacity: 0.3;
-}
-.contacts .feedback-form .btn.disabled:hover {
-  border-color: #d74e24;
+.contacts .feedback-form .btn:hover {
   color: inherit;
-  cursor: default;
+  border-color: inherit;
+  opacity: .75;
 }
 .contacts .map {
   width: 100%;
@@ -1981,6 +1972,9 @@ html {
   background: no-repeat left center;
   background-size: auto 100%;
 }
+.similar-products .similar-products-head img {
+  height: 100%;
+}
 .similar-products .similar-products-body .dl {
   font-size: 14px;
   font-size: 0.875rem;
@@ -2078,6 +2072,12 @@ html {
   width: 286px;
   width: 17.875rem;
 }
+.search-results-wrap .goods-ul .goods-li:hover {
+  color: inherit;
+}
+.search-results-wrap .goods-ul .goods-li:hover .goods-li-country {
+  color: inherit;
+}
 .fancybox-opened .fancybox-title {
   position: absolute;
   bottom: 0;
@@ -2129,6 +2129,35 @@ html {
 }
 .fancybox-overlay {
   background: rgba(0, 0, 0, 0.7);
+}
+.collFancybox .fancybox-skin {
+  background: none;
+}
+.collFancybox .fancybox-outer,
+.collFancybox .fancybox-inner {
+  position: relative;
+  right: 25%;
+}
+.collFancybox .fancybox-prev {
+  left: -25%;
+}
+.collFancybox .fancybox-next {
+  right: -75%;
+}
+.collFancybox .fancybox-close {
+  right: -70%;
+}
+.collFancybox.fancybox-opened .fancybox-title {
+  top: 0;
+  left: 50%;
+  height: 100%;
+  background: none;
+  line-height: 3rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+.collFancybox.fancybox-opened .fancybox-title strong {
+  font-weight: 300;
+  color: #fff;
 }
 .filters {
   position: relative;
