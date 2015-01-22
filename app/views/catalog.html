@@ -123,7 +123,7 @@
 				<ul class="goods-ul clearfix">
 					<li class="goods-li" ng-repeat="collection in CatCtrl.collections | filter: CatCtrl.filterByCountries | filter: CatCtrl.filterByFactories | filter: CatCtrl.filterByColors | filter: CatCtrl.filterByPrice | filter: CatCtrl.filterBySurface | filter: CatCtrl.filterByPlace | filter: CatCtrl.filterByFormat | filter: CatCtrl.filterBySurfaceTypes">
 						<div class="goods-li-head" style="background-image:url({{ CatCtrl.photos[ CatCtrl.galleries[collection.gallery_id].photos[0] ].full }})">
-							<a href="#!/collection/{{ collection.id }}"></a>						
+							<a href="#!/collection/{{ collection.slug }}"></a>						
 						</div>
 						<div class="goods-li-body">
 							<div class="goods-li-brand" style="background-image:url({{ CatCtrl.photos[CatCtrl.factories[ collection.factory_id ].image_id].full }})"></div>

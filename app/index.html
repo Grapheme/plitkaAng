@@ -80,7 +80,7 @@
 							</li>
 							<li class="subnav-li tile" ng-class="{ active: SubmCtrl.isActive('75') }">
 								<div class="subnav-li-top">
-									<a href="#!/catalog/1?type=75">
+									<a href="#!/catalog/plitka">
 										<span>Плитка</span>
 									</a>
 								</div>
@@ -94,16 +94,16 @@
 							</li>
 							<li class="subnav-li stone" ng-class="{ active: SubmCtrl.isActive('76') || SubmCtrl.isActive('76.5') || SubmCtrl.isActive('77') }">
 								<div class="subnav-li-top">
-									<a href="#!/catalog/1?type=76.5">
+									<a href="#!/catalog/kamen">
 										<span>Камень</span>
 									</a>
 								</div>
 								<div class="subnav-li-desc">
 									<div class="subnav-li-desc-link">
-										<a href="#!/catalog/1?type=76">Искусственный камень</a>
+										<a href="#!/catalog/iskusstvenniy_kamen">Искусственный камень</a>
 									</div>
 									<div class="subnav-li-desc-link">
-										<a href="#!/catalog/1?type=77">
+										<a href="#!/catalog/naturalniy_kamen">
 											Натуральный камень
 										</a>
 									</div>
@@ -111,7 +111,7 @@
 							</li>
 							<li class="subnav-li mosaic"ng-class="{ active: SubmCtrl.isActive('78') }" >
 								<div class="subnav-li-top">
-									<a href="#!/catalog/1?type=78">
+									<a href="#!/catalog/mozaika">
 										<span>Мозаика</span>
 									</a>
 								</div>
@@ -150,13 +150,13 @@
 							</li>
 							<li class="subnav-li materials" ng-class="{ active: SubmCtrl.isActive('79') }">
 								<div class="subnav-li-top">
-									<a href="#!/catalog/1?type=79">
+									<a href="#!/catalog/soputstvuiuschie_materiali">
 										<span>Сопутствующие материалы</span>
 									</a>
 								</div>
 								<div class="subnav-li-desc">
 									<div class="subnav-li-desc-link" ng-repeat="(key, item) in SubmCtrl.materials">
-										<a href="#!/collection/{{ SubmCtrl.materials[key].id }}">
+										<a href="#!/collection/{{ SubmCtrl.materials[key].slug }}">
 											{{ SubmCtrl.materials[key].name }}
 										</a>
 									</div>

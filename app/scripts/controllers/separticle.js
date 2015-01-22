@@ -22,10 +22,18 @@ angular.module('plitkaApp')
 		$http.get('http://plitka.dev.grapheme.ru/application/get').success(function(data){
 			self.data = data;
 
-			//Break data into objects
-			self.articleId = $routeParams.id;
+			//Get article data
 			self.articles = self.data.articles;
 			self.photos = self.data.photos;
+
+			//Break article into another array
+			self.articleBySlug = {};
+			for(var key in self.articles) {
+				self.articleBySlug[ self.articles[key].slug ] = self.articles[key];
+			}
+
+			self.articleId = self.articleBySlug[$routeParams.id].id;
+
 
 			$rootScope.h1 = self.articles[ self.articleId ].seo.h1;
 			$rootScope.title = self.articles[ self.articleId ].seo.title;

@@ -120,76 +120,88 @@ angular.module('plitkaApp')
 			//Если указана единица - то мы применяем к коллекциям фильтр по типу поверхности
 			self.catalogPos = $routeParams.type;
 
-			if($routeParams.id == 1 && $routeParams.type == 75) {
+			if($routeParams.id == 'plitka') {
 				for(var key in self.collections) {
-					if(self.collections[key].product_type_id == $routeParams.type) {
+					if(self.collections[key].product_type_id == 75) {
 						self.collectionsFilter.push(self.collections[key]);
 					}
 				}
 				self.collections = self.collectionsFilter;
-				self.catalogHeader = self.productType[$routeParams.type].name || 'Каталог';
+				self.catalogHeader = self.productType[75].name || 'Каталог';
 			}
-			if($routeParams.id == 1 && $routeParams.type == 76) {
+			if($routeParams.id == 'iskusstvenniy_kamen') {
 				for(var key in self.collections) {
-					if(self.collections[key].product_type_id == $routeParams.type) {
+					if(self.collections[key].product_type_id == 76) {
 						self.collectionsFilter.push(self.collections[key]);
 					}
 				}
 				self.collections = self.collectionsFilter;
-				self.catalogHeader = self.productType[$routeParams.type].name || 'Каталог';
+				self.catalogHeader = self.productType[76].name || 'Каталог';
 			}
-			if($routeParams.id == 1 && $routeParams.type == 76.5) {
+			if($routeParams.id == 'kamen') {
 				for(var key in self.collections) {
-					if(self.collections[key].product_type_id == $routeParams.type-0.5 || self.collections[key].product_type_id == $routeParams.type+0.5) {
+					if(self.collections[key].product_type_id == 76.5-0.5 || self.collections[key].product_type_id == 76.5+0.5) {
 						self.collectionsFilter.push(self.collections[key]);
 					}
 				}
 				self.collections = self.collectionsFilter;
 				self.catalogHeader = 'Камень';
 			}
-			if($routeParams.id == 1 && $routeParams.type == 77) {
+			if($routeParams.id == 'naturalniy_kamen') {
 				for(var key in self.collections) {
-					if(self.collections[key].product_type_id == $routeParams.type) {
+					if(self.collections[key].product_type_id == 77) {
 						self.collectionsFilter.push(self.collections[key]);
 					}
 				}
 				self.collections = self.collectionsFilter;
-				self.catalogHeader = self.productType[$routeParams.type].name || 'Каталог';
+				self.catalogHeader = self.productType[77].name || 'Каталог';
 			}
-			if($routeParams.id == 1 && $routeParams.type == 78) {
+			if($routeParams.id == 'mozaika') {
 				for(var key in self.collections) {
-					if(self.collections[key].product_type_id == $routeParams.type) {
+					if(self.collections[key].product_type_id == 78) {
 						self.collectionsFilter.push(self.collections[key]);
 					}
 				}
 				self.collections = self.collectionsFilter;
-				self.catalogHeader = self.productType[$routeParams.type].name || 'Каталог';
+				self.catalogHeader = self.productType[78].name || 'Каталог';
 			}
-			if($routeParams.id == 1 && $routeParams.type == 79) {
+			if($routeParams.id == 'soputstvuiuschie_materiali') {
 				for(var key in self.materialsCollections) {
-					if(self.materialsCollections[key].product_type_id == $routeParams.type) {
+					if(self.materialsCollections[key].product_type_id == 79) {
 						self.collectionsFilter.push(self.materialsCollections[key]);
 					}
 				}
 				self.collections = self.collectionsFilter;
-				self.catalogHeader = self.productType[$routeParams.type].name || 'Каталог';
+				self.catalogHeader = self.productType[79].name || 'Каталог';
+			}
+
+			self.clearFiltersByURL = function(){
+				$cookies.placeFilter = [];
+				$cookies.surfaceTypesFilter = [];
+				$cookies.factoryFilter = [];
 			}
 
 			//Если указана двойка - то мы применяем к коллекция фильтр по месту применения
 			if($routeParams.id == 1 && $routeParams.places) {
+				self.clearFiltersByURL();
+
 				setTimeout( function(){
 					$('[data-place="' + $routeParams.places + '"]').trigger('click');
-				}, 100);
+				}, 1001);
 			}
 			if($routeParams.id == 1 && $routeParams.surface) {
+				self.clearFiltersByURL();
+
 				setTimeout( function(){
 					$('[data-surface-type="' + $routeParams.surface + '"]').trigger('click');
-				}, 100);
+				}, 1001);
 			}
 			if($routeParams.id == 1 && $routeParams.factory) {
+				self.clearFiltersByURL();
+
 				setTimeout( function(){
 					$('[data-factory="' + $routeParams.factory + '"]').trigger('click');
-				}, 100);
+				}, 1001);
 			}
 
 			//Get all collections for this product type

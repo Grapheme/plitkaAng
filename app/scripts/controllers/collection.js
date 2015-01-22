@@ -28,6 +28,19 @@ angular.module('plitkaApp')
 			self.surfaceTypes = self.data.surface_type;
 			self.formats = self.data.format;
 
+			//Теперь нам нужно получить коллекцию не по айдишнику, а по уникальному имени(slug)
+			//Сначала из ассоциативного массива коллекций сделаем обычный, чтоб перебрать его и получить
+			//Искомую коллекцию
+			//А еще лучше - сделаем свой массив с блэкджеком и шлюхами, ключ в котором - slug
+
+			self.collectionBySlug = {};
+			for (var key in self.collections) {
+				self.collectionBySlug[ self.collections[ key ].slug ] = self.collections[ key ];
+			}
+
+			console.log( self.collectionBySlug );
+			self.collections = self.collectionBySlug;
+
 			//Наша коллекция
 			self.collection = self.collections[ self.collectionId ];
 			//Фото коллекции
@@ -60,8 +73,8 @@ angular.module('plitkaApp')
 			}
 			//Теперь вычислим место отображаемой коллекции в этом поцизии
 			self.collectionPos = self.sameCollections.map(function(e) { return e.id; }).indexOf(self.collection.id);
-			self.leftLink = (self.sameCollections[self.collectionPos - 1]) ? self.sameCollections[self.collectionPos - 1].id : '';
-			self.rightLink = (self.sameCollections[self.collectionPos + 1]) ? self.sameCollections[self.collectionPos + 1].id : '';
+			self.leftLink = (self.sameCollections[self.collectionPos - 1]) ? self.sameCollections[self.collectionPos - 1].slug : '';
+			self.rightLink = (self.sameCollections[self.collectionPos + 1]) ? self.sameCollections[self.collectionPos + 1].slug : '';
 
 			//Fotorama init
 			setTimeout( function(){
@@ -96,11 +109,11 @@ angular.module('plitkaApp')
 				}
 			}
 
-
+			self.collectionNumId = self.collectionBySlug[ self.collectionId ].id;
 			//Make products array for current collection
 			self.productsArr = [];
 			for(var key in self.products) {
-				if( self.products[key].collection_id == self.collectionId ) {
+				if( self.products[key].collection_id == self.collectionNumId ) {
 					self.productsArr.push( self.products[key] );
 				}
 			}
