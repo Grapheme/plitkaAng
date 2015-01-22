@@ -68,8 +68,8 @@
 		<ul class="similar-products-ul clearfix">
 			<li class="similar-products-li" ng-repeat="product in CollCtrl.productsArr">
 				<div class="similar-products-head">
-					<a class="fancybox" 
-						title="
+					<a class="fancybox" title="{{ product.name }}"
+						data-fancybox-title="
 							<img style='background: #fff; padding: 8px;' src='{{ CollCtrl.factoryImg }}'>
 							<div>
 								<strong>Тип</strong>: {{ CollCtrl.collectionSurfType }}
@@ -88,7 +88,7 @@
 							</div>
 							" 
 
-						rel="gallery" href="{{ CollCtrl.photos[ product.image_id ].full }}">
+						rel="gallery" href="#" data-fancybox-href="{{ CollCtrl.photos[ product.image_id ].full }}">
 						<img src="{{ CollCtrl.photos[ product.image_id ].full }}" alt="">
 					</a>					
 				</div>

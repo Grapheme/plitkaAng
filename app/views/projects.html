@@ -9,7 +9,7 @@
 					<a class="fancybox" title="{{ project.name }}" rel="gallery{{$index}}" href="{{ ProjCtrl.photos[ project.image_id ].full }}"></a>
 					
 					<span class="fancybox-gallery-item" ng-repeat="photo in ProjCtrl.galleries[project.gallery_id].photos">
-						<a class="fancybox" title="{{ project.name }}" rel="gallery{{$parent.$index}}" data-fancybox-href="{{ ProjCtrl.photos[ photo ].full }}"></a>
+						<a class="fancybox" title="{{ project.name }}" href="#" rel="gallery{{$parent.$index}}" data-fancybox-href="{{ ProjCtrl.photos[ photo ].full }}"></a>
 					</span>
 
 				</div>
