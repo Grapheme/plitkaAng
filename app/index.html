@@ -216,7 +216,22 @@
 		<!-- /Yandex.Metrika counter -->
 
 		<script src="//use.typekit.net/xfh4rnr.js"></script>
-		<script>try{Typekit.load();}catch(e){}</script>
+		<script>try{Typekit.load({
+				      loading: function() {
+				        // JavaScript to execute when fonts start loading
+				      },
+				      active: function() {
+				        if(window.__loaded == true) {
+							$('.loader').fadeOut(400);
+						} else {
+							window.__loaded = true;
+						}
+				      },
+				      inactive: function() {
+				        // JavaScript to execute when fonts become inactive
+				      }
+				    })
+		;}catch(e){}</script>
 		<script type="text/javascript"
       src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA4Q5VgK-858jgeSbJKHbclop_XIJs3lXs&sensor=true"></script>
 

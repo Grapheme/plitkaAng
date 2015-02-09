@@ -25,7 +25,11 @@ angular
 	}])
 	.run( ['$http', function($http){
 		$http.get('http://plitka.dev.grapheme.ru/application/get').success(function(data){
-			$('.loader').fadeOut(400);
+			if(window.__loaded == true) {
+				$('.loader').fadeOut(400);
+			} else {
+				window.__loaded = true;
+			}
 		});
 	}])
 	.config(function ($routeProvider) {
