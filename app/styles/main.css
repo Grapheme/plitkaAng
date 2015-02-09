@@ -1607,6 +1607,17 @@ html {
   line-height: 18px;
   line-height: 1.125rem;
 }
+.contacts .contacts-phones .contacts-email {
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-bottom: 1px solid #d74e24;
+  transition: all .2s ease;
+}
+.contacts .contacts-phones .contacts-email:hover {
+  color: #d74e24;
+  border-color: #222222;
+}
 .contacts .work-time {
   margin: 0 0 40px;
   margin: 0 0 2.5rem;
@@ -1731,6 +1742,17 @@ html {
   height: 26.25rem;
   margin: 21px 0 0;
   margin: 1.3125rem 0 0;
+}
+.contacts .contact-inblock {
+  display: inline-block;
+  margin-right: 70px;
+  margin-right: 4.375rem;
+}
+.contacts .contact-inblock.inblock-wom {
+  margin-right: 0;
+}
+.loader {
+  display: none !important;
 }
 .articles {
   padding: 58px 0 50px;
