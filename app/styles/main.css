@@ -1745,8 +1745,8 @@ html {
 }
 .contacts .contact-inblock {
   display: inline-block;
-  margin-right: 50px;
-  margin-right: 3.125rem;
+  margin-right: 70px;
+  margin-right: 4.375rem;
 }
 .contacts .contact-inblock.inblock-wom {
   margin-right: 0;
