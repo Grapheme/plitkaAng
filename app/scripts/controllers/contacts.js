@@ -88,6 +88,7 @@ angular.module('plitkaApp')
 
 			self.header = self.data.pages.contacts.name;
 			self.phones = self.contactsDataBlocks['phones'].content;
+			self.email = self.contactsDataBlocks['email'].content;
 			self.workTime = self.contactsDataBlocks['work-time-clearfix'].content;
 			self.contactsColumn = self.contactsDataBlocks['contacts-column'].content;
 
