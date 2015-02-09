@@ -4,8 +4,17 @@
 			{{ $root.h1 }}
 		</h1>
 		<div class="contacts-column">
-			<h3>Телефоны</h3>
-			<div ng-bind-html="ContCtrl.phones"></div>
+			<div class="contact-inblock">
+				<h3>Телефоны</h3>
+				<div ng-bind-html="ContCtrl.phones"></div>
+			</div>
+			<div class="contact-inblock inblock-wom">
+				<h3>Почта</h3>
+				<div ng-bind-html="ContCtrl.email"></div>
+				<!-- <div class="contacts-phones">
+					<a class="contacts-email" href="mailto:info@plitkamira.ru">info@plitkamira.ru</a>
+				</div> -->
+			</div>
 
 			<h3>График работы</h3>
 			<div ng-bind-html="ContCtrl.workTime"></div>
