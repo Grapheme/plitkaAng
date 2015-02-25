@@ -1820,6 +1820,12 @@ html {
 .sep-entity .sep-entity-desc p {
   margin-top: 0;
 }
+.sep-entity .sep-entity-desc a {
+  font-size: 1em;
+  font-style: normal;
+  margin: 0;
+  text-decoration: underline;
+}
 .sep-entity .sep-entity-nav {
   margin: 0 0 100px;
   margin: 0 0 6.25rem;

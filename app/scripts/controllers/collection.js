@@ -15,6 +15,12 @@ angular.module('plitkaApp')
 		$http.get('http://plitka.dev.grapheme.ru/application/get').success(function(data){
 			self.data = data;
 
+			$.each(self.data.options, function(index, value){
+				if(value.slug == 'course_euro_rub') {
+					self.course_euro_rub = value.name;
+				}
+			});
+
 			//Break data into objects
 			self.collectionId = $routeParams.id;
 			
@@ -89,7 +95,7 @@ angular.module('plitkaApp')
 			}, 100);
 
 			//Fancybox init
-			var fancybox = $('.fancybox').fancybox({
+			/*var fancybox = $('.fancybox').fancybox({
 				maxWidth: 450,
 				wrapCSS: 'collFancybox',
 				padding: 0,
@@ -98,7 +104,7 @@ angular.module('plitkaApp')
 						type: 'inside'
 					}
 				}
-			});
+			});*/
 			
 			//Места применения
 			self.dicvals = self.collection.related_dicvals;
@@ -114,9 +120,22 @@ angular.module('plitkaApp')
 			self.productsArr = [];
 			for(var key in self.products) {
 				if( self.products[key].collection_id == self.collectionNumId ) {
-					self.productsArr.push( self.products[key] );
+					var product_obj = self.products[key];
+					if(product_obj.unit) {
+						product_obj.price = parseInt(product_obj.price, 10);
+					}
+					if(product_obj.price_euro) {
+						var product_price = product_obj.price_euro * self.course_euro_rub;
+						product_obj.price = product_price;
+					}
+					if(product_obj.unit) {
+						var unit_str = self.data.units[product_obj.unit].name;
+						product_obj.price += ' руб/' + unit_str;
+					}
+					self.productsArr.push( product_obj );
 				}
 			}
+			//console.log(self.productsArr);
 
 			// SEO REQUIREMENT: 
 		    // PhantomJS pre-rendering workflow requires the page to declare, through htmlReady(), that
