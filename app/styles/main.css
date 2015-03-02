@@ -141,7 +141,6 @@ strong {
 }
 blockquote {
   margin: 1em 40px;
-  margin: 1em 2.5rem;
 }
 /**
  * Address styling not present in Safari 5 and Chrome.
@@ -241,7 +240,6 @@ ul {
 }
 dd {
   margin: 0 0 0 40px;
-  margin: 0 0 0 2.5rem;
 }
 /**
  * Address paddings set differently in IE 6/7.
@@ -250,7 +248,6 @@ menu,
 ol,
 ul {
   padding: 0 0 0 40px;
-  padding: 0 0 0 2.5rem;
 }
 /**
  * Correct list images handled incorrectly in IE 7.
@@ -303,7 +300,6 @@ form {
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
-  margin: 0 0.125rem;
   padding: 0.35em 0.625em 0.75em;
 }
 /**
@@ -318,7 +314,6 @@ legend {
   white-space: normal;
   /* 2 */
   *margin-left: -7px;
-  *margin-left: -0.4375rem;
   /* 3 */
 }
 /**
@@ -398,10 +393,8 @@ input[type="radio"] {
   padding: 0;
   /* 2 */
   *height: 13px;
-  *height: 0.8125rem;
   /* 3 */
   *width: 13px;
-  *width: 0.8125rem;
   /* 3 */
 }
 /**
@@ -492,7 +485,6 @@ html {
 hr {
   display: block;
   height: 1px;
-  height: 0.0625rem;
   border: 0;
   border-top: 1px solid #ccc;
   margin: 1em 0;
@@ -550,9 +542,7 @@ a[href^="tel"] {
   color: #666;
   text-decoration: none;
   font-size: 14px;
-  font-size: 0.875rem;
   line-height: 20px;
-  line-height: 1.25rem;
   border-bottom: 1px solid #d74e24;
 }
 .typical-link:hover {
@@ -597,28 +587,22 @@ a[href^="tel"] {
   position: relative;
   z-index: 1;
   height: 400px;
-  height: 25rem;
   display: table-cell;
   vertical-align: middle;
 }
 .slide .slide-sign .slide-sign-cont {
   display: inline-block;
   margin: 0 0 0 82px;
-  margin: 0 0 0 5.125rem;
   padding: 15px 32px;
-  padding: 0.9375rem 2rem;
   color: #fff;
   font-size: 36px;
-  font-size: 2.25rem;
   line-height: 48px;
-  line-height: 3rem;
   font-weight: 100;
   background: #414141;
   background: rgba(41, 41, 41, 0.49);
 }
 .fotorama__arr {
   width: 82px;
-  width: 5.125rem;
   background: none;
   text-align: center;
 }
@@ -628,9 +612,7 @@ a[href^="tel"] {
   transform: rotate(-45deg);
   display: inline-block;
   width: 14px;
-  width: 0.875rem;
   height: 14px;
-  height: 0.875rem;
   border-top: 3px solid #fff;
   border-left: 3px solid #fff;
   background: rgba(255, 255, 255, 0.28);
@@ -645,9 +627,7 @@ a[href^="tel"] {
   transform: rotate(45deg);
   display: inline-block;
   width: 14px;
-  width: 0.875rem;
   height: 14px;
-  height: 0.875rem;
   border-top: 3px solid #fff;
   border-right: 3px solid #fff;
   background: rgba(255, 255, 255, 0.28);
@@ -721,20 +701,15 @@ a[href^="tel"] {
 .btn {
   transition: all .4s ease;
   height: 68px;
-  height: 4.25rem;
   padding: 0 42px;
-  padding: 0 2.625rem;
   border: 2px solid #d74e24;
   line-height: 68px;
-  line-height: 4.25rem;
   background: #fff;
   color: #000;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 18px;
-  font-size: 1.125rem;
   border-radius: 2px;
-  border-radius: 0.125rem;
 }
 .btn:hover {
   color: #d74e24;
@@ -754,22 +729,16 @@ a[href^="tel"] {
   top: 50%;
   left: 50%;
   width: 64px;
-  width: 4rem;
   height: 64px;
-  height: 4rem;
   margin: -32px 0 0 -32px;
-  margin: -2rem 0 0 -2rem;
 }
 .main-header-top-wrap {
   height: 52px;
-  height: 3.25rem;
   background: #404040;
 }
 .main-header-top {
   width: 1190px;
-  width: 74.375rem;
   height: 52px;
-  height: 3.25rem;
   margin: 0 auto;
   background: #404040;
 }
@@ -787,12 +756,9 @@ a[href^="tel"] {
   transition: all .4s ease;
   float: left;
   height: 52px;
-  height: 3.25rem;
   border-right: 1px solid #6c6c6c;
   font-size: 14px;
-  font-size: 0.875rem;
   line-height: 52px;
-  line-height: 3.25rem;
   text-transform: uppercase;
 }
 .main-header-top .nav-li.active {
@@ -806,10 +772,8 @@ a[href^="tel"] {
   width: 0;
   height: 0;
   margin: 0 0 0 -6px;
-  margin: 0 0 0 -0.375rem;
   border-style: solid;
   border-width: 0 6px 6px 6px;
-  border-width: 0 0.375rem 0.375rem 0.375rem;
   border-color: transparent transparent #f1f1f1 transparent;
 }
 .main-header-top .nav-li.active:hover {
@@ -826,9 +790,7 @@ a[href^="tel"] {
   display: block;
   height: 100%;
   padding: 0 18px;
-  padding: 0 1.125rem;
   font-size: 16px;
-  font-size: 1rem;
   color: white;
   text-decoration: none;
   outline: none;
@@ -836,7 +798,6 @@ a[href^="tel"] {
 .main-header-top .phone {
   float: left;
   line-height: 52px;
-  line-height: 3.25rem;
 }
 .main-header-top .phone a {
   color: white;
@@ -848,51 +809,37 @@ a[href^="tel"] {
 .main-search .main-search-form {
   position: relative;
   margin: 0 24px 0 0;
-  margin: 0 1.5rem 0 0;
 }
 .main-search .main-search-input {
   width: 276px;
-  width: 17.25rem;
   height: 26px;
-  height: 1.625rem;
   padding: 0 5px;
-  padding: 0 0.3125rem;
   margin: 13px 0;
-  margin: 0.8125rem 0;
   border: none;
   background: #c6c6c6;
   border-radius: 1px;
-  border-radius: 0.0625rem;
 }
 .main-search .main-search-submit {
   position: absolute;
   top: 13px;
-  top: 0.8125rem;
   right: 0;
   width: 32px;
-  width: 2rem;
   height: 26px;
-  height: 1.625rem;
   margin: 0;
   padding: 0;
   border: none;
   border-radius: 1px;
-  border-radius: 0.0625rem;
   line-height: 26px;
-  line-height: 1.625rem;
   color: white;
   background: none;
 }
 .main-header-bot-wrap {
   height: 168px;
-  height: 10.5rem;
   background: #f1f1f1;
 }
 .main-header-bot {
   width: 1190px;
-  width: 74.375rem;
   height: 52px;
-  height: 3.25rem;
   margin: 0 auto;
 }
 .main-header-bot .subnav-ul {
@@ -920,7 +867,6 @@ a[href^="tel"] {
   position: absolute;
   top: 0 !important;
   left: -1px;
-  left: -0.0625rem;
   height: 100% !important;
   margin: 0 !important;
   border-right: 1px solid #fff !important;
@@ -945,7 +891,6 @@ a[href^="tel"] {
   position: absolute;
   top: 0;
   left: -1px;
-  left: -0.0625rem;
   height: 100% !important;
   margin: 0;
   border-right: 1px solid #fff !important;
@@ -957,10 +902,8 @@ a[href^="tel"] {
   top: 50%;
   right: 0;
   height: 52px;
-  height: 3.25rem;
   border-right: 1px solid #b3b3b3;
   margin-top: -26px;
-  margin-top: -1.625rem;
 }
 .main-header-bot .subnav-li.logo-cont {
   width: 18%;
@@ -985,10 +928,8 @@ a[href^="tel"] {
   top: 50%;
   left: 0;
   height: 52px;
-  height: 3.25rem;
   border-right: 1px solid #b3b3b3;
   margin-top: -26px;
-  margin-top: -1.625rem;
 }
 .main-header-bot .subnav-li.stone .subnav-li-top {
   background-image: url(../images/subnav/02.png);
@@ -1012,14 +953,10 @@ a[href^="tel"] {
 .main-header-bot .subnav-li .subnav-li-top {
   position: relative;
   height: 168px;
-  height: 10.5rem;
   padding-left: 5rem;
   background: no-repeat 4px center;
-  background: no-repeat 0.25rem center;
   font: 18px 'din-condensed-web';
-  font: 1.125rem 'din-condensed-web';
   line-height: 15.6px;
-  line-height: 0.975rem;
   text-transform: uppercase;
 }
 .main-header-bot .subnav-li .subnav-li-top > a {
@@ -1047,18 +984,14 @@ a[href^="tel"] {
   left: 0;
   width: 100%;
   height: 0;
-  padding: 0 30px 0 34px;
-  padding: 0 1.875rem 0 2.125rem;
+  padding: 0 30px 0 2.125rem;
   background: #fff;
   background: rgba(247, 247, 247, 0.9);
 }
 .main-header-bot .subnav-li .subnav-li-desc .subnav-li-desc-text {
   margin: 28px 0 10px;
-  margin: 1.75rem 0 0.625rem;
   font-size: 14px;
-  font-size: 0.875rem;
   line-height: 25px;
-  line-height: 1.5625rem;
 }
 .main-header-bot .subnav-li .subnav-li-desc .subnav-li-desc-text a {
   transition: all .4s ease;
@@ -1066,9 +999,7 @@ a[href^="tel"] {
   color: #666;
   text-decoration: none;
   font-size: 14px;
-  font-size: 0.875rem;
   line-height: 20px;
-  line-height: 1.25rem;
   border-bottom: 1px solid #d74e24;
   display: inline;
 }
@@ -1078,7 +1009,6 @@ a[href^="tel"] {
 }
 .main-header-bot .subnav-li .subnav-li-desc .subnav-li-desc-link {
   margin: 10px 0;
-  margin: 0.625rem 0;
 }
 .main-header-bot .subnav-li .subnav-li-desc .subnav-li-desc-link a {
   transition: all .4s ease;
@@ -1086,9 +1016,7 @@ a[href^="tel"] {
   color: #666;
   text-decoration: none;
   font-size: 14px;
-  font-size: 0.875rem;
   line-height: 20px;
-  line-height: 1.25rem;
   border-bottom: 1px solid #d74e24;
   display: inline;
   color: #000;
@@ -1102,87 +1030,66 @@ a[href^="tel"] {
 .main-header-bot .logo {
   margin: 0;
   font-size: 24px;
-  font-size: 1.5rem;
   line-height: 22px;
-  line-height: 1.375rem;
   text-transform: uppercase;
   color: black;
   background: url(../images/logo.png) no-repeat 4px center;
-  background: url(../images/logo.png) no-repeat 0.25rem center;
 }
 .main-header-bot .logo a {
   display: table-cell;
   vertical-align: middle;
   width: 212px;
-  width: 13.25rem;
   height: 168px;
-  height: 10.5rem;
   padding: 0 0 0 68px;
-  padding: 0 0 0 4.25rem;
   outline: none;
   text-decoration: none;
   color: inherit;
   text-indent: -9999px;
-  text-indent: -624.9375rem;
 }
 html {
   font: 16px 'HelveticaNeue', serif;
-  font: 1rem 'HelveticaNeue', serif;
 }
 .header-medium {
   margin: 0;
   font: 24px / 1.75 "din-condensed-web";
-  font: 1.5rem / 1.75 "din-condensed-web";
   text-transform: uppercase;
 }
 .header-small {
   margin: 0;
   font: 24px / 1.75 "din-condensed-web";
-  font: 1.5rem / 1.75 "din-condensed-web";
   text-transform: uppercase;
   margin: 0 0 10px;
   font-size: 20px;
-  font-size: 1.25rem;
 }
 .section-cont {
   width: 1190px;
-  width: 74.375rem;
   margin: 0 auto;
 }
 .section-cont h2 {
   margin: 0;
   font: 24px / 1.75 "din-condensed-web";
-  font: 1.5rem / 1.75 "din-condensed-web";
   text-transform: uppercase;
 }
 .section-cont h3 {
   margin: 0;
   font: 24px / 1.75 "din-condensed-web";
-  font: 1.5rem / 1.75 "din-condensed-web";
   text-transform: uppercase;
   margin: 0 0 10px;
   font-size: 20px;
-  font-size: 1.25rem;
 }
 .section-cont p {
   margin: 0 0 32px;
-  margin: 0 0 2rem;
   font-size: 16px;
-  font-size: 1rem;
   line-height: 24px;
-  line-height: 1.5rem;
 }
 .main-footer {
   border-top: 1px solid #f1f1f1;
 }
 .main-footer .main-footer-cont {
   max-width: 1190px;
-  max-width: 74.375rem;
   height: 115px;
-  height: 7.1875rem;
   margin: 0 auto;
   padding: 31px 0 0;
-  padding: 1.9375rem 0 0;
 }
 .main-footer .copy {
   float: left;
@@ -1190,11 +1097,8 @@ html {
 .main-footer .copy .copy-text {
   position: relative;
   left: -18px;
-  left: -1.125rem;
   margin: 0 0 8px;
-  margin: 0 0 0.5rem;
   font-size: 14px;
-  font-size: 0.875rem;
   color: #f1f1f1;
   color: rgba(0, 0, 0, 0.5);
 }
@@ -1204,9 +1108,7 @@ html {
   color: #666;
   text-decoration: none;
   font-size: 14px;
-  font-size: 0.875rem;
   line-height: 20px;
-  line-height: 1.25rem;
   border-bottom: 1px solid #d74e24;
 }
 .main-footer .copy .map-link:hover {
@@ -1216,7 +1118,6 @@ html {
 .main-footer .dev {
   float: right;
   font-size: 14px;
-  font-size: 0.875rem;
   color: #f1f1f1;
   color: rgba(0, 0, 0, 0.5);
 }
@@ -1226,9 +1127,7 @@ html {
   color: #666;
   text-decoration: none;
   font-size: 14px;
-  font-size: 0.875rem;
   line-height: 20px;
-  line-height: 1.25rem;
   border-bottom: 1px solid #d74e24;
   text-transform: uppercase;
   color: inherit;
@@ -1239,7 +1138,6 @@ html {
 }
 .goods {
   margin: 40px 0 0;
-  margin: 2.5rem 0 0;
 }
 .goods-ul {
   margin: 0;
@@ -1251,11 +1149,9 @@ html {
 }
 .goods-ul.products-ul .goods-li-head {
   height: 352px;
-  height: 22rem;
 }
 .goods-ul.products-ul .goods-li-body {
   height: 222px;
-  height: 13.875rem;
 }
 .goods-ul.products-ul.finished-projects .goods-li-body {
   height: 16rem;
@@ -1287,7 +1183,6 @@ html {
 }
 .goods-ul .goods-li-head {
   height: 211px;
-  height: 13.1875rem;
   background: no-repeat center center;
   background-size: cover;
 }
@@ -1307,38 +1202,28 @@ html {
   position: relative;
   z-index: 1;
   height: 176px;
-  height: 11rem;
   padding: 0 24px;
-  padding: 0 1.5rem;
   border-top: 1px solid #fff;
 }
 .goods-ul .goods-li-body .goods-li-date {
   font-size: 12px;
-  font-size: 0.75rem;
   line-height: 57px;
-  line-height: 3.5625rem;
   color: #6c6c6c;
 }
 .goods-ul .goods-li-body .goods-li-text {
   font: 18px / 20px "din-condensed-web";
-  font: 1.125rem / 1.25rem "din-condensed-web";
 }
 .goods-ul .goods-li-body .goods-li-text:first-child {
   margin: 24px 0 16px;
-  margin: 1.5rem 0 1rem;
 }
 .goods-ul .goods-li-body .goods-li-brand {
   height: 51px;
-  height: 3.1875rem;
   line-height: 51px;
-  line-height: 3.1875rem;
   background: no-repeat 0 center;
   background-size: auto 16px;
-  background-size: auto 1rem;
 }
 .goods-ul .goods-li-body .goods-li-product {
   font-size: 14px;
-  font-size: 0.875rem;
 }
 .goods-ul .goods-li-body .goods-li-product strong {
   display: inline-block;
@@ -1349,57 +1234,42 @@ html {
 .goods-ul .goods-li-body .goods-li-name {
   transition: all .2s ease;
   margin: 0 0 12px;
-  margin: 0 0 0.75rem;
   font-size: 18px;
-  font-size: 1.125rem;
   line-height: 19.2px;
-  line-height: 1.2rem;
   font-weight: 600;
 }
 .goods-ul .goods-li-body .goods-li-country {
   transition: all .2s ease;
   margin: 0 0 30px;
-  margin: 0 0 1.875rem;
   font-size: 14px;
-  font-size: 0.875rem;
   line-height: 19.2px;
-  line-height: 1.2rem;
   font-weight: 300;
 }
 .goods-ul .goods-li-body .goods-li-price {
   transition: all .2s ease;
   font-size: 30px;
-  font-size: 1.875rem;
   line-height: 19.2px;
-  line-height: 1.2rem;
   font-weight: bold;
 }
 .goods-ul .goods-li-body .goods-li-desc {
   font-size: 12px;
-  font-size: 0.75rem;
   line-height: 18px;
-  line-height: 1.125rem;
 }
 .goods-ul .goods-li-body .goods-li-desc p {
   font-size: 12px;
-  font-size: 0.75rem;
   line-height: 18px;
-  line-height: 1.125rem;
 }
 .about {
   padding: 58px 0 50px;
-  padding: 3.625rem 0 3.125rem;
   background: #f1f1f1;
 }
 .about .header-medium {
   margin: 0 0 48px;
-  margin: 0 0 3rem;
 }
 .about .about-cont {
   float: left;
   width: 75%;
   padding: 0 108px 0 0;
-  padding: 0 6.75rem 0 0;
 }
 .about .news {
   float: left;
@@ -1415,14 +1285,11 @@ html {
 }
 .news-ul .news-li {
   margin: 0 0 32px;
-  margin: 0 0 2rem;
 }
 .news-ul .news-date {
   color: #999;
   font-size: 12px;
-  font-size: 0.75rem;
   line-height: 24px;
-  line-height: 1.5rem;
 }
 .news-ul .news-link {
   transition: all .4s ease;
@@ -1430,9 +1297,7 @@ html {
   color: #666;
   text-decoration: none;
   font-size: 14px;
-  font-size: 0.875rem;
   line-height: 20px;
-  line-height: 1.25rem;
   border-bottom: 1px solid #d74e24;
   display: inline;
   color: #000;
@@ -1444,12 +1309,10 @@ html {
 }
 .partners {
   margin: 0 0 84px;
-  margin: 0 0 5.25rem;
 }
 .partners h2 {
   margin: 0;
   font: 24px / 1.75 "din-condensed-web";
-  font: 1.5rem / 1.75 "din-condensed-web";
   text-transform: uppercase;
 }
 .partners ul {
@@ -1457,45 +1320,35 @@ html {
   padding: 0;
   list-style: none;
   margin-top: 32px;
-  margin-top: 2rem;
 }
 .partners li {
   float: left;
   width: 25%;
   height: 110px;
-  height: 6.875rem;
   line-height: 110px;
-  line-height: 6.875rem;
   text-align: center;
 }
 .partners li img {
   max-height: 50px;
-  max-height: 3.125rem;
 }
 .sep-article {
   width: 1190px;
-  width: 74.375rem;
   margin: 25px auto 0;
-  margin: 1.5625rem auto 0;
 }
 .about-main {
   padding: 58px 0 50px;
-  padding: 3.625rem 0 3.125rem;
 }
 .about-main .header-medium {
   margin: 0 0 48px;
-  margin: 0 0 3rem;
 }
 .about-main .about-column {
   float: left;
   width: 33.333%;
   padding: 0 70px 0 0;
-  padding: 0 4.375rem 0 0;
 }
 .about-main .about-column strong {
   display: block;
   padding: 28px;
-  padding: 1.75rem;
   font-weight: 400;
   background: #e5e5e5;
 }
@@ -1505,12 +1358,9 @@ html {
   color: #666;
   text-decoration: none;
   font-size: 14px;
-  font-size: 0.875rem;
   line-height: 20px;
-  line-height: 1.25rem;
   border-bottom: 1px solid #d74e24;
   font-size: 16px;
-  font-size: 1rem;
 }
 .about-main .about-column strong a:hover {
   color: #d74e24;
@@ -1518,38 +1368,30 @@ html {
 }
 .contacts {
   padding: 58px 0 50px;
-  padding: 3.625rem 0 3.125rem;
 }
 .contacts h1 {
   margin: 0 0 48px;
-  margin: 0 0 3rem;
 }
 .contacts h2 {
   margin: 0 0 48px;
-  margin: 0 0 3rem;
 }
 .contacts h3 {
   margin: 0;
   font: 24px / 1.75 "din-condensed-web";
-  font: 1.5rem / 1.75 "din-condensed-web";
   text-transform: uppercase;
   margin: 0 0 10px;
   font-size: 20px;
-  font-size: 1.25rem;
 }
 .contacts .contacts-column {
   float: left;
   width: 50%;
   font-size: 14px;
-  font-size: 0.875rem;
 }
 .contacts .contacts-column:first-child {
   padding: 0 20px 0 0;
-  padding: 0 1.25rem 0 0;
 }
 .contacts .contacts-column:last-child {
   padding: 0 0 0 20px;
-  padding: 0 0 0 1.25rem;
 }
 .contacts .contacts-column address {
   font-style: normal;
@@ -1560,12 +1402,9 @@ html {
   color: #666;
   text-decoration: none;
   font-size: 14px;
-  font-size: 0.875rem;
   line-height: 20px;
-  line-height: 1.25rem;
   border-bottom: 1px solid #d74e24;
   padding: 0 5px;
-  padding: 0 0.3125rem;
   border-bottom-style: dotted;
   cursor: pointer;
 }
@@ -1580,36 +1419,28 @@ html {
 }
 .contacts .contacts-phones {
   margin: 0 0 40px;
-  margin: 0 0 2.5rem;
 }
 .contacts .contacts-phones a {
   color: inherit;
   font-size: 25px;
-  font-size: 1.5625rem;
   line-height: 18px;
-  line-height: 1.125rem;
   text-decoration: none;
   outline: none;
 }
 .contacts .contacts-phones .contacts-left-num {
   padding: 0 18px 0 0;
-  padding: 0 1.125rem 0 0;
   border-right: 1px solid #c6c6c6;
 }
 .contacts .contacts-phones .contacts-right-num {
   padding: 0 0 0 18px;
-  padding: 0 0 0 1.125rem;
 }
 .contacts .contacts-phones .contacts-phones-prefix {
   margin: 0 4px 0 0;
-  margin: 0 0.25rem 0 0;
   vertical-align: top;
   line-height: 18px;
-  line-height: 1.125rem;
 }
 .contacts .contacts-phones .contacts-email {
   font-size: 16px;
-  font-size: 1rem;
   font-weight: 500;
   border-bottom: 1px solid #d74e24;
   transition: all .2s ease;
@@ -1620,13 +1451,11 @@ html {
 }
 .contacts .work-time {
   margin: 0 0 40px;
-  margin: 0 0 2.5rem;
 }
 .contacts .work-time .work-time-col {
   float: left;
   width: 37.333%;
   padding: 0 40px 10px;
-  padding: 0 2.5rem 0.625rem;
   border-right: 1px solid #c6c6c6;
 }
 .contacts .work-time .work-time-col:first-child {
@@ -1638,30 +1467,21 @@ html {
 }
 .contacts .work-time .work-time-area {
   margin: 0 0 6px;
-  margin: 0 0 0.375rem;
   font-size: 14px;
-  font-size: 0.875rem;
 }
 .contacts .work-time .work-time-hours {
   font-size: 25px;
-  font-size: 1.5625rem;
   line-height: 18px;
-  line-height: 1.125rem;
 }
 .contacts .work-time .work-time-hours span {
   font-size: 12px;
-  font-size: 0.75rem;
   vertical-align: text-top;
 }
 .contacts .feedback-form {
   width: 577px;
-  width: 36.0625rem;
   height: 360px;
-  height: 22.5rem;
   padding: 30px 31px;
-  padding: 1.875rem 1.9375rem;
   margin: 0 0 40px;
-  margin: 0 0 2.5rem;
   background: url(../images/form-bg.png) 0 0 no-repeat;
   background-size: 100% 100%;
 }
@@ -1672,32 +1492,24 @@ html {
 .contacts .feedback-form.sended p {
   margin-bottom: 1.1em;
   font-size: 14px;
-  font-size: 0.875rem;
   line-height: 19.2px;
-  line-height: 1.2rem;
 }
 .contacts .feedback-form.sended p strong {
   display: block;
   padding-top: 21%;
   font-size: 18px;
-  font-size: 1.125rem;
 }
 .contacts .feedback-form fieldset {
   margin: 0 0 28px;
-  margin: 0 0 1.75rem;
 }
 .contacts .feedback-form input {
   transition: all .4s ease;
   display: inline-block;
   width: 48.5%;
   height: 48px;
-  height: 3rem;
   padding: 1em 0 1em 27px;
-  padding: 1em 0 1em 1.6875rem;
   font-size: 14px;
-  font-size: 0.875rem;
   border-radius: 2px;
-  border-radius: 0.125rem;
   border: 1px solid #c6c6c6;
   outline: none;
 }
@@ -1708,15 +1520,10 @@ html {
   transition: all .4s ease;
   width: 100%;
   height: 129px;
-  height: 8.0625rem;
   padding: 12px 0 0 27px;
-  padding: 0.75rem 0 0 1.6875rem;
   line-height: 24px;
-  line-height: 1.5rem;
   font-size: 14px;
-  font-size: 0.875rem;
   border-radius: 2px;
-  border-radius: 0.125rem;
   border: 1px solid #c6c6c6;
   outline: none;
   resize: none;
@@ -1739,28 +1546,20 @@ html {
 .contacts .map {
   width: 100%;
   height: 420px;
-  height: 26.25rem;
   margin: 21px 0 0;
-  margin: 1.3125rem 0 0;
 }
 .contacts .contact-inblock {
   display: inline-block;
   margin-right: 70px;
-  margin-right: 4.375rem;
 }
 .contacts .contact-inblock.inblock-wom {
   margin-right: 0;
 }
-.loader {
-  display: none !important;
-}
 .articles {
   padding: 58px 0 50px;
-  padding: 3.625rem 0 3.125rem;
 }
 .articles h2 {
   margin: 0 0 48px;
-  margin: 0 0 3rem;
 }
 .catalog .catalog-items {
   width: 75%;
@@ -1768,7 +1567,6 @@ html {
 }
 .catalog .catalog-items h2 {
   line-height: 70px;
-  line-height: 4.375rem;
 }
 .catalog .goods-ul .goods-li {
   width: 32%;
@@ -1779,33 +1577,25 @@ html {
 }
 .projects {
   padding: 58px 0 50px;
-  padding: 3.625rem 0 3.125rem;
 }
 .projects h2 {
   margin: 0 0 48px;
-  margin: 0 0 3rem;
 }
 .sep-entity .sep-entity-name {
   max-width: 800px;
-  max-width: 50rem;
   margin-bottom: 10px;
-  margin-bottom: 0.625rem;
   font-weight: normal;
 }
 .sep-entity .sep-entity-date {
   color: #6c6c6c;
   font-size: 12px;
-  font-size: 0.75rem;
   line-height: 24px;
-  line-height: 1.5rem;
 }
 .sep-entity .sep-entity-sub-name {
   margin: 20px 0;
-  margin: 1.25rem 0;
 }
 .sep-entity .sep-entity-desc {
   max-width: 800px;
-  max-width: 50rem;
 }
 .sep-entity .sep-entity-desc .sep-article-columns {
   margin-top: 1em;
@@ -1813,9 +1603,7 @@ html {
 }
 .sep-entity .sep-entity-desc img {
   margin-top: 18px;
-  margin-top: 1.125rem;
   margin-bottom: 18px;
-  margin-bottom: 1.125rem;
 }
 .sep-entity .sep-entity-desc p {
   margin-top: 0;
@@ -1828,27 +1616,21 @@ html {
 }
 .sep-entity .sep-entity-nav {
   margin: 0 0 100px;
-  margin: 0 0 6.25rem;
 }
 .sep-entity .icon {
   transition: all .4s ease;
   display: inline-block;
   font-size: 42px;
-  font-size: 2.625rem;
   font-style: normal;
   line-height: 20px;
-  line-height: 1.25rem;
   vertical-align: top;
   color: #c6c6c6;
 }
 .sep-entity a {
   transition: all .4s ease;
   margin: 0 18px 0 0;
-  margin: 0 1.125rem 0 0;
   font-size: 12px;
-  font-size: 0.75rem;
   line-height: 20px;
-  line-height: 1.25rem;
   color: #000;
   text-decoration: none;
   font-style: italic;
@@ -1861,11 +1643,9 @@ html {
 }
 .product {
   margin: 0 0 40px;
-  margin: 0 0 2.5rem;
 }
 .product .product-top {
   margin: 1em 0 32px;
-  margin: 1em 0 2rem;
 }
 .product .back-to-block {
   float: left;
@@ -1874,21 +1654,16 @@ html {
   transition: all .4s ease;
   display: inline-block;
   font-size: 42px;
-  font-size: 2.625rem;
   font-style: normal;
   line-height: 20px;
-  line-height: 1.25rem;
   vertical-align: top;
   color: #c6c6c6;
 }
 .product .back-to-block a {
   transition: all .4s ease;
   margin: 0 18px 0 0;
-  margin: 0 1.125rem 0 0;
   font-size: 12px;
-  font-size: 0.75rem;
   line-height: 20px;
-  line-height: 1.25rem;
   color: #000;
   text-decoration: none;
   font-style: italic;
@@ -1901,9 +1676,7 @@ html {
 }
 .product .breadcrumbs {
   font-size: 14px;
-  font-size: 0.875rem;
   line-height: 22px;
-  line-height: 1.375rem;
   color: #6c6c6c;
 }
 .product .breadcrumbs a {
@@ -1917,7 +1690,6 @@ html {
   float: left;
   width: 60%;
   height: 400px;
-  height: 25rem;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -1936,35 +1708,25 @@ html {
   float: left;
   width: 40%;
   padding: 0 0 0 32px;
-  padding: 0 0 0 2rem;
 }
 .product .product-desc h1 {
   margin: -8px 0 0;
-  margin: -0.5rem 0 0;
   font-size: 39px;
-  font-size: 2.4375rem;
   line-height: 48px;
-  line-height: 3rem;
   font-weight: normal;
 }
 .product .product-desc .product-brand {
   height: 36px;
-  height: 2.25rem;
   background: no-repeat 0 center;
   background-size: auto 14px;
-  background-size: auto 0.875rem;
 }
 .product .product-desc p {
   font-size: 14px;
-  font-size: 0.875rem;
   line-height: 20px;
-  line-height: 1.25rem;
 }
 .product .product-char {
   font-size: 14px;
-  font-size: 0.875rem;
   line-height: 28px;
-  line-height: 1.75rem;
 }
 .product .product-char dt {
   float: left;
@@ -1981,7 +1743,6 @@ html {
 }
 .similar-products .section-cont {
   padding: 66px 0 34px;
-  padding: 4.125rem 0 2.125rem;
 }
 .similar-products .similar-products-ul {
   margin: 0;
@@ -2005,9 +1766,7 @@ html {
 }
 .similar-products .similar-products-body .dl {
   font-size: 14px;
-  font-size: 0.875rem;
   line-height: 28px;
-  line-height: 1.75rem;
 }
 .similar-products .similar-products-body .dt {
   float: left;
@@ -2022,13 +1781,11 @@ html {
 .similar-products .similar-products-price {
   font-weight: 600;
   font-size: 20px;
-  font-size: 1.25rem;
 }
 .wrapper-404 {
   display: table;
   width: 100%;
   height: 524px;
-  height: 32.75rem;
 }
 .wrapper-404-cont {
   display: table-cell;
@@ -2038,9 +1795,7 @@ html {
 .wrapper-404-left {
   display: inline-block;
   width: 274px;
-  width: 17.125rem;
   padding: 0 35px;
-  padding: 0 2.1875rem;
   border-right: 1px solid #d8d8d8;
   text-align: left;
 }
@@ -2051,16 +1806,12 @@ html {
   display: inline-block;
   vertical-align: middle;
   width: 274px;
-  width: 17.125rem;
   padding: 0 35px;
-  padding: 0 2.1875rem;
   text-align: left;
 }
 .wrapper-404-right p {
   font-size: 14px;
-  font-size: 0.875rem;
   line-height: 25px;
-  line-height: 1.5625rem;
 }
 .wrapper-404-right a {
   transition: all .4s ease;
@@ -2068,9 +1819,7 @@ html {
   color: #666;
   text-decoration: none;
   font-size: 14px;
-  font-size: 0.875rem;
   line-height: 20px;
-  line-height: 1.25rem;
   border-bottom: 1px solid #d74e24;
 }
 .wrapper-404-right a:hover {
@@ -2080,25 +1829,19 @@ html {
 .search-results-wrap h1 {
   margin: 1.25em 0;
   font-size: 26px;
-  font-size: 1.625rem;
   font-weight: normal;
   text-transform: uppercase;
 }
 .search-results-wrap .search-results-str {
   font-size: 14px;
-  font-size: 0.875rem;
   line-height: 20px;
-  line-height: 1.25rem;
 }
 .search-results-wrap .search-results-count {
   font-size: 14px;
-  font-size: 0.875rem;
   line-height: 20px;
-  line-height: 1.25rem;
 }
 .search-results-wrap .main-search .main-search-input {
   width: 286px;
-  width: 17.875rem;
 }
 .search-results-wrap .goods-ul .goods-li:hover {
   color: inherit;
@@ -2112,11 +1855,8 @@ html {
   left: 0;
   width: 100%;
   height: 63px;
-  height: 3.9375rem;
   padding: 0 0 0 26px;
-  padding: 0 0 0 1.625rem;
   font: 100 24px/63px "HelveticaNeue", sans-serif;
-  font: 100 1.5rem/3.9375rem "HelveticaNeue", sans-serif;
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
 }
@@ -2125,13 +1865,11 @@ html {
 }
 .fancybox-nav.fancybox-prev span {
   left: -96px;
-  left: -6rem;
   background: url(../images/icons/angle-left-thin.svg) no-repeat center center;
   background-size: auto 100%;
 }
 .fancybox-nav.fancybox-next span {
   right: -96px;
-  right: -6rem;
   background: url(../images/icons/angle-right-thin.svg) no-repeat center center;
   background-size: auto 100%;
 }
@@ -2139,20 +1877,14 @@ html {
   transition: all .4s ease;
   visibility: visible;
   width: 50px;
-  width: 3.125rem;
   height: 50px;
-  height: 3.125rem;
   margin-top: -25px;
-  margin-top: -1.5625rem;
 }
 .fancybox-close {
   width: 50px;
-  width: 3.125rem;
   height: 50px;
-  height: 3.125rem;
   top: 0;
   right: -96px;
-  right: -6rem;
   background: url(../images/icons/close-thin.svg) no-repeat center center;
 }
 .fancybox-overlay {
@@ -2192,13 +1924,9 @@ html {
   float: left;
   width: 23.5%;
   min-height: 414px;
-  min-height: 25.875rem;
   margin: 70px 0 100px;
-  margin: 4.375rem 0 6.25rem;
   padding: 22px 34px;
-  padding: 1.375rem 2.125rem;
   line-height: 24px;
-  line-height: 1.5rem;
   background: #f1f1f1;
 }
 .filters .filter {
@@ -2207,9 +1935,7 @@ html {
 }
 .filters .filter.active {
   margin: -4px -15px 0;
-  margin: -0.25rem -0.9375rem 0;
-  padding: 4px 12px;
-  padding: 0.25rem 0.75rem;
+  padding: 4px .75rem;
   background: #fff;
   border: 1px solid #e5e5e5;
   z-index: 1;
@@ -2243,9 +1969,7 @@ html {
 .filters .filter-name {
   display: inline-block;
   font-size: 12px;
-  font-size: 0.75rem;
   line-height: 24px;
-  line-height: 1.5rem;
   font-weight: 600;
   text-transform: uppercase;
   cursor: pointer;
@@ -2258,9 +1982,7 @@ html {
   display: inline-block;
   padding: 0 7px 0 0;
   font-size: 12px;
-  font-size: 0.75rem;
   line-height: 24px;
-  line-height: 1.5rem;
   color: #de947d;
   cursor: pointer;
 }
@@ -2270,9 +1992,7 @@ html {
 .filters .filter-chosen.colors li {
   vertical-align: middle;
   width: 24px;
-  width: 1.5rem;
   height: 24px;
-  height: 1.5rem;
   border: 2px solid #e5e5e5;
 }
 .filters .filter-chosen.colors li:after {
@@ -2281,7 +2001,6 @@ html {
 .filters .filter-chosen li {
   display: inline-block;
   line-height: 24px;
-  line-height: 1.5rem;
 }
 .filters .filter-chosen li:after {
   content: ',';
@@ -2308,7 +2027,6 @@ html {
   z-index: 3;
   width: 100%;
   max-height: 370px;
-  max-height: 23.125rem;
   overflow: auto;
   margin: 0;
   padding: 14px;
@@ -2317,9 +2035,7 @@ html {
 }
 .filters .filter-choise li {
   font-size: 12px;
-  font-size: 0.75rem;
   line-height: 24px;
-  line-height: 1.5rem;
   cursor: pointer;
 }
 .filters .filter-choise li span:before {
@@ -2328,18 +2044,13 @@ html {
   display: inline-block;
   vertical-align: middle;
   width: 18px;
-  width: 1.125rem;
   height: 18px;
-  height: 1.125rem;
   margin: -2px 6px 0 0;
-  margin: -0.125rem 0.375rem 0 0;
   line-height: 18px;
-  line-height: 1.125rem;
   text-align: center;
   color: #de947d;
   background: #e5e5e5;
   border-radius: 4px;
-  border-radius: 0.25rem;
 }
 .filters .filter-choise li span.active:before {
   content: '\e805';
@@ -2356,7 +2067,6 @@ html {
   overflow: hidden;
   /* IE 6/7 fallback */
   *text-indent: -9999px;
-  *text-indent: -624.9375rem;
 }
 .ir:before {
   content: "";
@@ -2378,14 +2088,11 @@ html {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
-  height: 0.0625rem;
   margin: -1px;
-  margin: -0.0625rem;
   overflow: hidden;
   padding: 0;
   position: absolute;
   width: 1px;
-  width: 0.0625rem;
 }
 /*
  * Extends the .visuallyhidden class to allow the element to be focusable
