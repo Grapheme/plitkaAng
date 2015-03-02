@@ -129,13 +129,15 @@ angular.module('plitkaApp')
 						product_obj.price = product_price;
 					}
 					if(product_obj.unit) {
-						var unit_str = self.data.units[product_obj.unit].name;
-						product_obj.price += ' руб/' + unit_str;
+						if(self.data.units[product_obj.unit]) {
+							var unit_str = self.data.units[product_obj.unit].name;
+							product_obj.price += ' руб/' + unit_str;
+						}
 					}
 					self.productsArr.push( product_obj );
 				}
 			}
-			//console.log(self.productsArr);
+			console.log(self.productsArr);
 
 			// SEO REQUIREMENT: 
 		    // PhantomJS pre-rendering workflow requires the page to declare, through htmlReady(), that
