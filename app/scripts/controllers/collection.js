@@ -95,7 +95,7 @@ angular.module('plitkaApp')
 			}, 100);
 
 			//Fancybox init
-			/*var fancybox = $('.fancybox').fancybox({
+			var fancybox = $('.fancybox').fancybox({
 				maxWidth: 450,
 				wrapCSS: 'collFancybox',
 				padding: 0,
@@ -104,7 +104,7 @@ angular.module('plitkaApp')
 						type: 'inside'
 					}
 				}
-			});*/
+			});
 			
 			//Места применения
 			self.dicvals = self.collection.related_dicvals;
