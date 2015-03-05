@@ -1990,12 +1990,15 @@ html {
   vertical-align: top;
   width: 25%;
   margin: 0 0 5%;
+  padding-right: 25px;
+  padding-right: 1.5625rem;
 }
 .similar-products .similar-products-head {
   margin: 0 0 1.5em;
   height: 9rem;
   background: no-repeat left center;
   background-size: auto 100%;
+  overflow: hidden;
 }
 .similar-products .similar-products-head img {
   height: 100%;
