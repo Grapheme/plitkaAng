@@ -8,7 +8,7 @@
  * Controller of the plitkaApp
  */
 angular.module('plitkaApp')
-	.controller('CollectionCtrl', ['$http', '$routeParams', '$scope', function ($http, $routeParams, $scope) {
+	.controller('CollectionCtrl', ['$http', '$routeParams', '$scope', '$rootScope', function ($http, $routeParams, $scope, $rootScope) {
 		var self = this;
 
 		//Get data from server
@@ -137,7 +137,15 @@ angular.module('plitkaApp')
 					self.productsArr.push( product_obj );
 				}
 			}
-			console.log(self.productsArr);
+			self.realName = self.collection.name;
+			var h1_name = self.collection.seo.h1
+			if(h1_name && h1_name != '') {
+				self.realName = h1_name;
+			}
+
+			$rootScope.title = self.collection.seo.title;
+			$rootScope.description = self.collection.seo.title;
+			$rootScope.keywords = self.collection.seo.title;
 
 			// SEO REQUIREMENT: 
 		    // PhantomJS pre-rendering workflow requires the page to declare, through htmlReady(), that

@@ -626,6 +626,11 @@ angular.module('plitkaApp')
 				$('.filter').removeClass('active');
 			});
 
+			$rootScope.h1 = self.data.pages.catalog.seo.h1;
+			$rootScope.title = self.data.pages.catalog.seo.title;
+			$rootScope.description = self.data.pages.catalog.seo.title;
+			$rootScope.keywords = self.data.pages.catalog.seo.title;
+
 			// SEO REQUIREMENT: 
 	        // PhantomJS pre-rendering workflow requires the page to declare, through htmlReady(), that
 	        // we are finished with this controller.

@@ -29,6 +29,10 @@ angular.module('plitkaApp')
 			self.factory = self.data.factory;
 			self.productTypes = self.data.product_type;
 
+			$rootScope.h1 = self.data.pages.projects.seo.h1;
+			$rootScope.title = self.data.pages.projects.seo.title;
+			$rootScope.description = self.data.pages.projects.seo.title;
+			$rootScope.keywords = self.data.pages.projects.seo.title;
 
 			// SEO REQUIREMENT: 
 	      	// PhantomJS pre-rendering workflow requires the page to declare, through htmlReady(), that
