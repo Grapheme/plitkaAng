@@ -4,7 +4,7 @@
 			Статьи
 		</h2>
 		<ul class="goods-ul articles-ul clearfix">
-			<li class="goods-li" ng-repeat="(id, article) in ArtCtrl.articles">
+			<li class="goods-li" ng-repeat="article in ArtCtrl.articles | orderBy:'-publiched_at'">
 				<div class="goods-li-head" style="background-image:url({{ ArtCtrl.photos[ article.image_id ].full }})">
 					<a href="http://plitkamira.ru/#!/article/{{ article.slug }}"></a>
 				</div>

@@ -628,8 +628,8 @@ angular.module('plitkaApp')
 
 			$rootScope.h1 = self.data.pages.catalog.seo.h1;
 			$rootScope.title = self.data.pages.catalog.seo.title;
-			$rootScope.description = self.data.pages.catalog.seo.title;
-			$rootScope.keywords = self.data.pages.catalog.seo.title;
+			$rootScope.description = self.data.pages.catalog.seo.description;
+			$rootScope.keywords = self.data.pages.catalog.seo.keywords;
 
 			// SEO REQUIREMENT: 
 	        // PhantomJS pre-rendering workflow requires the page to declare, through htmlReady(), that

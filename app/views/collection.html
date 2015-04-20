@@ -55,8 +55,7 @@
 					<dt ng-show="CollCtrl.country.name">Страна</dt>
 					<dd ng-show="CollCtrl.country.name"> {{ CollCtrl.country.name }} </dd>
 				</dl>
-				<p>
-					{{ CollCtrl.collection.description}}
+				<p ng-bind-html="CollCtrl.collection.description">
 				</p>
 			</div>
 		</div>

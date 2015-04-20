@@ -92,6 +92,11 @@ angular
 				controller: 'CollectionCtrl',
 				controllerAs: 'CollCtrl'
 			})
+			.when('/pages/:id', {
+				templateUrl: 'views/page.html',
+				controller: 'PagesCtrl',
+				controllerAs: 'PageCtrl'
+			})
 			.otherwise({
 				redirectTo: '/404'
 			});

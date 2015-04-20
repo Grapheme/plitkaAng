@@ -44,7 +44,7 @@ angular.module('plitkaApp')
 				self.collectionBySlug[ self.collections[ key ].slug ] = self.collections[ key ];
 			}
 
-			console.log( self.collectionBySlug );
+			//console.log( self.collectionBySlug );
 			self.collections = self.collectionBySlug;
 
 			//Наша коллекция
@@ -58,7 +58,11 @@ angular.module('plitkaApp')
 				//Имя фабрики коллекции
 				self.factoryName = self.factories[ self.collections[ self.collectionId ].factory_id ].name;
 				//Изображение фабрики коллекции
-				self.factoryImg = self.photos[ self.factories[ self.collections[ self.collectionId ].factory_id ].image_id ].full;
+				if( self.factories[ self.collections[ self.collectionId ].factory_id ].image_id ) {
+					self.factoryImg = self.photos[ self.factories[ self.collections[ self.collectionId ].factory_id ].image_id ].full;
+				} else {
+					self.factoryImg = '';
+				}
 				//Тип поверхности коллекции
 			}
 			
