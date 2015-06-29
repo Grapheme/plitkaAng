@@ -11,7 +11,7 @@ angular.module('plitkaApp')
     .controller('PagesCtrl', ['$http', '$routeParams', '$scope', '$rootScope', function($http, $routeParams, $scope, $rootScope) {
 
         //Get contacts - page data
-        $http.get('http://plitka.dev.grapheme.ru/application/get').success(function(data){
+        $http.get(OriginHref).success(function(data){
             var this_id = $routeParams.id;
             self.data = data;
             self.page = self.data.pages[this_id];

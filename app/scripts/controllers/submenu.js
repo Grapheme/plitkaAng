@@ -17,7 +17,7 @@ angular.module('plitkaApp')
 			return num === $routeParams.type;
 		};
 		//Get data from server
-		$http.get('http://plitka.dev.grapheme.ru/application/get').success(function(data){
+		$http.get(OriginHref).success(function(data){
 			self.data = data;
 
 			self.places = self.data.scope;

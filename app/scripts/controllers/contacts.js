@@ -81,7 +81,7 @@ angular.module('plitkaApp')
 		};
 
 		//Get contacts - page data
-		$http.get('http://plitka.dev.grapheme.ru/application/get').success(function(data){
+		$http.get(OriginHref).success(function(data){
 			self.data = data;
 
 			self.contactsDataBlocks = self.data.pages.contacts.blocks;

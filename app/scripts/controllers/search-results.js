@@ -7,12 +7,18 @@
  * # SearchResultsCtrl
  * Controller of the plitkaApp
  */
+
+window.OriginHref = '/application/get'
+if(window.location.hostname == 'localhost') {
+	window.OriginHref = 'http://plitka.dev.grapheme.ru/application/get';
+}
+
 angular.module('plitkaApp')
 	.controller('SearchResultsCtrl', ['$rootScope', '$location', '$scope', '$http', function ($rootScope, $location, $scope, $http) {
 		
 		var self = this;
 
-		$http.get('http://plitka.dev.grapheme.ru/application/get').success(function(data){
+		$http.get(OriginHref).success(function(data){
 			self.data = data;
 
 			var data = $rootScope.searchData;

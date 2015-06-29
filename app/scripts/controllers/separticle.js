@@ -19,7 +19,7 @@ angular.module('plitkaApp')
 		var self = this;
 
 		//Get data from server
-		$http.get('http://plitka.dev.grapheme.ru/application/get').success(function(data){
+		$http.get(OriginHref).success(function(data){
 			self.data = data;
 
 			//Get article data

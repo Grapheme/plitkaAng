@@ -24,7 +24,7 @@ angular
 		$locationProvider.hashPrefix('!');
 	}])
 	.run( ['$http', function($http){
-		$http.get('http://plitka.dev.grapheme.ru/application/get').success(function(data){
+		$http.get(OriginHref).success(function(data){
 			if(window.__loaded == true) {
 				$('.loader').fadeOut(400);
 			} else {
